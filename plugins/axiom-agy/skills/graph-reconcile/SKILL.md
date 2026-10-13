@@ -13,6 +13,8 @@ repository test suite or the host completion gate.
 
 ## Coherent boundary
 
+Use the configured Axiom MCP `graph_status` tool first. If `graph-watch` already covers the changed scope, observe its publication within the bounded deadline; request an additional reconcile only when an authorized freshness barrier or recovery requires it. The daemon owns continuous file watching; this skill coordinates an explicit dirty-scope boundary through MCP `graph_reconcile` and `graph_job`, using credentials authorized for reconciliation. A read-only question belongs to `graph-context` and does not authorize this write workflow.
+
 Reconcile at a coherent boundary, meaning a point where a logical unit of work has settled:
 
 - after a batch of related edits, not after each individual edit;

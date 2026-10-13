@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Documentation
+
+- Connect initial graph builds, automatic source-change refresh and MCP-backed code questions in skills and onboarding. Explain engine/analyzer requirements, instance-wide daemon watching, scoped MCP access, operation-specific query arguments and freshness limits.
+
 ### Bug Fixes
 
 - Correct the repository marketplace guide to list ten skills and align the optional Copilot catalog version with the plugin. Check declared marketplace versions before packaging. Published standalone 0.1.6 host packages already include the correct version and ten skills.

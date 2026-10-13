@@ -1,6 +1,6 @@
 ---
 name: graph-impact
-description: Review the impact of a change against the repository graph by comparing expected dependencies with actual ones and reporting unresolved limits instead of assuming no impact.
+description: Review a change through Axiom MCP graph queries, compare expected dependencies with observed impact and report unresolved limits instead of assuming no impact.
 ---
 
 # Impact review
@@ -14,7 +14,7 @@ repository test suite, and it does not replace the host completion gate.
 ## Preconditions
 
 1. Read the repository instructions and the installed policy at `.axiom/agent/POLICY.md`.
-2. Check `graph_status` for freshness, coverage, active generations and capabilities.
+2. Discover the configured Axiom MCP tools and check `graph_status` for freshness, coverage, active generations and capabilities. Follow `graph-context` for connection, scoped read credentials and symbol discovery; do not replace MCP reads with shell queries or start services to perform this review.
 3. Confirm the freshness and coverage of the scope under review before drawing conclusions.
 
 ## Procedure
@@ -25,9 +25,7 @@ repository test suite, and it does not replace the host completion gate.
    before the query is the only thing that makes a later surprise visible.
 2. **Ask for the actual dependency projection.** Use `graph_query` with
    `"operation": "impact"` for the changed target and, where it adds evidence, `callers`,
-   `dependencies`, `path` and `changes`. Ask for an explicit `projection` such as `identity`,
-   `relations`, `source_locations` or `coverage`, and explicit bounds (`depth`, `max_nodes`,
-   `max_edges`, `max_bytes`).
+   `dependencies`, `path` and `changes`. For traversal operations use a resolved node ID as `target`, an explicit `projection` array including `source_locations`, and bounds (`depth`, `max_nodes`, `max_edges`, `max_bytes`). `path` also needs `target_to`; `changes` accepts a baseline generation and `max_bytes`, not traversal fields. Follow each discovered operation schema and report ambiguous candidates instead of selecting one silently.
 3. **Compare expected against actual.** Produce three explicit lists: expected dependents that
    the graph confirms, expected dependents the graph does not show, and dependents the graph
    shows that you did not expect. An unexpected dependent is the most valuable output of this

@@ -6,6 +6,7 @@ Start with [Get started](GETTING-STARTED.md) to install the plugin, make its ski
 |---|---|
 | Install the plugin in my assistant | [Plugin installation](../marketplace-plugins/README.md) |
 | See the available skills and example requests | [Skill directory](../README.md#what-you-can-do) |
+| Build a graph, refresh it after saves and query it through MCP | [Graph lifecycle and tool routing](guides/graph-lifecycle.md) |
 | Fix missing skills or a disconnected graph | [Getting started and troubleshooting](GETTING-STARTED.md#if-the-skills-do-not-appear) |
 | Configure host instructions and hooks | [Advanced host setup](guides/hosts.md) |
 | Understand freshness, budgets and completion behavior | [Agent workflow reference](guides/agent-workflow.md) |

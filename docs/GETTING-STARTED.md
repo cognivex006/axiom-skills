@@ -29,11 +29,13 @@ For Claude Code, GitHub Copilot CLI, Gemini CLI or Antigravity, use [the plugin 
 
 ## 3. Connect a project and MCP
 
-Start with `$axiom:graph-build` to register the selected solution, build its first graph and verify a known symbol. Use `$axiom:graph-watch` to keep that graph current as source files change. Both skills need the graph engine; automatic refresh uses its persistent daemon and current polling watcher.
+Start with `$axiom:graph-build` to register the selected solution, build its first graph and verify a known symbol. Then use `$axiom:graph-watch` to keep that graph current after source files are saved. Both skills need `axiom-graphd`; automatic refresh uses its running daemon and current polling watcher. This refresh updates graph data, not application binaries.
 
 Use the [graph engine command reference](https://github.com/orchex006/axiom-graphd/blob/main/docs/reference/axiom-graphd.md) to register your solution and produce its graph. Configure the [MCP gateway](https://github.com/orchex006/axiom-mcp#run) with credentials scoped to that solution and add its launch configuration to your host.
 
 MCP credentials stay private. Registering a skills plugin does not create credentials, register a solution or start an MCP server.
+
+For code questions, the assistant uses `graph-context` or `graph-impact` to discover and call MCP `graph_status` / `graph_query`; CLI graph queries are setup diagnostics. Keep the engine and gateway on the same `AXIOM_HOME`, instance and repository bindings. See [Build → watch → query](guides/graph-lifecycle.md) for prerequisites, actual tool routing, bounded query examples and failure recovery.
 
 ## 4. Try a skill
 

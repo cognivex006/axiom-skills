@@ -2,7 +2,7 @@
 
 Give your coding assistant a repeatable workflow for understanding code, assessing changes and keeping an Axiom code graph current.
 
-Axiom packages ten skills in one plugin. The plugin works alongside your existing assistant; the graph engine and MCP connection provide the runtime it uses.
+Axiom packages ten skills in one plugin. Skills teach the assistant how to use the tools: `axiom-graphd` builds the graph, its daemon watches saved source changes and publishes updates, and `axiom-mcp` serves the assistant's graph questions.
 
 **[Get started](docs/GETTING-STARTED.md)** · **[Install the plugin](marketplace-plugins/README.md)** · **[Documentation](docs/README.md)** · **[Releases](https://github.com/orchex006/axiom-skills/releases)**
 
@@ -40,8 +40,8 @@ For a local checkout or an unpacked skills bundle, replace `orchex006/axiom-skil
 |---|---|
 | `graph-build` | Create the first graph from registered source using the graph engine |
 | `graph-watch` | Keep the graph updated automatically when source files are saved |
-| `graph-context` | Find the code and relationships relevant to your task |
-| `graph-impact` | Assess which callers and projects a change may affect |
+| `graph-context` | Query MCP to find the code and relationships relevant to your task |
+| `graph-impact` | Query MCP to assess which callers and projects a change may affect |
 | `graph-reconcile` | Refresh the graph after a coherent set of edits |
 | `graph-checkpoint` | Record a graph checkpoint for the reviewed source state |
 | `graph-doctor` | Diagnose graph availability, freshness and configuration |
@@ -66,7 +66,7 @@ You can also choose a skill in Codex or ask in plain language:
 
 > Refresh the graph after these changes and report what remains unverified.
 
-`graph-build` needs the installed engine and an analyzer for the selected source language. `graph-watch` needs a registered solution and the running graph daemon; its watcher detects saved source changes. Query workflows need published graph data, and MCP provides the connection for assistants using gateway tools. Installing the plugin makes the skills available; it does not start the graph daemon or configure credentials. Follow [Get started](docs/GETTING-STARTED.md) to connect these pieces.
+`graph-build` needs the installed engine and an analyzer for the selected source language. `graph-watch` needs a registered solution and the running graph daemon; its watcher detects saved source changes. The assistant answers graph questions through MCP using scoped read credentials and published graph data. CLI queries are setup diagnostics. Installing the plugin makes the instructions available; it does not start the daemon or configure credentials. Follow [Get started](docs/GETTING-STARTED.md) and [Build → watch → query](docs/guides/graph-lifecycle.md) to connect these pieces.
 
 ## Related components
 

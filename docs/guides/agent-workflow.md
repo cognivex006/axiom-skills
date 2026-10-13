@@ -5,7 +5,7 @@
 Skills use one portable bundle across OS targets. GitHub Actions verifies tests, payload hashes and plugin parity; GitHub Releases supplies the checked archive with source revision, version and SHA-256 checksum. No certification, code signing or attestation is required. Host runtime results document capabilities and never gate skill downloads. Existing host permissions, updater integrity and approval checks remain unchanged.
 
 
-Owner: `axiom-skills`. Spec baseline: `2.0.0-draft.1`.
+For building and using a graph, start with [Build → watch → query](graph-lifecycle.md). This advanced reference describes optional host hooks and completion coordination. Skills teach tool use; the graph engine owns analysis and file watching, and MCP owns the assistant query connection.
 
 This guide explains how the canonical graph skills and the bounded completion hooks cooperate
 during one agent turn: what each layer is allowed to decide, how a timeout is bounded, when a
@@ -16,13 +16,6 @@ installed. Every claim about runtime behaviour below names the exact file and sy
 implements it, so the claim can be re-checked against the shipped bytes instead of taken on
 trust. Behaviour the repository does **not** implement is listed under
 [What is not guaranteed](#what-is-not-guaranteed) rather than described as if it existed.
-
-Path decision: the task card proposed `docs/guides/agent-workflow.md` and this is that path.
-Spec A states the repository owns documentation under `docs/`; the installable bundle scope is
-declared as `policy`, `skills` and `adapters`
-(`release/skills-manifest.json` → `install_policy.declared_scope`), so a guide under `docs/`
-adds reviewable documentation without entering the install manifest or changing the bytes the
-reference verifier (`release/verify_manifest.py`) checks.
 
 ---
 
@@ -38,7 +31,7 @@ Three shipped artifacts make that boundary concrete:
 
 | Layer | Artifact | What it is allowed to decide |
 |---|---|---|
-| Workflow guidance | `skills/*/SKILL.md` (6 skills) | Advises what to query and when; grants no permission and is not a gate |
+| Workflow guidance | `skills/*/SKILL.md` (10 skills) | Advises what to query and when; grants no permission and is not a gate |
 | Host decision | `adapters/*/hooks/*.py` | May ask a host to continue/retry a turn inside a bounded loop guard |
 | Shared runtime | `adapters/common/hook_runtime.py` | Bounds one operation in time; returns pending evidence instead of waiting |
 
@@ -205,8 +198,10 @@ freshness.
 
 ## 6. How the layers cooperate in one turn
 
+Start with `graph-build` for the initial graph and `graph-watch` for daemon-owned automatic refresh. These setup workflows require the installed engine and the authorized instance scope. MCP uses the same instance and bindings; query readiness is a separate check.
+
 1. **Before reading source.** Follow `skills/graph-context/SKILL.md`: request an explicit,
-   bounded projection and use returned source locations as the reading list; never load
+   bounded projection through MCP `graph_status` and `graph_query` and use returned source locations as the reading list; never load
    `.axiom/graph` as a directory or dump a catalog into context.
 2. **At a coherent change boundary.** Follow `skills/graph-reconcile/SKILL.md`: request dirty-scope
    reconciliation, poll within a bounded deadline, and report `pending`/blocked when the deadline

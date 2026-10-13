@@ -5,7 +5,7 @@ description: Create the first Axiom code graph for a selected solution using the
 
 # Build a code graph
 
-The skill coordinates `axiom-graphd`; the engine performs inventory, parsing, dependency analysis and graph publication. It cannot build a graph without the installed engine and a supported analyzer.
+The skill teaches the assistant how to coordinate `axiom-graphd`; the engine performs inventory, parsing, dependency analysis and graph publication. It cannot build a graph without the installed engine and a supported analyzer. MCP exposes graph tools to the assistant; it does not replace the engine.
 
 ## Resolve the target
 
@@ -46,8 +46,14 @@ axiom-graphd status --solution <solution-id> --json
 axiom-graphd query context --solution <solution-id> --symbol <known-symbol> --max-nodes 20 --max-bytes 8192 --json
 ```
 
+The CLI query above is a bounded setup smoke check when MCP is not yet connected. Once MCP is available, verify through its discovered `graph_status` and `graph_query` tools instead. Answer the user's code questions through MCP using `graph-context`; do not use CLI queries as the assistant's normal graph interface.
+
 Check the actual reconcile result, published generation and coverage, then query a symbol known to exist in the selected source. Do not treat exit zero, an empty graph, unsupported-language coverage or process liveness as complete indexing. A query can be ambiguous; narrow it rather than inventing a node identity.
 
 If another daemon owns the instance, use the configured control/MCP reconcile interface and bounded job polling. Do not start a second writer or clear its lock. A first full build is deliberate work; routine edits should use dirty-scope reconciliation or `graph-watch`.
 
 Report solution/projects, instance home, engine/analyzer versions, observed generation, source coverage, query evidence and unresolved limitations. Do not load graph shards into model context or edit the generated graph directly.
+
+## Handoff
+
+For requested automatic refresh, continue with `graph-watch`: the graph daemon owns file watching and publication. For code questions, continue with `graph-context` or `graph-impact`: discover the configured Axiom MCP tools, confirm solution/project scope and query published generations. Keep daemon and MCP on the same `AXIOM_HOME` and matching registered bindings. Missing MCP configuration is a separate connection prerequisite; a successful build does not prove the assistant can query it. Do not silently configure credentials or start services while answering a read-only question.
