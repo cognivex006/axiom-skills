@@ -43,7 +43,7 @@ def main():
         found=[skill for row in result['data'] for skill in row.get('skills',[]) if skill['name'].startswith('axiom:')]
         expected={f'axiom:{p.parent.name}':p for p in (ROOT/'skills').glob('*/SKILL.md')}
         if len(found)!=len(expected) or {s['name'] for s in found}!=set(expected):
-            raise RuntimeError('Codex did not discover all eight canonical Axiom skills')
+            raise RuntimeError('Codex did not discover all ten canonical Axiom skills')
         digests={}
         for skill in found:
             if not skill['enabled']:raise RuntimeError('an Axiom skill is disabled')
@@ -54,7 +54,7 @@ def main():
                 'platform':platform.system(),'machine':platform.machine(),'method':'native skills/list',
                 'skills':digests,'enabled':True,'model_turn_started':False,'desktop_ui':'not_run','graph_mcp_execution':'not_run'}
         args.out.write_text(json.dumps(report,indent=2)+'\n')
-        print('PASS: native Codex discovers eight enabled canonical Axiom skills')
+        print('PASS: native Codex discovers ten enabled canonical Axiom skills')
     finally:
         events.close();proc.terminate()
         try:proc.wait(timeout=5)

@@ -1,5 +1,7 @@
 name: Skills GitHub Release
 on:
+  push:
+    tags: ['v*']
   workflow_dispatch:
     inputs:
       tag:
@@ -9,7 +11,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: skills-release-${{ inputs.tag }}
+  group: skills-release-${{ inputs.tag || github.ref_name }}
   cancel-in-progress: false
 jobs:
   verify:
@@ -26,7 +28,7 @@ jobs:
           fetch-depth: 0
       - name: Verify existing tag and source
         env:
-          RELEASE_TAG: ${{ inputs.tag }}
+          RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
         run: |
           python -c "import os,re; assert re.fullmatch(r'v[0-9]+\.[0-9]+\.[0-9]+(?:-[A-Za-z0-9.-]+)?',os.environ['RELEASE_TAG']), 'invalid tag'"
           test "$(git rev-parse "refs/tags/$RELEASE_TAG^{commit}")" = "$GITHUB_SHA"
@@ -49,7 +51,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
-          RELEASE_TAG: ${{ inputs.tag }}
+          RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
         run: |
           cd release-assets
           test "$(cat SOURCE-REVISION.txt)" = "$GITHUB_SHA"

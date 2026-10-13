@@ -1,0 +1,686 @@
+## Unreleased — O-011 standards-based multi-host packages
+
+- Add Agent Plugins 1.0 metadata and a Copilot marketplace, a repository-root Gemini extension and a dedicated Antigravity package. All packages retain identical canonical skill/policy bytes. Build five standalone source/hash-bound host archives; document installation, update/removal and each host’s actual marketplace capability. Keep absent-host runtime and public directory publication unclaimed.
+
+## Unreleased — O-010 Codex skills discovery and consumer onboarding
+
+- Lead with plugin installation, the eight skills, usage examples and graph/MCP setup. Explain why the runtime skills bundle is not automatically discoverable in Codex, with verified marketplace/add/list commands and restart guidance. Keep contributor traceability in maintainer documentation and refresh packaged documentation hashes.
+
+## 0.1.5 — short command axm release
+
+- Version 0.1.5; carries L-017 (the axiom-cli-install skill drives Axiom through `axm`, ADR-0036) [L-019].
+
+## Unreleased — L-017 skills drive Axiom through axm
+
+- The `axiom-cli-install` skill (id unchanged) and its plugin copy use `axm` (ADR-0036 short name of `axiom-cli`) for every verb, fall back to `axiom-cli` on 0.1.4 or older, and offer the ADR-0035 update one-liners (`update.ps1` / `update.sh`). Fix a control character (BEL) that had replaced `\a` in `%USERPROFILE%\axiom`. Workflow checks require the short commands, the update scripts and no control characters; manifest digests refreshed (R06, R13).
+
+## 0.1.4 — one-line update release
+
+- Version 0.1.4 to keep one release version across the ADR-0035 one-line update script (axiom-cli L-013); no functional change [L-014].
+
+## 0.1.3 — one-line install release
+
+- Version 0.1.3; carries L-008 (axiom-cli-install leads with the one-line install).
+
+## Unreleased — L-008 one-line install skill
+
+- `axiom-cli-install` now leads with the ADR-0033 one-liners (Windows `irm …/install.ps1 | iex`, POSIX `curl -fsSL …/install.sh | sh`) and the pinned `releases/download/vX.Y.Z/` form, requires asking the human before the single confirmation (never self-approving, never inventing a digest), diagnoses through `axiom-cli doctor`, points legacy layouts to L-006 adoption (`--adopt`) and keeps `--dry-run` / `--apply --approve-digest` as the automation fallback only. Plugin copy and `release/skills-manifest.json` updated; new `OneLineInstallSkillTests` (R06, R16, R22).
+
+## 0.1.2 — K-612
+
+- Publish the current portable owner bundle and aligned host plugin metadata through checked GitHub delivery; no OS-specific skill fork or certification prerequisite.
+
+## Unreleased — K-608
+
+- Include the three canonical bootstrap content files in the hash-verified portable owner payload for graphd public bootstrap composition.
+
+## Unreleased — K-605
+
+- Replace active skills/adapter certification state with evidence; add portable GitHub CI and Release packaging.
+
+# 0.1.1 MacIntel test release
+
+Owner-authorized publication of current code; see release/v0.1.1-notes.md.
+
+# Changelog
+
+Canonical changelog for `axiom-skills`. Component versioning is independent of the spec
+version; entries below are unreleased working-tree changes, not a published release.
+
+## Unreleased
+
+### K-301 Windows owner bundle candidate
+
+Use the active Python interpreter for owner payload staging on Windows. Align
+distribution guidance and its contract checks with ADR-0020, pin the immutable
+three-lane specification, and regenerate the portable plugin and manifest hashes.
+Record actual Windows bundle verification and failure-boundary evidence for the
+downstream K-305 consumer; installed runtime and release certification remain separate.
+
+### K-401 container lane owner bundle candidate
+
+Reuse the exact K-101 portable 41-file payload and immutable K-012 spec pin for
+the container consumer. Verify the owner archive and manifest again, including
+corrupt, missing, undeclared and path-escape refusals. A read-only Linux x64
+container consumed the same archive without changing its bytes. The bundle
+remains a local candidate; installed runtime, release signing and platform
+certification belong to later tasks.
+
+### K-101 Mac Intel owner bundle candidate
+
+Pin the K-012 draft scope revision in the owner lock and full 41-file manifest.
+Keep the candidate explicitly unreleased. Refuse manifest path traversal and
+symlink payloads before reading or packaging. Add corrupt, missing, undeclared
+and escape regressions; the distribution can convert the complete owner payload
+to the engine bundle without a substitute fixture. Local bundle verification
+does not certify an installed host or publish a release.
+
+### K-011 owner skills closure candidate
+
+Pin the reviewed specification revision in the source manifest and record
+least-scoped capability declarations for all six executable hook files. This
+allows the distribution to convert the owner bundle for an isolated container
+candidate; it does not publish or activate a new skills release. Update the
+distribution skill and its packaged copy to the four finish-first lanes in the
+current platform matrix, including separate WSL2 evidence. The full owner test
+suite passes on Python 3.13 (204 tests), and the 41-file manifest verifies.
+
+### 0.1.0 experimental Windows release
+
+Set the component, adapter and portable plugin versions to `0.1.0`. This first
+release is unsigned and does not certify installed Codex, Claude, Gemini or
+Antigravity host versions. The plugin packages skills and policy; Axiom runtime
+installation and MCP configuration remain separate.
+
+### Portable plugin package and host marketplaces
+
+Added one `plugins/axiom` skill package with Codex, Claude Code, Gemini CLI and
+Antigravity manifests, a Codex marketplace, a Claude marketplace and a cross-host
+catalog in `marketplace-plugins/`. The packaged skills and policy are checked
+byte-for-byte against their canonical source. Plugin installation does not install
+the Axiom runtime, start MCP or claim host certification. Added manifest coverage
+and positive and tampered-package tests.
+
+### README specification-pin validator invocation (W10-READMES)
+
+`README.md` §"Specification pin" documented `python tools/spec-lock-check.py --lock
+spec.lock.json --spec-root <axiom-specs-checkout>`, but `axiom-skills` ships no `tools/`
+directory; the validator is canonical in `axiom-specs` (`tools/spec-lock-check.py`, flags
+`--lock`, `--spec-root`, `--release` and `--json`). Run as written from this checkout the
+command failed with `[Errno 2] No such file or directory` and exit 2. The section now names the
+canonical owner and gives the invocation that runs from an `axiom-specs` checkout
+(`--lock ../axiom-skills/spec.lock.json --spec-root .`); both documented outcomes were re-verified
+against the pinned revision `6b23ea78e19902726edf40dbd9c15bda27c91ebb` - default mode prints
+`immutable revision and pinned digests verified` and exits 0, and `--release` is rejected with
+`release-coverage-missing:conformance/fixture-index.json` and exits 2. README-only change: no file
+under `policy/`, `skills/` or `adapters/` changed, so `release/skills-manifest.json` is
+unaffected.
+### Repository entry point, governance file and host-parity clarity (W10-C)
+`README.md` was a **0-byte file**, `AGENTS.md` did not exist at all, `docs/README.md` did not
+exist and `spec.lock.json` was absent, so the bundle had no entry point, no repository
+governance file and no verified specification pin. `AGENTS.md` is restored byte-for-byte from
+the published seed `axiom-specs/repo-seeds/axiom-skills/AGENTS.md`, which is the same
+governance text `axiom-mcp` ships, so the workspace `AGENTS.md` §2 requirement that every
+component repository carry root agent instructions is satisfied again. `README.md` now states
+the owner scope (the six skills, the per-host adapters, the shared bounded hook runtime, the
+managed-item policy and the bootstrap templates - and explicitly not the graph runtime, the
+query gateway or the ecosystem contracts), the repository layout, the two required checks
+with the manifest-regeneration rule for changes under `policy/`, `skills/` or `adapters/`, the
+unapproved-draft nature of the specification pin, the fail-closed install policy and the
+platform status. `docs/README.md` indexes the three shipped guides and points at the
+authoritative records (`adapters/compatibility.json`, `policy/POLICY.md`,
+`release/skills-manifest.json`). `spec.lock.json` pins the immutable `axiom-specs` revision
+`6b23ea78e19902726edf40dbd9c15bda27c91ebb` plus five contract digests
+(`contracts/version-dimensions.json`, `contracts/normative-terms.md`,
+`contracts/bootstrap-ownership.md`, `contracts/repository-ownership.json`,
+`contracts/schemas/task-evidence.schema.json`) and their canonical rollup; default mode is
+`ACCEPTED` (exit 0) and `--release` deliberately still rejects with
+`release-coverage-missing:conformance/fixture-index.json`.
+`docs/guides/agent-workflow.md` §3 said "only some hosts can express it" about the canonical
+`block` action, which reads as though some supported host is left without the gate. Every
+adapter maps the canonical decision into its own host's documented shape - `block` on Codex CLI
+and Claude Code, `retry` on Gemini CLI, `continue` on Antigravity (AGY) - so the section now
+says all four can express it and keeps the parts that really do differ: the shape is not
+interchangeable, a capability flag the installed version reports as `False` degrades the
+decision to `advisory`, and a host with no equivalent event records the feature as
+`not_documented` rather than inventing a hook (Gemini CLI documents no task-completion event;
+Antigravity documents no `AfterAgent` event). Neither adapter lacks its host's documented
+completion gate, so no adapter behaviour, no `adapters/compatibility.json` record and no
+hash-pinned file under `policy/`, `skills/` or `adapters/` changed in this entry - which is why
+`release/skills-manifest.json` is deliberately not regenerated. Recorded and not claimed: no
+host version was probed, `certified_adapters` stays `0`, `enforcement_level` stays
+`instructions_only`, no tag or release exists, and the host matrix still records
+`installed_version: null` for all four hosts.
+### A-001 — Define minimal graph policy contract
+
+Add `policy/POLICY.md` as the canonical managed graph policy. It fixes the exact graph
+directory `.axiom/graph`, separates graph freshness from coverage, states explicitly that the
+policy grants no new permissions and that graph data is never an instruction, forbids loading
+every JSON shard into context, and describes the managed-instruction boundary.
+
+### A-002 — Create bounded context skill
+
+Add `skills/graph-context/SKILL.md`. The workflow requests an explicit, bounded graph
+projection before any source reading, uses returned source locations as the reading list,
+respects the byte and node budgets, and never loads `.axiom/graph` as a directory or dumps a
+catalog into context.
+
+### A-003 — Create batch reconcile skill
+
+Add `skills/graph-reconcile/SKILL.md`. Reconciliation is requested with dirty scope at
+coherent change boundaries, polled within a bounded deadline, and reported as pending or
+blocked when the deadline expires. Per-keystroke and per-save full rebuilds are prohibited,
+and `scope=full` requires explicit owner authorisation.
+
+### A-004 — Create impact review skill
+
+Add `skills/graph-impact/SKILL.md`. The review states the expected impact before querying,
+compares that expectation against the actual dependency projection, and records resolved and
+unresolved limits. An empty or truncated result is never upgraded into a claim that the change
+has no impact: missing edges, partial coverage, dynamic binding and unanalyzed consumers are
+reported as unverified risk with a verification action.
+
+### A-005 — Create checkpoint publication skill
+
+Add `skills/graph-checkpoint/SKILL.md`. A checkpoint names its source selector explicitly
+(`--source staged`, `--source worktree --verify-stable`, `--source commit --ref`), materialises
+the Git index for commit-bound checkpoints, verifies against the staged source, and separates
+the Git-ignored `live/` lane from the tracked `checkpoint/` lane. A checkpoint whose source was
+not the staged index is never committed, publication happens at an explicit boundary rather
+than on every save, and the size budgets and non-union merge rules are stated.
+
+### A-006 — Create graph diagnostics skill
+
+Add `skills/graph-doctor/SKILL.md`. A missing daemon, a partial snapshot and a bounded timeout
+map to distinct recovery steps with their own evidence and escalation, and deleting or
+rebuilding the live graph, the queue database or daemon state is explicitly not a recovery
+step. Authentication, bind addresses, freshness checks and host configuration are never
+weakened to clear a symptom.
+
+### A-007 — Create approved version-update skill
+
+Add `skills/graph-update/SKILL.md`. A version check reports `installed`, `available`,
+`compatible`, `channel`, `schema_range`, `update_policy` and `needs_restart` without ever
+guessing that an unknown or offline result is up to date. Check and plan are separate from
+apply: `axiom update apply --plan <digest>` runs only for a plan digest a human approved for
+that exact scope, re-verifies the installed state and refuses instead of silently replanning.
+Auto-apply is disabled by default, rollback is bounded to owned files whose after-hash is
+unchanged, and repository content — a skill file, a document, a graph payload, a task
+description, a commit message — can never authorize an apply.
+
+### A-008 — Create canonical policy/skill package manifest
+
+Add `release/skills-manifest.json` with the component version, the declared install scope, the
+host capability requirements and the declared files with their SHA256 and byte counts, plus
+the reference verifier `release/verify_manifest.py`. The manifest declares and the verifier
+enforces the strict install policy: a missing file, a hash or byte-count mismatch, a duplicate
+declaration or an unknown file inside a declared scope fails install. Nothing is repaired in
+place and an install still requires an explicit human approval.
+
+### A-009 — Create Codex instruction adapter
+
+Add `adapters/codex/instructions.md`. The adapter pins the probed host version and capability
+set, falls back to a manual preview on an unknown version, and never auto-writes an assumed
+hook configuration. Instruction discovery is not treated as evidence of reading: the agent
+must explicitly read `.axiom/agent/POLICY.md` and record the policy path and digest, because a
+link to the policy is not evidence that the policy was loaded. The canonical hook result
+(`action`, `reason`, `job_id`, `snapshot`, `freshness`, `coverage`, `retry_after_ms`,
+`hook_attempt`), the declaration of an `instructions_only`, `hook_verified` or `ci_verified`
+enforcement level, the transcript-parsing prohibition, the two-continuation loop guard, the
+`bearer_token_env_var` credential rule and the managed instruction markers are all stated.
+
+### A-010 — Create Claude Code instruction adapter
+
+Add `adapters/claude/instructions.md`. The adapter pins the probed host version and
+capability set before anything is written, declares the `instructions_only`, `hook_verified`
+and `ci_verified` enforcement levels, and names the `CLAUDE.md` instruction scope plus the
+`Stop` and `TaskCompleted` events. `TaskCompleted` is bound to the documented task lifecycle
+and is not treated as a hook for every turn, a Stop continuation is not the same as a user
+interrupt, and a bounded reconcile failure blocks only where the pinned version documents a
+stop decision. A link to the policy is not evidence that the policy was loaded, so the agent
+must explicitly read `.axiom/agent/POLICY.md` and record the path and digest.
+
+### A-011 — Create Gemini CLI instruction adapter
+
+Add `adapters/gemini/instructions.md`. The adapter covers `GEMINI.md` discovery, the MCP
+configuration and the `AfterAgent` and `AfterTool` hooks, and keeps the user-level context
+file human-owned: the repository-local managed block is staged around byte-identical human
+text, activation is proven with a fixture rather than assumed, and no unrelated global
+instruction is overwritten. The host's own JSON and exit conventions are used instead of the
+Claude exit or JSON shape, and the MCP transport uses the documented `httpUrl` field.
+
+### A-012 — Create Antigravity host adapter
+
+Add `adapters/antigravity/instructions.md`. The adapter separates the IDE and CLI surfaces
+with their own versions, paths and hook behaviour, and requires `axiom host detect` plus a
+recorded pin in the host matrix. An unrecognized path is reported as a conflict rather than
+written to. The `Stop` hook's documented output decision on this host is `continue`, carried
+with the reason, and the other host's `decision: block` payload is not reused blindly; the MCP
+configuration uses the documented `serverUrl` field. Human rules outside the managed markers
+are preserved, and existing repository instructions remain authoritative over the managed block.
+
+### A-013 — Create Codex Stop hook adapter
+
+Add `adapters/codex/hooks/graph_stop.py`. The hook maps a Codex payload to a canonical result
+(`action`, `reason`, `job_id`, `snapshot`, `freshness`, `coverage`, `retry_after_ms`,
+`hook_attempt`) and maps that result back to the host's documented output, emitting the block
+decision only for its declared `codex-stop-v1` schema profile. It honours `stop_hook_active`
+and allows at most two forced continuations for one unchanged fingerprint. A malformed payload,
+an unrecognised profile, an unavailable status or an unreadable state file degrades to an empty
+decision plus a stderr diagnostic, and the hook never parses a conversation transcript.
+
+### A-014 — Create Claude Stop hook adapter
+
+Add `adapters/claude/hooks/graph_stop.py`. The adapter is the Claude counterpart of A-013 with
+its own pinned host and `claude-stop-v1` profile, and it blocks only where the installed host
+reports the capability: when the host does not support a stop decision the bounded reconcile
+failure is reported as `advisory` instead. A user interrupt is never force-continued, and the
+adapter states that Claude is not claimed to invoke the Stop hook reliably for every surface.
+
+### A-015 — Create Claude task-completion hook adapter
+
+Add `adapters/claude/hooks/graph_task_completed.py`. Enforcement is scoped to the documented
+`TaskCompleted` event and a real task identity, so the adapter is not a universal
+response-completion hook: an ordinary turn, a message, a tool result or a user interrupt is
+left alone. The task transition may be blocked only while a bounded graph reconcile is still
+pending and only for the declared `claude-task-completed-v1` profile, with the same
+two-continuation loop guard and the same degrade-to-empty-and-diagnose behaviour.
+
+### A-016 — Implement Gemini AfterAgent adapter
+
+Add `adapters/gemini/hooks/graph_after_agent.py`. The adapter pins `gemini-after-agent-v1`,
+declares the host's own bounded `retry` decision and halt condition, and never reuses the
+Claude exit convention or another host's `{"decision": "block", "reason": ...}` payload shape.
+The effective retry bound is the smaller of the host-reported `retry_remaining` budget and the
+documented two-continuation cap, so a host that reports nothing cannot widen the bound. stdout
+carries exactly one strict JSON document and every diagnostic and log line goes to stderr, so a
+log line cannot corrupt the hook response.
+
+### A-017 — Implement Antigravity Stop adapter
+
+Add `adapters/antigravity/hooks/graph_stop.py`. The adapter pins `antigravity-stop-v1` and
+emits this host's documented `continue` decision with the reason carried alongside it; the
+canonical `block` action is mapped to `continue` and never to another host's block payload, and
+`block` is only used where the pinned version documents it. A bounded reconcile failure is
+`advisory` where the installed host reports no stop decision, a user interrupt is never
+force-continued, and the two-continuation loop guard and the degrade-to-empty-and-diagnose
+behaviour match the other adapters.
+
+### A-018 — Bound hook runtime and reconnect behaviour
+
+Add `adapters/common/hook_runtime.py`. One attempt runs under a wall-clock `timeout_ms` in an
+abandonable daemon worker, so a hung daemon call or a dead socket cannot hang completion
+indefinitely; the caller gets pending evidence naming the failure instead of an unanswered
+wait. Retries are capped by `max_retries` and by the documented `HARD_MAX_RETRIES = 2`, a crash
+is recorded as `crashed` pending evidence rather than propagated into the host's structured
+channel, and `bounded_budget` refuses a non-positive or unbounded budget instead of silently
+clamping it.
+
+### A-019 — Handle graph-unavailable fallback policy
+
+Add `adapters/common/degraded_policy.json`. The mode is explicit per repository and is never
+inherited: `axiom-graphd` and `axiom-mcp` are `strict` and return pending evidence while the
+graph is unverified, `axiom-skills` and `axiom-specs` are `advisory`, and an unknown repository
+falls back to an explicit non-fail-open `strict` default. Every degraded path reports
+`freshness: "unverified"` and `completion_gate: "not_claimed"`, so a fail-open decision never
+masquerades as verified graph freshness or as a completion gate that ran.
+
+### A-020 — Separate cancellation from completion
+
+Add `adapters/common/cancellation.md`. A user cancel, a shutdown and an error preserve durable
+dirty state without claiming a completion gate ran: the dirty scope is written to the durable
+hook state before exit, nothing is cleaned, reset, stashed or discarded, and no authority is
+widened by a cancelled turn. The machine-checkable record declares
+`dirty_state: "preserved"`, `durable: true`, `completion_gate: "not_run"`,
+`freshness: "unverified"`, `forced_continuation: false` and `resume_from: "dirty_scope"`, so a
+later run resumes from the preserved dirty scope instead of treating a cancel as completion.
+
+### A-021 — Version and certify adapter payloads
+
+Add `adapters/compatibility.json`. Every shipped host adapter records its declared host identity
+and surface, the exact adapter version, the protocol version, the documented sources, the
+boundary caveat, the per-feature status and the SHA256-pinned in-repository test evidence, and
+the recorded hash is checked against the bytes shipped in the bundle rather than trusted. No
+adapter is certified: certification requires a probed exact installed version, a tested operating
+system, a host runtime test artifact with its SHA256 and an enforcement level the evidence
+supports, so every adapter stays at `enforcement_level: "instructions_only"` with an explicit
+`certification_blocker` and an empty `host_runtime_evidence`. A documented capability table, an
+in-repository unit test, a mock or a cross-compile is never accepted as host certification, and a
+feature the host does not document cannot claim a status.
+
+### Tests
+
+Extend `tests/test_canonical_workflows.py` with positive contract checks for the nine canonical
+workflow artifacts, structural sequencing checks (expected impact stated before the comparison,
+staged verification before commit, apply approval sequenced after check and plan), and negative
+or boundary fixtures that must be rejected: a policy that misses the canonical graph directory
+or grants permissions, a context skill whose projection request is missing or reordered after
+source reading, a reconcile skill that rebuilds on every edit, an impact skill that turns a
+missing edge into a no-impact claim, a checkpoint skill that exports an unstaged working tree, a
+diagnostics skill that treats every symptom as delete-and-rebuild, an update skill that applies
+the newest release from repository text without approval, a bundle with an undeclared file or a
+changed declared file, and a Codex adapter that treats a policy link as proof the policy was
+loaded or retries the stop hook without a bound. The manifest tests replay the shipped
+`release/verify_manifest.py` against staged bundles, so the install-failure contract is executed
+rather than asserted. A dedicated `unittest` class binds each slice to its task.
+
+The same module now covers the three additional host adapters and the three completion hooks
+with a shared adapter contract and a shared hook contract. Each host adapter is checked for the
+version pin, the policy-read requirement, the canonical result fields, the two-continuation loop
+guard, the reentrance flag and the managed markers, and each is replayed against a negative
+fixture and a boundary fixture that removes one required rule. Each hook is run the way its host
+runs it, with JSON on stdin and an isolated loop-guard state directory, so block, cap,
+reentrance, interrupt, malformed-input, untrusted-profile and non-task-event behaviour are
+executed rather than described. The bundle is declared with 19 files across the `policy`,
+`skills` and `adapters` scopes, and the bytecode hygiene assertions keep a declared scope free
+of generated `__pycache__` content.
+
+The module also covers the two additional host hooks and the three shared adapter-common
+contracts. The Gemini AfterAgent hook is exercised for its documented retry decision, its halt
+path when the host budget is spent, its host-versus-adapter retry bound and its strict
+single-document stdout; the Antigravity Stop hook is exercised through a contract subclass that
+requires the host's documented `continue` decision, so a variant that reuses another host's
+`decision: block` payload is rejected. The bounded hook runtime is run for real: a daemon call
+that never answers must return pending evidence inside the budget, a crash must be recorded as
+pending evidence rather than raised, the retry cap must stop further attempts, and an unbounded
+budget must be refused. The degraded policy is checked for an explicit per-repository mode with
+unverified freshness and no claimed gate, and the cancellation contract is parsed from its
+shipped record, with negative and boundary variants that claim a gate ran, drop the resume
+requirement or discard the dirty state all rejected.
+
+The compatibility record is replayable as well: the checks reject an adapter certified without a
+probed installed version or host runtime evidence, a capability the host does not document that
+still claims a status, a test-evidence hash that no longer matches the shipped bytes, and an
+enforcement level raised above the evidence, while the shipped record keeps all four adapters
+uncertified and declared inside the bundle.
+
+### Delivery record — A-001 … A-021 integrated into `main`
+
+Record that the skills delivery chain is integrated into `main`, so the workspace owner can see
+what is finished without opening each branch. The earlier merges were made from the working
+checkout and pushed directly, which left no pull-request record in GitHub; this entry is the
+explicit integration record for that delivery.
+
+| Task group | Task branch (`feature/…`) | Branch tip SHA | Integrated into `main` by |
+| --- | --- | --- | --- |
+| A-001 – A-003 | `a-001-003-canonical-workflows` | `6874cb8` | `b5b9a3e` |
+| A-004 – A-006 | `a-004-006-canonical-workflows` | `581b855` | `b5b9a3e` |
+| A-007 – A-009 | `a-007-009-canonical-workflows` | `fea863d` | `b5b9a3e` |
+| A-010 – A-015 | `a-010-015-host-adapters-and-hooks` | `6d0c218` | `b5b9a3e` |
+| A-016 – A-020 | `a-016-020-hooks-and-common` | `f7052ea` | `b5b9a3e` |
+| A-021 | `a-021-compatibility-certification` | `5765ee6` | `b5b9a3e` |
+| governance contract | `governance-development-contract` | `f4dc5fd` | `26f66d2` |
+
+Verification recorded for the integrated state of `main`: `python -m pytest tests -q` reports
+`106 passed`, and `python release/verify_manifest.py` reports `OK` for the committed bundle bytes
+(component `axiom-skills`, version `0.1.0-draft.1`, 20 files).
+
+Not verified / not claimed: no host certification beyond `adapters/compatibility.json` was re-run
+for this entry, and no release branch or tag was created. The feature branches are intentionally
+kept so their history stays reviewable.
+
+### Governance — development contract, branch/merge/release policy
+
+Add `Development.md` for `axiom-skills`: repository identity and ownership boundaries, the
+preflight gate, required checks (`python -m pytest tests -q`), evidence and completion
+requirements, branch/merge/release policy, the rule that verified work finished in a worktree
+must reach the owner's primary checkout, commit/push rules, version/release policy and the
+definition of blocked.
+
+The contract records that `main` is the integration branch, `feature/<task-id>-<slug>` is the
+mandatory task branch and `release/vX.Y.Z` is the release branch. An agent MAY merge a verified
+task branch into `main` on its own authority once every merge-gate condition holds; release
+branches, tags and publishes still require explicit release authorization.
+
+It also records that a skill MUST NOT instruct an agent to bypass an applicable `AGENTS.md` or
+`Development.md`, and that bootstrap operations which manage governance must preserve
+human-owned instructions.
+
+Unverified statements: this contract is documentation only; no skill bundle or adapter behaviour
+changed in this entry.
+
+### D-008 — Write host setup guides
+
+Add `docs/guides/hosts.md`, the operator guide for wiring the Axiom graph workflow into Codex
+CLI, Claude Code, Gemini CLI and Antigravity (AGY). For each host it records the
+version-specific instruction file and discovery scope, the native MCP configuration field
+names, and the hook events with the exact host output decision the shipped adapter emits
+(`codex-stop-v1`, `claude-stop-v1`, `claude-task-completed-v1`, `gemini-after-agent-v1`,
+`antigravity-stop-v1`). It restates the explicit `.axiom/agent/POLICY.md` read rule that a
+link to the policy is not evidence, the loop guard, the cancellation contract and the degraded
+policy, and it keeps all four adapters uncertified: `adapters/compatibility.json` still
+declares `certified_adapters: 0` because no licensed host runtime was probed.
+
+The guide's certification links are the retrieved host-documentation URLs from
+`axiom-specs/research/SOURCES.md` (S09-S20). Each returned HTTP 200 on 2026-09-18 with its
+cited token present in the decoded body; the raw retrieval log is preserved as D-008 evidence.
+No URL is presented as host certification, and no fabricated link is used.
+
+Add `tests/test_hosts_guide.py` with a targeted regression over the shipped guide, drift checks
+that re-read the shipped hook adapters and the compatibility record, two negative fixtures (a
+fabricated certification URL and a missing host) that must be rejected, and two boundary
+fixtures (every link honestly marked pending, and an allowlisted source URL whose final URL
+differs after a redirect) that must be accepted. This slice adds no declared bundle file, so
+`release/skills-manifest.json` is unchanged: `docs/` and `tests/` stay outside the `policy`,
+`skills` and `adapters` hashed scopes, and `python release/verify_manifest.py` still accepts
+the twenty-file bundle.
+### D-010 — Write AI batch and completion workflow guide
+
+Add `docs/guides/agent-workflow.md`, plus the targeted slice test
+`tests/test_agent_workflow_guide.py`. The guide documents how the six canonical graph skills
+and the bounded host hooks cooperate, and it grounds every runtime claim in an exact
+file+symbol: the shared budget in `adapters/common/hook_runtime.py` (`bounded_budget`,
+`_run_once`, `run_bounded`, `HARD_MAX_RETRIES`), the per-host block decisions and
+`MAX_FORCED_CONTINUATIONS` cap in `adapters/*/hooks/*.py`, the `cancellation-v1` contract in
+`adapters/common/cancellation.md`, the explicit per-repository modes in
+`adapters/common/degraded_policy.json`, and the certification limits in
+`adapters/compatibility.json`.
+
+The guide states the ownership boundary explicitly: there is no universal hard completion
+gate, no adapter is certified, a bounded timeout abandons a daemon worker rather than
+cancelling it, the pending path of the runtime returns `allow` rather than `block`, and a
+cancel preserves dirty state without claiming a gate. Behaviour the repository does not
+implement is listed as not guaranteed instead of being described as if it existed.
+
+The slice test asserts the guide exists, that every cited file+symbol resolves, that the
+documented timeout numbers match the shipped runtime, and that negative/boundary guide
+variants (a missing timeout section, an omitted "not guaranteed" section, a claimed universal
+gate, a citation to a missing symbol, a real file credited with the wrong symbol) are
+rejected. `python -m pytest tests -q` records 140 passed on the integrated branch and
+rejected. `python -m pytest tests -q` records 118 passed and
+`python release/verify_manifest.py` records OK for the committed bundle bytes.
+
+Not verified / not claimed: no host was installed or version-probed for this entry, so the
+adapter certification status does not change (`certified_adapters: 0`); the guide is
+documentation and changes no hook or skill behaviour.
+### V2-003 — Publish canonical bootstrap content bundle
+
+Add `templates/bootstrap/manifest.json` as the machine-readable pin for the managed bootstrap
+content inside `axiom-skills`. `templates/bootstrap/AGENTS.block.md` and
+`templates/bootstrap/gitignore.fragment` are carried byte-exact from the `axiom-specs` repo seeds
+and pinned with SHA256, byte count, template version and role, and each declares the exact markers
+that bound the only bytes a re-apply may rewrite.
+
+The bundle ships no second policy copy: exactly one policy source, `policy/POLICY.md` (installed
+at `.axiom/agent/POLICY.md`), is referenced once, so the bootstrap engine consumes the canonical
+policy instead of a forked hardcoded copy. Human text outside the managed markers is preserved, a
+managed segment whose bytes no longer match the pinned template is reported as a conflict instead
+of being replaced, and the seeder `POLICY.md` from the seed set is deliberately not republished
+because it would be a duplicate policy text.
+
+Verified: `python -m pytest tests -q` and `python release/verify_manifest.py` (declared scopes
+stay `policy`, `skills`, `adapters`; `templates/` is outside them).
+
+Not verified / not claimed: this manifest is content plus a local regression test only. No
+bootstrap, install or update was run against a real repository, no host adapter behaviour
+changed, and no release branch or tag was created.
+### V2-008 - Update namespace and ownership-aware templates
+
+Refine `templates/bootstrap/gitignore.fragment` so the managed `.gitignore` segment isolates
+the private native runtime state under the Axiom namespace while keeping the portable,
+human-owned and ownership content visible to Git. Every rule is scoped to `.axiom/`; no
+root-level pattern is added and the whole `.axiom/` directory is never ignored, so the portable
+configuration (`.axiom/config/solutions/*.json`), human annotations, the managed policy
+(`.axiom/agent/POLICY.md`), the human override (`.axiom/agent/POLICY.local.md`), the portable
+ownership file (`.axiom/agent/bootstrap.lock.json`) and the optional Git-reviewed checkpoints
+stay tracked and eligible for invalidation.
+
+The generated live/staging lanes and the local/tmp state are ignored as before, and the
+fragment now adds namespace-scoped rules for the private native runtime state that must never
+be committed: SQLite databases and their WAL/SHM/journal sidecars, lock and guard files and
+atomic temp files. An overbroad lock rule is rejected because it would swallow the portable
+ownership file, and changes under `.axiom/config/` or `.axiom/annotations/` remain tracked
+changes that invalidate the affected analysis inputs rather than being silently ignored.
+
+`templates/bootstrap/manifest.json` pins the fragment by SHA256 and byte count, so that pin is
+updated in the same commit as the fragment. `release/skills-manifest.json` is not modified:
+`templates/` is outside its declared `policy`, `skills`, `adapters` scopes and the fragment is
+not a declared bundle file, so `python release/verify_manifest.py` still accepts the
+twenty-file bundle.
+
+Add `tests/test_gitignore_fragment.py` with a targeted regression over the shipped fragment
+that runs the real `git check-ignore` in a throwaway repository, two negative fixtures (a
+fragment that ignores all of `.axiom/`, a fragment with unnamespaced root-level rules) that
+must be rejected, and four boundary fixtures (a fragment that leaks the private runtime state,
+an overbroad lock rule that swallows the ownership file, a broken managed marker, and an
+honest minimal fragment) stored as bytes for replay.
+
+Verified: `python -m pytest tests -q` -> 155 passed, exit 0; `python release/verify_manifest.py`
+-> OK files=20 scopes=policy,skills,adapters, exit 0.
+
+Not verified / not claimed: this is bootstrap content plus a local regression only. No
+bootstrap, install or update was run against a real repository, no host adapter behaviour
+changed, no daemon or live graph runtime was probed and no release branch or tag was created.
+
+
+### V2-028 - Publish version-probed host setup guides
+
+Add `docs/host-compatibility.md`, the probing and compatibility-discipline companion to
+`docs/guides/hosts.md`. Every host example is marked `unverified` until the exact installed
+version was probed, the operating system was named, the surface was resolved, the protocol and
+adapter versions were pinned and a host runtime test artifact with its SHA256 exists; none of
+those hold in this environment, so every example stays unverified and every unexercised
+capability stays `not tested`. The guide records installed version, operating system, surface,
+protocol version, adapter version and enforcement level as independent compatibility
+dimensions, states that provider settings never override host permissions and that host
+approval stays authoritative, and inherits the axiom-skills component version instead of
+carrying an independent documentation version.
+
+Add `tests/test_host_compatibility.py` with a targeted regression over the shipped guide, drift
+checks that re-read `adapters/compatibility.json` and `docs/guides/hosts.md`, three negative
+fixtures (a host marked verified without a probed version, an affirmative provider-override
+claim, a self-declared documentation version) and three boundary fixtures (every host honestly
+unverified, a fully evidenced probed host, an unknown version left unverified) stored as bytes
+for replay.
+
+Verified: `python -m pytest tests -q` -> 172 passed, exit 0; `python release/verify_manifest.py`
+-> OK files=20 scopes=policy,skills,adapters, exit 0.
+
+Not verified / not claimed: no licensed host runtime was probed, so `certified_adapters` stays
+0 and no adapter is certified. A host executable located on a build machine is not a version
+probe and a documentation table is not a runtime test. `docs/` and `tests/` stay outside the
+hashed bundle scope, so `release/skills-manifest.json` is unchanged.
+
+### I-006 / J-010 - Add the ecosystem provisioning and distributed-CLI skills
+
+Add `skills/graph-install/SKILL.md` (I-006), the AI provisioning skill. It reads the installation
+contract (`axiom-specs/contracts/ecosystem-installation-contract.md`, contract version 1) and the
+end-to-end installation guide as the authority, declares its dependencies and its bundle metadata
+from `release/skills-manifest.json`, probes every declared prerequisite with
+`axiom doctor --all --json` and stops when a prerequisite is unsatisfied or unknown or its version
+source is `undeclared`, installs strictly in the contract order (core release, gateway, then
+bundle) through the declared `axiom install plan` / `axiom install apply` verbs behind one
+approved plan digest, verifies each component with the documented command, hands off to the host
+wiring guide (`docs/guides/hosts.md`), and reports partial or unverified steps as partial or
+unverified rather than complete. It points at the contract and does not restate it as its own
+authority.
+
+Add `skills/axiom-cli-install/SKILL.md` (J-010), the tier-aware provisioning skill for the
+distributed entrypoint. It reads the dependency table and the release tiers from the distribution
+contract (`axiom-specs/contracts/axiom-cli-distribution-contract.md`) before installing anything,
+drives install, update, doctor, version and uninstall only through `axiom-cli`/`axiom-cli.exe`,
+refuses a platform the contract does not declare, records the target it actually executed, treats
+the WSL2 lane as Linux evidence and never as Windows evidence, reports every target it could not
+exercise as unverified, and ends at the same recorded verification result the Human path produces.
+It extends and does not replace `graph-install`.
+
+Both skill files are declared in `release/skills-manifest.json` with role `skill` and their SHA256
+and byte counts: `skills/` is a declared install scope, so an undeclared file inside it fails
+install and the manifest must be regenerated in the same change. `README.md` now states eight
+Agent Skills and lists both. `tests/test_canonical_workflows.py` gains `GraphInstallChecks`,
+`AxiomCliInstallChecks` and their positive, negative and boundary tests, the two host-drift guards
+that pinned the bundle at 20 files are updated to the new 22-file bundle, and a manifest test
+asserts both provisioning skills are declared.
+
+Verified: `python -m pytest tests -q` -> 183 passed, exit 0; `python release/verify_manifest.py`
+-> OK files=22 scopes=policy,skills,adapters, exit 0.
+
+Not verified / not claimed: the `axiom` operator verbs are not built on the current `axiom-graphd`
+revision and answer `NOT_READY` with exit 4, and the `uninstall` verb is recorded `undeclared` by
+the installation contract, so neither skill executed an end-to-end install; the install, update
+and uninstall legs stay unverified/unbuilt rather than working, and no version, URL, digest or
+result is invented. The distribution contract certifies no platform and publishes no released
+artifact and no `channels/stable.json` manifest, so no target is `certified: true` and the
+`axiom-cli` legs stay unverified. No host was probed.
+
+### J-010 — Resolve the distribution authority, and check the skill against the real contract
+
+The tier-aware provisioning skill named its two `axiom-specs` authorities by path only, so an agent
+following the pin could not resolve either one. `spec.lock.json` pins
+`6b23ea78e19902726edf40dbd9c15bda27c91ebb`, and
+`git -C <axiom-specs> cat-file -e 6b23ea78e19902726edf40dbd9c15bda27c91ebb:contracts/axiom-cli-distribution-contract.md`
+exits `128` because the contract was added later by the J-001 specification commit `f8f5885`; the
+same probe for `repo-seeds/axiom-cli/docs/30-DISTRIBUTION-AND-INSTALLERS.md` also exits `128`. That
+is a real defect and it is recorded as one rather than papered over. The skill now states the
+resolution rule: read the pin from `spec.lock.json`, probe the authority with that exact command,
+record `authority-absent-at-pin` with the exit code, then resolve the authority at the newest
+immutable revision of `axiom-specs` that contains it and record that sha in the report. It states
+explicitly that it does not advance `spec.lock.json` itself, because a pin older than an authority
+the skill needs is a governance finding to report and not a local edit to make, and it refuses when
+an authority resolves at no immutable revision.
+
+The skill also gains the four case outcomes the task card names — positive, declared but not yet
+verified, undeclared platform, and a dependency the host is missing — each with the verdict it must
+record (`passed`, `refused`, `unverified` or `not_run`), and its report now carries the resolved
+authority revision and the pin state. No version, URL, channel or command is added that no owner
+repository defines, and no host execution is claimed for a leg that did not run.
+
+`tests/test_canonical_workflows.py` gains `DistributionAuthorityResolver`,
+`DistributionAgreementChecks`, `AxiomCliDistributionAgreementTests` and
+`AxiomCliEntrypointSurfaceTests`, so the skill's claims are checked against the real contract and
+`compatibility/platform-matrix.json` bytes instead of against a restatement: the exact six-platform
+enumeration, the two tier sets and each platform's tier, the dependency table's mandatory and
+non-mandatory rows, the recorded `channels/stable.json` channel with its forbidden pins, the cited
+section numbers and their real titles, the `wsl2-linux-x64` to `linux-x64` evidence target, the
+all-false certification state, and the observed pin state. Negative and boundary variants that drop
+the authority-resolution rule, the pin-state record or the case matrix are rejected.
+
+Verified on Windows 11 x64 with the merged bytes: `python -m pytest tests -q` -> `197 passed`,
+exit 0 (was 183); `python -m pytest tests/test_canonical_workflows.py -q -k AxiomCli` -> `19 passed`,
+exit 0; `python release/verify_manifest.py` -> `OK ... files=22 scopes=policy,skills,adapters`,
+exit 0. `release/skills-manifest.json` is regenerated for `skills/axiom-cli-install/SKILL.md`
+(`10712` bytes / `672a181c436db08361f294ec5aca7960816a4244c9d5746fb1ad69109f7bce23` ->
+`14120` bytes / `b21a0c94434fcc77db9547f53ae9a3406c971b9aae49b22f87e9045a6597e3f0`). The real
+contract read for the agreement checks is `axiom-specs` `contracts/axiom-cli-distribution-contract.md`
+SHA256 `cd0759410e89ec1e1a9e6059108f344d0655a07a80a7c9d7e41df1562b48d3b1` (`11096` bytes) with
+`compatibility/platform-matrix.json`.
+
+The first real entrypoint run in this repository: `axiom-cli.exe` from the `axiom-cli` build
+(`target/debug`, `221696` bytes, SHA256
+`20945e2c4183333fe3e7369016afe10a138b17941ae6b715e98cccd14bab0ccc`) answers `--help` with exit 0 and
+advertises all five contract verbs, while `version --all --json`, `doctor --all --json`,
+`install --dry-run --json`, `uninstall --dry-run --json` and `update check --all --json` each answer
+the `not_ready` envelope with exit code `4`. The positive case is therefore recorded `unverified`,
+never `passed`, and the run does not become a completed installation. This entry supersedes the
+"No host was probed" note of the I-006/J-010 entry above, which was accurate for that change.
+
+Not verified / not claimed: no install, update, doctor or uninstall leg completed, because no
+released artifact, no per-user installer and no `channels/stable.json` manifest exist and no target
+is `certified: true`; `where axiom-cli` and `where axiom` both exit `1` on this host, so the
+entrypoint is not on `PATH` and the build above was invoked by path. `linux-x64`, `macos-arm64` and
+`wsl2-linux-x64` were not executed — there is no macOS host and no native Linux host — so they stay
+`unverified` at their `design-complete-test-later` tier, and `windows-x64` is not certified by a run
+on one machine. The Rust toolchain, the Python interpreter, the SQLite driver, `node` and `wsl` all
+probe present on this host, so the missing-mandatory-dependency refusal leg could not be exercised
+and is recorded `not_run` rather than `passed`. The stale `spec.lock.json` pin is reported here and
+left for the owner; this repository did not re-pin it.

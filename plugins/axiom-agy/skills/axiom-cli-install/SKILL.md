@@ -1,6 +1,6 @@
 ---
 name: axiom-cli-install
-description: Install with the ADR-0033 one-line command and update with the ADR-0035 one-line update command, then drive install, update, doctor, version and uninstall through `axm` (the ADR-0036 short name of the distributed axiom-cli entrypoint; axiom-cli on 0.1.4 or older) only, reading the distribution contract dependency table and release tiers before installing anything, refusing an undeclared target, and recording every target it could not exercise as unverified.
+description: Install, repair, check, update or remove Axiom through the released `axm` CLI and verified platform-specific bootstrap scripts. Check prerequisites and target support, keep approvals scoped to the printed plan, and report unverified outcomes honestly.
 ---
 
 # Distributed CLI provisioning
@@ -16,9 +16,9 @@ produces. This skill is workflow guidance. It grants no permissions, it does not
 sandbox or approval behaviour, and it does not replace the distribution contract or the host's own
 consent.
 
-## Primary path: the one-line install (ADR-0033)
+## Primary path: the one-line install
 
-Since ADR-0033 (accepted 2026-10-06) the supported first install is one command, hosted as a
+The supported first install is one command, hosted as a
 GitHub Release asset of `orchex006/axiom-cli`:
 
 - Windows x64 (PowerShell 5.1+, not Administrator):
@@ -28,7 +28,7 @@ GitHub Release asset of `orchex006/axiom-cli`:
 - A pinned version: `https://github.com/orchex006/axiom-cli/releases/download/vX.Y.Z/install.ps1`
   (or `install.sh`).
 
-Updating an existing installation (ADR-0035, from 0.1.4) is also one command:
+Updating an existing installation is also one command:
 
 - Windows x64: `powershell -ExecutionPolicy Bypass -c "irm https://github.com/orchex006/axiom-cli/releases/latest/download/update.ps1 | iex"`
 - macOS, Linux x64 and WSL2: `curl -fsSL https://github.com/orchex006/axiom-cli/releases/latest/download/update.sh | sh`
@@ -38,8 +38,7 @@ upgrades a 0.1.0/0.1.2 layout through the verified install hand-off, stops witho
 nothing is installed, and stops while leftover `AXIOM_CLI_INSTALL_ROOT`, `AXIOM_ENGINE_BIN` or
 `AXIOM_HOME` variables are set. Offer it when no Axiom command is on PATH.
 
-**Command name.** `axm` (`axm.exe` on Windows) is the short name of `axiom-cli` (ADR-0036, installed
-from 0.1.5): the same program, a byte-identical copy in the same `bin`, with identical verbs, options
+**Command name.** `axm` (`axm.exe` on Windows) is the short name of `axiom-cli` (installed from 0.1.5): the same program, a byte-identical copy in the same `bin`, with identical verbs, options
 and exit codes. Use `axm` for every verb. When `axm` is not found but `axiom-cli` is (0.1.4 or
 older), use `axiom-cli` with the same verbs, or offer the update command, which brings `axm`.
 
@@ -57,7 +56,7 @@ user data).
 
 **Legacy installations.** A 0.1.0/0.1.2 CLI store, a 0.1.2 bootstrap root such as
 `%USERPROFILE%\axiom`, a stale `axiom-cli` earlier on PATH or leftover `AXIOM_*` variables are
-reported by `axm doctor` (`axiom-cli doctor` on older installs). Point the human to the L-006 adoption shown in the install plan
+reported by `axm doctor` (`axiom-cli doctor` on older installs). Point the human to the legacy adoption shown in the install plan
 (in place for a CLI store, `axiom-cli install --adopt <path>` for a bootstrap root, otherwise side
 by side); never delete a legacy tree yourself.
 
@@ -120,7 +119,7 @@ authority.
    distribution contract section 7 dependency table record, per prerequisite, the component that
    needs it, the manifest or document that proves its version, whether it is mandatory and whether
    it needs elevation. From section 4 release tiers record which platforms are finish-first and
-   which are deferred. Apply the accepted scope amendment ADR-0020: Windows x64, container
+   which are deferred. Respect the declared release scope: Windows x64, container
    Linux x64 and Mac Intel are the three required lanes; WSL2 is deferred and nonblocking.
    A prerequisite whose owning repository has not pinned a
    version is recorded as `undeclared-pending-<task>`; the distribution must not guess a version,
@@ -159,7 +158,7 @@ authority.
 
 6. **Update through the recorded channel only.** A bare `axm update` (or the update one-liner) reads the channel source
    recorded in `installed.json` (the release's `channel.json`), shows the plan and asks once; ask the
-   human before confirming. The J-007 subcommands `update check`, `plan`, `apply` and `rollback`
+   human before confirming. The advanced subcommands `update check`, `plan`, `apply` and `rollback`
    resolve versions only from the recorded manifest (`channels/stable.json`); a branch tip, a tag
    alias, a network `latest`, `HEAD` or `*` is refused. A sha256 is verified for every artifact
    before it is used, and a mismatch aborts the transaction. An apply is an atomic swap that keeps

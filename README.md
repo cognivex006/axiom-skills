@@ -2,7 +2,7 @@
 
 Give your coding assistant a repeatable workflow for understanding code, assessing changes and keeping an Axiom code graph current.
 
-Axiom packages eight skills in one plugin. The plugin works alongside your existing assistant; the graph engine and MCP connection provide the runtime it uses.
+Axiom packages ten skills in one plugin. The plugin works alongside your existing assistant; the graph engine and MCP connection provide the runtime it uses.
 
 **[Get started](docs/GETTING-STARTED.md)** · **[Install the plugin](marketplace-plugins/README.md)** · **[Documentation](docs/README.md)** · **[Releases](https://github.com/orchex006/axiom-skills/releases)**
 
@@ -38,6 +38,8 @@ For a local checkout or an unpacked skills bundle, replace `orchex006/axiom-skil
 
 | Skill | Use it to |
 |---|---|
+| `graph-build` | Create the first graph from registered source using the graph engine |
+| `graph-watch` | Keep the graph updated automatically when source files are saved |
 | `graph-context` | Find the code and relationships relevant to your task |
 | `graph-impact` | Assess which callers and projects a change may affect |
 | `graph-reconcile` | Refresh the graph after a coherent set of edits |
@@ -50,6 +52,8 @@ For a local checkout or an unpacked skills bundle, replace `orchex006/axiom-skil
 Codex discovers these as `axiom:graph-context`, `axiom:graph-impact`, and so on. For example:
 
 ```text
+$axiom:graph-build Build a graph for this solution.
+$axiom:graph-watch Refresh the graph when I save source files.
 $axiom:graph-context Find the code relevant to this bug.
 $axiom:graph-impact Check the impact of changing this method.
 ```

@@ -29,6 +29,8 @@ For Claude Code, GitHub Copilot CLI, Gemini CLI or Antigravity, use [the plugin 
 
 ## 3. Connect a project and MCP
 
+Start with `$axiom:graph-build` to register the selected solution, build its first graph and verify a known symbol. Use `$axiom:graph-watch` to keep that graph current as source files change. Both skills need the graph engine; automatic refresh uses its persistent daemon and current polling watcher.
+
 Use the [graph engine command reference](https://github.com/orchex006/axiom-graphd/blob/main/docs/reference/axiom-graphd.md) to register your solution and produce its graph. Configure the [MCP gateway](https://github.com/orchex006/axiom-mcp#run) with credentials scoped to that solution and add its launch configuration to your host.
 
 MCP credentials stay private. Registering a skills plugin does not create credentials, register a solution or start an MCP server.
@@ -38,6 +40,8 @@ MCP credentials stay private. Registering a skills plugin does not create creden
 In Codex, invoke the discovered skill by name:
 
 ```text
+$axiom:graph-build Build the first graph for this solution.
+$axiom:graph-watch Update the graph when I save source files.
 $axiom:graph-context Find the code relevant to this bug.
 ```
 
@@ -45,7 +49,7 @@ Or choose `graph-context` in the skills picker and ask:
 
 > Find the code and relationships relevant to this bug, then read the source files needed to verify the result.
 
-Use `graph-impact` before a change, `graph-reconcile` after a set of edits, and `graph-doctor` when the graph is missing or stale. The [skill directory](../README.md#what-you-can-do) describes all eight workflows.
+Use `graph-impact` before a change, `graph-reconcile` after a set of edits, and `graph-doctor` when the graph is missing or stale. The [skill directory](../README.md#what-you-can-do) describes all ten workflows.
 
 ## If the skills do not appear
 

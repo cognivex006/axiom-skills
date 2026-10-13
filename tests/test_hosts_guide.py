@@ -251,7 +251,7 @@ class HostsGuideDriftTests(unittest.TestCase):
         self.assertEqual(["policy", "skills", "adapters", "plugins", ".agents/plugins", ".claude-plugin", "marketplace-plugins", "templates/bootstrap", ".github/plugin"], scopes)
         for added in ("docs", "tests"):
             self.assertNotIn(added, scopes, f"{added}/ must stay outside the hashed bundle scope")
-        self.assertEqual(56, len(manifest["files"]))
+        self.assertEqual(62, len(manifest["files"]))
 
     def test_shipped_manifest_verifier_still_accepts_the_bundle(self) -> None:
         spec = importlib.util.spec_from_file_location(

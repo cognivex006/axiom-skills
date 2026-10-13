@@ -25,7 +25,7 @@ def test_every_archive_is_standalone_and_exact(tmp_path):
         with zipfile.ZipFile(archive) as z:
             z.extractall(tmp_path/host)
             assert markers[host] in z.namelist()
-            assert len([n for n in z.namelist() if n.endswith('/SKILL.md')]) == 8
+            assert len([n for n in z.namelist() if n.endswith('/SKILL.md')]) == 10
             for name, digest in row['files'].items():
                 assert hashlib.sha256((tmp_path/host/name).read_bytes()).hexdigest() == digest
             for skill in (ROOT/'skills').glob('*/SKILL.md'):

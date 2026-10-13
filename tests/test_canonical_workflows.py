@@ -1049,7 +1049,7 @@ class AxiomCliInstallSkillTests(unittest.TestCase):
         for path in ("skills/axiom-cli-install/SKILL.md", "plugins/axiom/skills/axiom-cli-install/SKILL.md"):
             text = read(path)
             self.assertIn("short name of `axiom-cli`", text, path)
-            self.assertIn("ADR-0036", text, path)
+            self.assertNotRegex(text, r"\b(?:ADR-\d{4}|[A-Z]-\d{3})\b", path)
             self.assertIn("releases/latest/download/update.ps1", text, path)
         fixture = read("skills/axiom-cli-install/SKILL.md").replace("axm update", "axiom-cli update")
         self.assertTrue(any("axm update" in p for p in AxiomCliInstallChecks.check(fixture)))

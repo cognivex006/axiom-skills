@@ -12,6 +12,7 @@ from release.build_github_release import verify_source
 from release.verify_manifest import verify, portable_relative
 
 ROOT = Path(__file__).resolve().parents[1]
+EXPECTED_SKILLS = {'axiom-cli-install', 'graph-build', 'graph-watch', 'graph-context', 'graph-impact', 'graph-reconcile', 'graph-checkpoint', 'graph-doctor', 'graph-update', 'graph-install'}
 HOSTS = ('codex', 'claude', 'gemini', 'antigravity', 'copilot')
 INSTALL = {
     'codex': ['codex plugin marketplace add <extracted-package>', 'codex plugin add axiom@axiom-skills'],
@@ -40,8 +41,8 @@ def checked_packages(root: Path) -> tuple[str, dict[str, str]]:
     expected = {p.relative_to(root): p.read_bytes() for folder in ('skills', 'policy')
                 for p in (root / folder).rglob('*') if p.is_file()}
     skills = list((root / 'skills').glob('*/SKILL.md'))
-    if len(skills) != 8:
-        raise ValueError('eight canonical skills are required')
+    if {p.parent.name for p in skills} != EXPECTED_SKILLS:
+        raise ValueError('canonical skill inventory is incomplete')
     for skill in skills:
         body = skill.read_text()
         if not body.startswith('---\n') or '\n---\n' not in body:
