@@ -1,6 +1,6 @@
 # Install the Axiom skills plugin
 
-Choose your assistant below. Every package contains the same eight Axiom skills. Plugin installation makes them discoverable; the [graph runtime](https://github.com/orchex006/axiom-cli) and MCP connection are configured separately.
+Choose your assistant below. Start with `graph-build` to create the first graph and `graph-watch` to update it automatically as source files change. Every package contains the same ten Axiom skills. Plugin installation makes them discoverable; the [graph runtime](https://github.com/orchex006/axiom-cli) and MCP connection are configured separately.
 
 ## Codex
 

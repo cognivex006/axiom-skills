@@ -300,8 +300,8 @@
     {
       "path": "marketplace-plugins/README.md",
       "role": "plugin-marketplace",
-      "sha256": "985009a3bb4871ec84e405808c778626c1e36bd2391346781ac267158047a566",
-      "bytes": 5505
+      "sha256": "6b84911f3e192442f09c7789914b33f08f4dd37f14b5156bd7e59042ff212ae5",
+      "bytes": 5623
     },
     {
       "path": "marketplace-plugins/catalog.json",
@@ -396,7 +396,7 @@
     {
       "path": ".github/plugin/marketplace.json",
       "role": "plugin-marketplace",
-      "sha256": "9f9065298c9b7d902029444548f64513cf993b1206a669992711a7b587866c64",
+      "sha256": "904e25ec58a493dc1645739da598da0a832e01bcfa08c5370a1dbbcec3f9c4ac",
       "bytes": 366
     },
     {

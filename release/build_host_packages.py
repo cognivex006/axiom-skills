@@ -86,6 +86,9 @@ def checked_packages(root: Path) -> tuple[str, dict[str, str]]:
             raise ValueError('unsafe marketplace path')
         if host in ('codex', 'claude', 'copilot'):
             market = json.loads((root / entry).read_text())
+            declared_version = market['plugins'][0].get('version')
+            if declared_version is not None and declared_version != version:
+                raise ValueError('marketplace declared version mismatch')
             source = market['plugins'][0]['source']
             source = source['path'] if isinstance(source, dict) else source
             if source.removeprefix('./') != packages[host] or market['plugins'][0]['name'] != 'axiom':

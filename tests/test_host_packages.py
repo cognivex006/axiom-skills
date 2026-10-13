@@ -44,7 +44,7 @@ def test_existing_output_and_moving_revision_are_refused(tmp_path):
     assert not (tmp_path/'new').exists()
 
 
-@pytest.mark.parametrize('mutation',['payload','catalog','version','entrypoint'])
+@pytest.mark.parametrize('mutation',['payload','catalog','version','market-version','entrypoint'])
 def test_broken_sources_never_produce_an_archive(tmp_path,mutation):
     root=tmp_path/'source'
     shutil.copytree(ROOT,root,ignore=shutil.ignore_patterns('.git','__pycache__','.pytest_cache','evidence','.delivery'))
@@ -54,6 +54,8 @@ def test_broken_sources_never_produce_an_archive(tmp_path,mutation):
         p=root/'marketplace-plugins/catalog.json';d=json.loads(p.read_text());d['packages']['gemini']='../escape';p.write_text(json.dumps(d))
     elif mutation=='version':
         p=root/'plugins/axiom/plugin.json';d=json.loads(p.read_text());d['version']='999.0.0';p.write_text(json.dumps(d))
+    elif mutation=='market-version':
+        p=root/'.github/plugin/marketplace.json';d=json.loads(p.read_text());d['plugins'][0]['version']='999.0.0';p.write_text(json.dumps(d))
     else:(root/'gemini-extension.json').write_text('{}')
     # Rebind the fixture manifest so structural/parity rejection is tested beyond the hash gate.
     manifest_path=root/'release/skills-manifest.json'
