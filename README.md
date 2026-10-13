@@ -66,7 +66,7 @@ You can also choose a skill in Codex or ask in plain language:
 
 > Refresh the graph after these changes and report what remains unverified.
 
-Graph operations need a registered solution, published graph data and a configured MCP connection. Installing the plugin makes the skills available; it does not start the graph daemon or configure credentials. Follow [Get started](docs/GETTING-STARTED.md) to connect these pieces.
+`graph-build` needs the installed engine and an analyzer for the selected source language. `graph-watch` needs a registered solution and the running graph daemon; its watcher detects saved source changes. Query workflows need published graph data, and MCP provides the connection for assistants using gateway tools. Installing the plugin makes the skills available; it does not start the graph daemon or configure credentials. Follow [Get started](docs/GETTING-STARTED.md) to connect these pieces.
 
 ## Related components
 
