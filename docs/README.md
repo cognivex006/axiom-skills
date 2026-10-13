@@ -1,38 +1,16 @@
-# axiom-skills documentation
+# Axiom Skills documentation
 
-These guides are owned and released with `axiom-skills`. They describe intended
-behaviour and record what has actually been executed; they are not a
-runtime verification for any host or target. Canonical contracts live in `axiom-specs`
-and are resolved through the pinned revision - do not fork them as an editable
-copy here.
+Start with [Get started](GETTING-STARTED.md) to install the plugin, make its skills visible to Codex and connect the graph runtime.
 
-## Guides
+| I want to… | Read |
+|---|---|
+| Install the plugin in my assistant | [Plugin installation](../marketplace-plugins/README.md) |
+| See the available skills and example requests | [Skill directory](../README.md#what-you-can-do) |
+| Fix missing skills or a disconnected graph | [Getting started and troubleshooting](GETTING-STARTED.md#if-the-skills-do-not-appear) |
+| Configure host instructions and hooks | [Advanced host setup](guides/hosts.md) |
+| Understand freshness, budgets and completion behavior | [Agent workflow reference](guides/agent-workflow.md) |
+| Check adapter compatibility for a host version | [Host compatibility reference](host-compatibility.md) |
 
-- [Host compatibility and version probing](host-compatibility.md) - the probing
-  and compatibility-discipline guide: what "version-probed" means, the
-  independent compatibility dimensions, and why a documented capability table is
-  not runtime verification.
-- [Host setup guides](guides/hosts.md) - the wiring guide, with the shared versus
-  host-specific split, the runtime verification links each claim is grounded in, and a
-  per-host quick reference for Codex CLI, Claude Code, Gemini CLI and Antigravity
-  (AGY).
-- [Agent workflow](guides/agent-workflow.md) - the bounded runtime contract: the
-  timeout budget and retry cap, per-host block behaviour and the loop guard, the
-  cancellation record, and what the workflow explicitly does not guarantee.
+The plugin supplies workflow instructions. Graph analysis belongs to [axiom-graphd](https://github.com/orchex006/axiom-graphd), and graph access from an assistant belongs to [axiom-mcp](https://github.com/orchex006/axiom-mcp).
 
-## Adapter and policy sources
-
-Documentation follows the shipped bytes; the authoritative records are:
-
-- `adapters/compatibility.json` - per-adapter, per-feature status, in-repository
-  test evidence and the runtime limitations.
-- `policy/POLICY.md` - the managed-item policy, least privilege and degraded
-  operation.
-- `release/skills-manifest.json` - the hash-pinned bundle declaration and its
-  fail-closed install policy.
-
-## Ownership
-
-Documentation for this bundle is owned here and changes in the same branch as the
-code it describes. A published site can aggregate documentation from immutable
-revisions without a separate documentation repository or a second version train.
+Contributor procedures and implementation traceability are in [Development.md](../Development.md).

@@ -1,0 +1,14 @@
+{
+  "task_id": "O-010",
+  "repository": "axiom-skills",
+  "status": "done",
+  "branch": "feature/o-010-codex-skills-onboarding",
+  "acceptance": "Consumer docs, live Codex discovery, eight cache hashes, 224 owner tests, package parity and 44-file manifest pass",
+  "canonical_completion": "axiom-specs evidence/completion/O-010.json: before/after validation and completion passed",
+  "artifacts": {
+    "codex-discovery.json": "4b165f13aa71786619f91df028debe296994cf3e91d2afabfcd37121c3aa6e75",
+    "pytest.txt": "c0998850e5b42eff33c4e2e22047a5c4f9a9303d537a85701546950fa05c2ee1",
+    "package-checks.txt": "a4ca44ca61e39eb59994362c47820fd3e193fa1542bcc8958090a0737f9bea75",
+    "review.json": "3dc2725b4393894ff3056f9d0c097df8ee0e5635447b312150f72bdf662e6f70"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "scope": "README and default onboarding navigation; no skill behavior, hook or credential policy changes",
+  "preflight": "Canonical before-stage validation passed; clean owner branch and immutable pin verified",
+  "user_config": "Backed up config before native Codex marketplace/add calls; no unrelated config replacement",
+  "compatibility": "Verified current Mac Intel Codex CLI 0.162.1 plugin discovery only; desktop UI and graph/MCP/other hosts are not_run",
+  "known_environment_issue": "Initial pytest via system Python3.9 failed Python3.10+ APIs; rerun using Python3.13.15 and temporary pytest8.4.2 environment passed all 224 tests",
+  "release": "No tag, publication or version bump"
+}

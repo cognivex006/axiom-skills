@@ -1,3 +1,7 @@
+## Unreleased — O-010 Codex skills discovery and consumer onboarding
+
+- Lead with plugin installation, the eight skills, usage examples and graph/MCP setup. Explain why the runtime skills bundle is not automatically discoverable in Codex, with verified marketplace/add/list commands and restart guidance. Keep contributor traceability in maintainer documentation and refresh packaged documentation hashes.
+
 ## 0.1.5 — short command axm release
 
 - Version 0.1.5; carries L-017 (the axiom-cli-install skill drives Axiom through `axm`, ADR-0036) [L-019].
