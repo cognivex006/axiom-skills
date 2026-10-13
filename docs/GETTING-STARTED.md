@@ -25,7 +25,7 @@ For a local checkout or the complete unpacked skills bundle, pass that directory
 
 Start a new Codex session. If the desktop app still shows the old plugin list, restart it. A plugin being listed confirms installation; it does not prove that a graph query or a host completion hook works.
 
-For Claude Code, Gemini CLI or Antigravity, use [the plugin installation guide](../marketplace-plugins/README.md).
+For Claude Code, GitHub Copilot CLI, Gemini CLI or Antigravity, use [the plugin installation guide](../marketplace-plugins/README.md).
 
 ## 3. Connect a project and MCP
 

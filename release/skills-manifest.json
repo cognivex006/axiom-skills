@@ -15,7 +15,8 @@
       ".agents/plugins",
       ".claude-plugin",
       "marketplace-plugins",
-      "templates/bootstrap"
+      "templates/bootstrap",
+      ".github/plugin"
     ],
     "missing_files": "fail",
     "hash_mismatch": "fail",
@@ -227,8 +228,8 @@
     {
       "path": "plugins/axiom/plugin.json",
       "role": "plugin-package",
-      "sha256": "da4aca6feb231965ff2fcfe9d0f56f6a22767c5e702287394ae5d3a0d0c7219a",
-      "bytes": 166
+      "sha256": "a20c49b351407117786146df4c0df8cc766ec4a0a7d35927441fc1845b408436",
+      "bytes": 436
     },
     {
       "path": "plugins/axiom/policy/POLICY.md",
@@ -299,14 +300,14 @@
     {
       "path": "marketplace-plugins/README.md",
       "role": "plugin-marketplace",
-      "sha256": "41acf84ee98bb9e5927b90756e453d966db35c8442194abe563a93a2f5b37d26",
-      "bytes": 2186
+      "sha256": "985009a3bb4871ec84e405808c778626c1e36bd2391346781ac267158047a566",
+      "bytes": 5505
     },
     {
       "path": "marketplace-plugins/catalog.json",
       "role": "plugin-marketplace",
-      "sha256": "2f2790857fad4ea17e69b5b302edd37f1d8aefb5c37e9d1a690414debf252eef",
-      "bytes": 275
+      "sha256": "ce07de4dc85d381bb3f4fde565d4007f33906278bb3f8d5d8bc53874ee6506ba",
+      "bytes": 722
     },
     {
       "path": "templates/bootstrap/AGENTS.block.md",
@@ -325,6 +326,78 @@
       "role": "bootstrap-content",
       "sha256": "be134c02a8afaa2e048e9d9512f01ddf165f1e28e3e4ed7e90bd23bd202a84c3",
       "bytes": 2398
+    },
+    {
+      "path": "plugins/axiom-agy/README.md",
+      "role": "plugin-package",
+      "sha256": "cf68be72819f0f76d4172c718b81d97f679c0f73d343954abf02859136a648cb",
+      "bytes": 563
+    },
+    {
+      "path": "plugins/axiom-agy/plugin.json",
+      "role": "plugin-package",
+      "sha256": "da4aca6feb231965ff2fcfe9d0f56f6a22767c5e702287394ae5d3a0d0c7219a",
+      "bytes": 166
+    },
+    {
+      "path": "plugins/axiom-agy/policy/POLICY.md",
+      "role": "plugin-package",
+      "sha256": "96713d17e1e82dac2636dec746ed9ce5b57efd097e714ea119e59c061306133f",
+      "bytes": 5153
+    },
+    {
+      "path": "plugins/axiom-agy/skills/axiom-cli-install/SKILL.md",
+      "role": "plugin-package",
+      "sha256": "efee4fd60981b31580653777b43fc10ae84a1312a14aebb9bc4ede1a29839448",
+      "bytes": 18165
+    },
+    {
+      "path": "plugins/axiom-agy/skills/graph-checkpoint/SKILL.md",
+      "role": "plugin-package",
+      "sha256": "acc44509ade81953cc4ac92028bf0722ba85366333cf104aa1a74edd618abb0f",
+      "bytes": 5821
+    },
+    {
+      "path": "plugins/axiom-agy/skills/graph-context/SKILL.md",
+      "role": "plugin-package",
+      "sha256": "7b62ed7fc0db9c407e3c87a27f5789d4da9774b7624dbf0795c7c5c9ad47b072",
+      "bytes": 3432
+    },
+    {
+      "path": "plugins/axiom-agy/skills/graph-doctor/SKILL.md",
+      "role": "plugin-package",
+      "sha256": "34a2d9c0dc05671b59e3f3b25d26cbe5d7a267da0e1aaee2d979d73df79cc4c4",
+      "bytes": 5558
+    },
+    {
+      "path": "plugins/axiom-agy/skills/graph-impact/SKILL.md",
+      "role": "plugin-package",
+      "sha256": "56d4cd787530cf07bf5eae473cb2e14d5e22ad76713d1e246fdfccae2392d3d2",
+      "bytes": 4489
+    },
+    {
+      "path": "plugins/axiom-agy/skills/graph-install/SKILL.md",
+      "role": "plugin-package",
+      "sha256": "c430c789dbd206820dd18944d30508f368439247acbe618aedbde309779b7bc1",
+      "bytes": 9849
+    },
+    {
+      "path": "plugins/axiom-agy/skills/graph-reconcile/SKILL.md",
+      "role": "plugin-package",
+      "sha256": "fe30997c49637a3bba824374b36d7f4604189e6824d372ab6387cb22efd0d38d",
+      "bytes": 3635
+    },
+    {
+      "path": "plugins/axiom-agy/skills/graph-update/SKILL.md",
+      "role": "plugin-package",
+      "sha256": "51bfccb938717ecc73e029979f25fa4c88223be187dce10e081e24b54bb94696",
+      "bytes": 5535
+    },
+    {
+      "path": ".github/plugin/marketplace.json",
+      "role": "plugin-marketplace",
+      "sha256": "9f9065298c9b7d902029444548f64513cf993b1206a669992711a7b587866c64",
+      "bytes": 366
     }
   ]
 }

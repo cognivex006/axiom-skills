@@ -1,3 +1,7 @@
+## Unreleased — O-011 standards-based multi-host packages
+
+- Add Agent Plugins 1.0 metadata and a Copilot marketplace, a repository-root Gemini extension and a dedicated Antigravity package. All packages retain identical canonical skill/policy bytes. Build five standalone source/hash-bound host archives; document installation, update/removal and each host’s actual marketplace capability. Keep absent-host runtime and public directory publication unclaimed.
+
 ## Unreleased — O-010 Codex skills discovery and consumer onboarding
 
 - Lead with plugin installation, the eight skills, usage examples and graph/MCP setup. Explain why the runtime skills bundle is not automatically discoverable in Codex, with verified marketplace/add/list commands and restart guidance. Keep contributor traceability in maintainer documentation and refresh packaged documentation hashes.

@@ -17,7 +17,7 @@ class PluginPackageTests(unittest.TestCase):
     def test_catalog_and_manifests_resolve_to_one_package(self) -> None:
         catalog = json.loads((ROOT / "marketplace-plugins" / "catalog.json").read_text())
         self.assertEqual(catalog["package"], "plugins/axiom")
-        self.assertEqual(set(catalog["hosts"]), {"codex", "claude", "gemini", "antigravity"})
+        self.assertEqual(set(catalog["hosts"]), {"codex", "claude", "gemini", "antigravity", "copilot"})
         for manifest_path in catalog["hosts"].values():
             self.assertTrue((ROOT / manifest_path).is_file(), manifest_path)
         for relative in (
@@ -27,6 +27,10 @@ class PluginPackageTests(unittest.TestCase):
             "plugin.json",
         ):
             self.assertEqual(json.loads((PLUGIN / relative).read_text())["name"], "axiom")
+        portable = json.loads((PLUGIN / "plugin.json").read_text())
+        self.assertEqual(portable["$schema"], "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json")
+        agy = ROOT / catalog["packages"]["antigravity"]
+        self.assertEqual(json.loads((agy / "plugin.json").read_text())["$schema"], "https://antigravity.google/schemas/v1/plugin.json")
         self.assertNotIn("mcpServers", json.loads((PLUGIN / "gemini-extension.json").read_text()))
         self.assertFalse((PLUGIN / "mcp_config.json").exists())
         codex = json.loads((ROOT / catalog["hosts"]["codex"]).read_text())

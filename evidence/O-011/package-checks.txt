@@ -1,0 +1,4 @@
+Both plugin roots: eight canonical skills and policy byte parity passed
+Owner manifest: 56 declared files verify
+Consumer host guide links/anchors: passed
+Official Agent Plugins1.0 JSON Schema: passed

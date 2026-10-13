@@ -60,7 +60,7 @@ def build(root: Path, output: Path, tag: str, source_revision: str) -> Path:
     (output / "SOURCE-REVISION.txt").write_text(source_revision + "\n", encoding="utf-8", newline="\n")
     (output / "RELEASE-NOTES.md").write_text(
         "# Axiom portable skills " + manifest["component_version"] + "\n\n"
-        "One skills bundle for Codex, Claude Code, Gemini CLI and Antigravity. "
+        "One skills bundle for Codex, Claude Code, Gemini CLI, Antigravity and Copilot. "
         "No OS-specific skill variants, certification, signing or attestation prerequisite. "
         "Host runtime hooks remain version/capability-specific and unverified where not exercised. "
         "This bundle does not install the Axiom runtime.\n", encoding="utf-8", newline="\n")
