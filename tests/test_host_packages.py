@@ -55,5 +55,12 @@ def test_broken_sources_never_produce_an_archive(tmp_path,mutation):
     elif mutation=='version':
         p=root/'plugins/axiom/plugin.json';d=json.loads(p.read_text());d['version']='999.0.0';p.write_text(json.dumps(d))
     else:(root/'gemini-extension.json').write_text('{}')
+    # Rebind the fixture manifest so structural/parity rejection is tested beyond the hash gate.
+    manifest_path=root/'release/skills-manifest.json'
+    manifest=json.loads(manifest_path.read_text())
+    for entry in manifest['files']:
+        raw=(root/entry['path']).read_bytes()
+        entry['sha256']=hashlib.sha256(raw).hexdigest();entry['bytes']=len(raw)
+    manifest_path.write_text(json.dumps(manifest))
     with pytest.raises(ValueError):build(root,tmp_path/'out',SOURCE)
     assert not (tmp_path/'out').exists()
