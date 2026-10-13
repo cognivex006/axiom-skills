@@ -732,7 +732,7 @@ class AxiomCliInstallChecks:
     def check(cls, text: str) -> list[str]:
         problems: list[str] = []
         meta = frontmatter(text)
-        if meta.get("name") != "axiom-cli-install":
+        if meta.get("name") != "axm":
             problems.append("frontmatter name is missing or wrong")
         if not meta.get("description"):
             problems.append("frontmatter description is missing")
@@ -1043,21 +1043,21 @@ class AxiomCliInstallSkillTests(unittest.TestCase):
     """J-010 - tier-aware provisioning of the distributed axiom-cli entrypoint."""
 
     def test_skill_satisfies_contract(self):
-        self.assertEqual(AxiomCliInstallChecks.check(read("skills/axiom-cli-install/SKILL.md")), [])
+        self.assertEqual(AxiomCliInstallChecks.check(read("skills/axm/SKILL.md")), [])
 
     def test_skill_and_plugin_copy_lead_with_axm(self):
-        for path in ("skills/axiom-cli-install/SKILL.md", "plugins/axiom/skills/axiom-cli-install/SKILL.md"):
+        for path in ("skills/axm/SKILL.md", "plugins/axiom/skills/axm/SKILL.md"):
             text = read(path)
             self.assertIn("short name of `axiom-cli`", text, path)
             self.assertNotRegex(text, r"\b(?:ADR-\d{4}|[A-Z]-\d{3})\b", path)
             self.assertIn("releases/latest/download/update.ps1", text, path)
-        fixture = read("skills/axiom-cli-install/SKILL.md").replace("axm update", "axiom-cli update")
+        fixture = read("skills/axm/SKILL.md").replace("axm update", "axiom-cli update")
         self.assertTrue(any("axm update" in p for p in AxiomCliInstallChecks.check(fixture)))
-        control = read("skills/axiom-cli-install/SKILL.md") + chr(7)
+        control = read("skills/axm/SKILL.md") + chr(7)
         self.assertIn("skill contains a control character", AxiomCliInstallChecks.check(control))
 
     def test_skill_reads_the_contract_before_installing(self):
-        text = read("skills/axiom-cli-install/SKILL.md")
+        text = read("skills/axm/SKILL.md")
         read_at = text.find(AxiomCliInstallChecks.DEPENDENCY_MARKER)
         install_at = text.find("`axiom-cli install` installs or")
         self.assertNotEqual(read_at, -1)
@@ -1067,7 +1067,7 @@ class AxiomCliInstallSkillTests(unittest.TestCase):
     def test_negative_skill_that_installs_on_an_undeclared_platform_is_rejected(self):
         fixture = (
             "---\n"
-            "name: axiom-cli-install\n"
+            "name: axm\n"
             "description: Install axiom-cli everywhere.\n"
             "---\n\n"
             "Read the dependency table and the release tiers before you install anything.\n"
@@ -1082,7 +1082,7 @@ class AxiomCliInstallSkillTests(unittest.TestCase):
     def test_negative_skill_that_promotes_every_tier_is_rejected(self):
         fixture = (
             "---\n"
-            "name: axiom-cli-install\n"
+            "name: axm\n"
             "description: Promote every declared platform.\n"
             "---\n\n"
             "Present every deferred platform as finish-first and mark each\n"
@@ -1093,7 +1093,7 @@ class AxiomCliInstallSkillTests(unittest.TestCase):
         self.assertTrue(any("record runtime verification state" in p for p in problems), problems)
 
     def test_boundary_skill_that_drops_the_wsl_evidence_rule_is_rejected(self):
-        text = read("skills/axiom-cli-install/SKILL.md")
+        text = read("skills/axm/SKILL.md")
         mutated = text.replace(AxiomCliInstallChecks.WSL_MARKER, "Handle the WSL2 lane")
         problems = AxiomCliInstallChecks.check(mutated)
         self.assertTrue(any("WSL2 evidence separate" in p for p in problems), problems)
@@ -1207,7 +1207,7 @@ class AxiomCliDistributionAgreementTests(unittest.TestCase):
             )
         cls.contract = DistributionAuthorityResolver.contract_text(cls.specs)
         cls.matrix = DistributionAuthorityResolver.matrix(cls.specs)
-        cls.skill = read("skills/axiom-cli-install/SKILL.md")
+        cls.skill = read("skills/axm/SKILL.md")
         cls.flat = flatten(cls.skill)
         cls.platforms = [p["platform_id"] for p in cls.matrix["delivery_platforms"]]
 
@@ -1403,7 +1403,7 @@ class SkillsManifestTests(unittest.TestCase):
         manifest = self.manifest()
         paths = {entry["path"] for entry in manifest["files"]}
         self.assertIn("skills/graph-install/SKILL.md", paths)
-        self.assertIn("skills/axiom-cli-install/SKILL.md", paths)
+        self.assertIn("skills/axm/SKILL.md", paths)
 
     def test_negative_manifest_with_an_undeclared_file_is_rejected(self):
         root, manifest = self.stage_bundle(extra="skills/graph-context/EXTRA.md")
@@ -3180,16 +3180,16 @@ class OneLineInstallSkillTests(unittest.TestCase):
         return found
 
     def test_skill_and_plugin_copy_lead_with_the_one_liner(self):
-        for path in ("skills/axiom-cli-install/SKILL.md", "plugins/axiom/skills/axiom-cli-install/SKILL.md"):
+        for path in ("skills/axm/SKILL.md", "plugins/axiom/skills/axm/SKILL.md"):
             self.assertEqual(self.problems(read(path)), [], path)
 
     def test_negative_two_script_procedure_is_rejected(self):
-        text = read("skills/axiom-cli-install/SKILL.md").replace(
+        text = read("skills/axm/SKILL.md").replace(
             self.PS, "powershell -File bootstrap_windows.ps1 -Root <root> -DryRun")
         problems = self.problems(text)
         self.assertIn("missing Windows one-liner", problems)
         self.assertIn("stale primary path bootstrap_windows.ps1", problems)
 
     def test_negative_self_approving_skill_is_rejected(self):
-        text = " ".join(read("skills/axiom-cli-install/SKILL.md").split()).replace(self.HUMAN, "pass --yes")
+        text = " ".join(read("skills/axm/SKILL.md").split()).replace(self.HUMAN, "pass --yes")
         self.assertIn("missing human confirmation rule", self.problems(text))

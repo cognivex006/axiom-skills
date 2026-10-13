@@ -47,11 +47,12 @@ For a local checkout or an unpacked skills bundle, replace `orchex006/axiom-skil
 | `graph-doctor` | Diagnose graph availability, freshness and configuration |
 | `graph-update` | Check and apply an explicitly approved ecosystem update |
 | `graph-install` | Set up the graph ecosystem and hand off project/host configuration |
-| `axiom-cli-install` | Install, check, update or remove Axiom through `axm` |
+| `axm` | Install, check, update or remove Axiom through `axm` |
 
 Codex discovers these as `axiom:graph-context`, `axiom:graph-impact`, and so on. For example:
 
 ```text
+$axiom:axm Check the installed Axiom version and diagnose installation issues.
 $axiom:graph-build Build a graph for this solution.
 $axiom:graph-watch Refresh the graph when I save source files.
 $axiom:graph-context Find the code relevant to this bug.

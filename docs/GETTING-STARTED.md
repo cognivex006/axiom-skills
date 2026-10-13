@@ -11,7 +11,7 @@ axm version
 axm doctor
 ```
 
-These commands check the installed ecosystem. Project registration and AI-host setup are separate.
+These commands check the installed ecosystem. Project registration and AI-host setup are separate. Once the plugin is installed, `$axiom:axm` guides install, repair, update, doctor, version and uninstall through the same `axm` command.
 
 ## 2. Add the skills to Codex
 

@@ -12,7 +12,7 @@ from release.build_github_release import verify_source
 from release.verify_manifest import verify, portable_relative
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED_SKILLS = {'axiom-cli-install', 'graph-build', 'graph-watch', 'graph-context', 'graph-impact', 'graph-reconcile', 'graph-checkpoint', 'graph-doctor', 'graph-update', 'graph-install'}
+EXPECTED_SKILLS = {'axm', 'graph-build', 'graph-watch', 'graph-context', 'graph-impact', 'graph-reconcile', 'graph-checkpoint', 'graph-doctor', 'graph-update', 'graph-install'}
 HOSTS = ('codex', 'claude', 'gemini', 'antigravity', 'copilot')
 INSTALL = {
     'codex': ['codex plugin marketplace add <extracted-package>', 'codex plugin add axiom@axiom-skills'],

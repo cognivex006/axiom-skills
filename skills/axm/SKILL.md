@@ -1,9 +1,9 @@
 ---
-name: axiom-cli-install
+name: axm
 description: Install, repair, check, update or remove Axiom through the released `axm` CLI and verified platform-specific bootstrap scripts. Check prerequisites and target support, keep approvals scoped to the printed plan, and report unverified outcomes honestly.
 ---
 
-# Distributed CLI provisioning
+# Axiom command-line workflow
 
 Use this skill when an agent is asked to install, update, repair or remove the distributed
 `axiom-cli` entrypoint on a target host, or to report which target it actually verified and which
