@@ -1,0 +1,32 @@
+{
+  "codex_version": "0.162.1",
+  "platform": "Darwin x86_64",
+  "plugin_id": "axiom@axiom-skills",
+  "installed": true,
+  "enabled": true,
+  "discovery_method": "Native Codex app-server initialize then skills/list with forceReload; no model turn",
+  "names": [
+    "axiom:axiom-cli-install",
+    "axiom:graph-checkpoint",
+    "axiom:graph-context",
+    "axiom:graph-doctor",
+    "axiom:graph-impact",
+    "axiom:graph-install",
+    "axiom:graph-reconcile",
+    "axiom:graph-update"
+  ],
+  "cached_skill_sha256": {
+    "axiom-cli-install": "efee4fd60981b31580653777b43fc10ae84a1312a14aebb9bc4ede1a29839448",
+    "graph-impact": "56d4cd787530cf07bf5eae473cb2e14d5e22ad76713d1e246fdfccae2392d3d2",
+    "graph-checkpoint": "acc44509ade81953cc4ac92028bf0722ba85366333cf104aa1a74edd618abb0f",
+    "graph-install": "c430c789dbd206820dd18944d30508f368439247acbe618aedbde309779b7bc1",
+    "graph-context": "7b62ed7fc0db9c407e3c87a27f5789d4da9774b7624dbf0795c7c5c9ad47b072",
+    "graph-update": "51bfccb938717ecc73e029979f25fa4c88223be187dce10e081e24b54bb94696",
+    "graph-doctor": "34a2d9c0dc05671b59e3f3b25d26cbe5d7a267da0e1aaee2d979d73df79cc4c4",
+    "graph-reconcile": "fe30997c49637a3bba824374b36d7f4604189e6824d372ab6387cb22efd0d38d"
+  },
+  "consumer_links_checked": 21,
+  "consumer_entrypoints": "No internal task IDs, spec revisions/hashes or private-spec prerequisites",
+  "desktop_ui": "not_run; existing app/session may require restart",
+  "mcp_graph_execution": "not_run; requires separate project/credentials setup"
+}

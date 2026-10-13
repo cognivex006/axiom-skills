@@ -215,8 +215,8 @@
     {
       "path": "plugins/axiom/README.md",
       "role": "plugin-package",
-      "sha256": "acc71fe2555958422b18bb72665b3dd385821a125571ed25304c5d206b4dda13",
-      "bytes": 720
+      "sha256": "5ff8fbe2de3d5706055deedea7b28b8dba455ec09f24fb45e1f49a7d2726b8df",
+      "bytes": 1060
     },
     {
       "path": "plugins/axiom/gemini-extension.json",
@@ -299,8 +299,8 @@
     {
       "path": "marketplace-plugins/README.md",
       "role": "plugin-marketplace",
-      "sha256": "f8343d51c56b95992da64025282243577530ac81cae88d3ad74f8a4d5ef146ae",
-      "bytes": 1840
+      "sha256": "41acf84ee98bb9e5927b90756e453d966db35c8442194abe563a93a2f5b37d26",
+      "bytes": 2186
     },
     {
       "path": "marketplace-plugins/catalog.json",
