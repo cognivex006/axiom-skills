@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "release" / "skills-manifest.json"
-SCOPES = ("plugins", ".agents/plugins", ".claude-plugin", "marketplace-plugins")
+SCOPES = ("plugins", ".agents/plugins", ".claude-plugin", "marketplace-plugins", ".github/plugin")
 
 
 def main() -> int:

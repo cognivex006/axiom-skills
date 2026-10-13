@@ -5,6 +5,22 @@
     "codex": ".agents/plugins/marketplace.json",
     "claude": ".claude-plugin/marketplace.json",
     "gemini": "plugins/axiom/gemini-extension.json",
-    "antigravity": "plugins/axiom/plugin.json"
+    "antigravity": "plugins/axiom-agy/plugin.json",
+    "copilot": ".github/plugin/marketplace.json"
+  },
+  "schema_version": 2,
+  "packages": {
+    "codex": "plugins/axiom",
+    "claude": "plugins/axiom",
+    "copilot": "plugins/axiom",
+    "gemini": "plugins/axiom",
+    "antigravity": "plugins/axiom-agy"
+  },
+  "runtime_verification": {
+    "codex": "native_codex_discovery_verified",
+    "claude": "not_run",
+    "gemini": "not_run",
+    "antigravity": "not_run",
+    "copilot": "not_run"
   }
 }

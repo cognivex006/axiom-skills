@@ -6,6 +6,18 @@ Axiom packages eight skills in one plugin. The plugin works alongside your exist
 
 **[Get started](docs/GETTING-STARTED.md)** · **[Install the plugin](marketplace-plugins/README.md)** · **[Documentation](docs/README.md)** · **[Releases](https://github.com/orchex006/axiom-skills/releases)**
 
+## Choose your assistant
+
+| Assistant | Distribution | Install instructions |
+|---|---|---|
+| Codex | Plugin marketplace | [Codex](marketplace-plugins/README.md#codex) |
+| Claude Code | Plugin marketplace | [Claude Code](marketplace-plugins/README.md#claude-code) |
+| GitHub Copilot CLI / VS Code | Plugin marketplace or direct plugin | [CLI](marketplace-plugins/README.md#github-copilot-cli) · [VS Code](marketplace-plugins/README.md#github-copilot-in-vs-code) |
+| Gemini CLI | GitHub or local extension | [Gemini](marketplace-plugins/README.md#gemini-cli) |
+| Antigravity / AGY | Dedicated native plugin package | [AGY](marketplace-plugins/README.md#antigravity--agy) |
+
+The packages use the same canonical skills. Host-specific manifests make each package discoverable using that assistant's supported installation method. [Standalone packages](marketplace-plugins/README.md#local-packages-and-offline-distribution) also support local distribution.
+
 ## Install in Codex
 
 With Codex CLI installed, run:

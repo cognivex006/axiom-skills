@@ -1,5 +1,16 @@
 {
-  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "axiom",
-  "description": "Axiom graph skills for repository analysis and operations"
+  "version": "0.1.5",
+  "description": "Code graph context, change impact and Axiom operations for coding assistants",
+  "author": {
+    "name": "orchex006",
+    "url": "https://github.com/orchex006"
+  },
+  "repository": "https://github.com/orchex006/axiom-skills",
+  "keywords": [
+    "code-graph",
+    "skills",
+    "code-analysis"
+  ]
 }

@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PLUGIN = ROOT / "plugins" / "axiom"
+PLUGINS = (PLUGIN, ROOT / "plugins" / "axiom-agy")
 
 
 def source_files() -> list[Path]:
@@ -27,11 +28,18 @@ def main() -> int:
     parser.add_argument("--force", action="store_true", help="replace a differing packaged copy")
     parser.add_argument("--plugin-root", type=Path, default=PLUGIN, help="package to check")
     args = parser.parse_args()
-    plugin = args.plugin_root.resolve()
-    if args.write and plugin != PLUGIN.resolve():
-        parser.error("--write is permitted only for the repository plugin")
+    if args.plugin_root == PLUGIN:
+        targets = PLUGINS
+    else:
+        targets = (args.plugin_root,)
+    return max(check_plugin(args, target.resolve()) for target in targets)
+
+
+def check_plugin(args: argparse.Namespace, plugin: Path) -> int:
+    if args.write and plugin not in [p.resolve() for p in PLUGINS]:
+        raise ValueError("--write is permitted only for repository plugins")
     if args.force and not args.write:
-        parser.error("--force requires --write")
+        raise ValueError("--force requires --write")
     errors: list[str] = []
     sources = source_files()
     if not sources or any(not path.is_file() for path in sources):

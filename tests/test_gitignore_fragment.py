@@ -210,7 +210,7 @@ class GitignoreFragmentStructureTests(unittest.TestCase):
     def test_canonical_fragment_is_inside_the_hashed_bundle_scope(self) -> None:
         manifest = json.loads(read("release/skills-manifest.json"))
         scopes = manifest["install_policy"]["declared_scope"]
-        self.assertEqual(["policy", "skills", "adapters", "plugins", ".agents/plugins", ".claude-plugin", "marketplace-plugins", "templates/bootstrap"], scopes)
+        self.assertEqual(["policy", "skills", "adapters", "plugins", ".agents/plugins", ".claude-plugin", "marketplace-plugins", "templates/bootstrap", ".github/plugin"], scopes)
         self.assertIn("templates/bootstrap", scopes)
         self.assertIn(FRAGMENT, [f["path"] for f in manifest["files"]])
 

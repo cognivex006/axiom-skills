@@ -1,0 +1,9 @@
+{
+  "portable_format": "Agent Plugins 1.0",
+  "schema_url": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "schema_sha256": "0a4aad95ce337878ad38802ebf0daa3fde76abe3f65400c86bcbb1ec0b3ab883",
+  "native_verified": "Codex0.162.1 MacIntel install/list/skills discovery and cache parity",
+  "other_hosts": "Claude/Gemini/AGY/Copilot CLI absent; native runtime not_run. VSCode UI not_run.",
+  "publication": "Repository marketplace/plugin packaging only; official directory submissions and release tags not performed",
+  "root_Gemini_entrypoints": "Git checkout entrypoints mirror the hash-declared package manifest/context; runtime owner handoff remains directory-only for CLI compatibility"
+}

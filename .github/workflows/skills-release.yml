@@ -35,6 +35,16 @@ jobs:
         with:
           name: portable-skills-${{ github.sha }}
           path: release-assets
+      - uses: actions/download-artifact@v4
+        with:
+          name: host-plugins-${{ github.sha }}
+          path: host-assets
+      - name: Verify and combine standalone plugin assets
+        run: |
+          test "$(cat host-assets/HOST-SOURCE-REVISION.txt)" = "$GITHUB_SHA"
+          (cd host-assets && sha256sum -c SHA256SUMS)
+          cp host-assets/axiom-skills-*.zip host-assets/host-packages.json host-assets/HOST-SOURCE-REVISION.txt release-assets/
+          cat host-assets/SHA256SUMS >> release-assets/SHA256SUMS
       - name: Verify checked assets and publish new release
         env:
           GH_TOKEN: ${{ github.token }}

@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "component": "axiom-skills",
+  "version": "0.1.5",
+  "source_revision": "eb7de3eff275fe14cf35cc7d2c5c3bf805b1c65a",
+  "hosts": {
+    "codex": {
+      "archive": "axiom-skills-0.1.5-codex.zip",
+      "sha256": "517f952d1fcf6ec8fe99e209d376be7389316e822eaefc545dd6b2a4409234dd",
+      "files": {
+        ".agents/plugins/marketplace.json": "a7613110c39f75349cb07a64fcb281b5b2a72568693f9e45f1699dd922c9e6dd",
+        ".claude-plugin/plugin.json": "35d845b015d0138ad5d45d2a1ac33e82bb6e95b45fb26ab8b4d2876402a789e6",
+        ".codex-plugin/plugin.json": "d3df0bf0be7b5325395537217ecf2d0d173e51bea97f16606222f54f753e5ba9",
+        "GEMINI.md": "c387f1a23bc4dfeb25dedb3ab6d4903b01ad16a7db7a31b7da027a93fe4ca953",
+        "INSTALL.md": "065f4b44e347b1477427bfbf2cbe60c7f98da084277aa953d82ddda7e3dadf9a",
+        "README.md": "5ff8fbe2de3d5706055deedea7b28b8dba455ec09f24fb45e1f49a7d2726b8df",
+        "gemini-extension.json": "e47a8764a3f799f2bed5cac8c1b461e57a8fdd8543541d5aae8a9c8e4903fe87",
+        "plugin.json": "a20c49b351407117786146df4c0df8cc766ec4a0a7d35927441fc1845b408436",
+        "policy/POLICY.md": "96713d17e1e82dac2636dec746ed9ce5b57efd097e714ea119e59c061306133f",
+        "skills/axiom-cli-install/SKILL.md": "efee4fd60981b31580653777b43fc10ae84a1312a14aebb9bc4ede1a29839448",
+        "skills/graph-checkpoint/SKILL.md": "acc44509ade81953cc4ac92028bf0722ba85366333cf104aa1a74edd618abb0f",
+        "skills/graph-context/SKILL.md": "7b62ed7fc0db9c407e3c87a27f5789d4da9774b7624dbf0795c7c5c9ad47b072",
+        "skills/graph-doctor/SKILL.md": "34a2d9c0dc05671b59e3f3b25d26cbe5d7a267da0e1aaee2d979d73df79cc4c4",
+        "skills/graph-impact/SKILL.md": "56d4cd787530cf07bf5eae473cb2e14d5e22ad76713d1e246fdfccae2392d3d2",
+        "skills/graph-install/SKILL.md": "c430c789dbd206820dd18944d30508f368439247acbe618aedbde309779b7bc1",
+        "skills/graph-reconcile/SKILL.md": "fe30997c49637a3bba824374b36d7f4604189e6824d372ab6387cb22efd0d38d",
+        "skills/graph-update/SKILL.md": "51bfccb938717ecc73e029979f25fa4c88223be187dce10e081e24b54bb94696"
+      },
+      "package_verified": true,
+      "install": [
+        "codex plugin marketplace add <extracted-package>",
+        "codex plugin add axiom@axiom-skills"
+      ],
+      "native_runtime": "not_run"
+    },
+    "claude": {
+      "archive": "axiom-skills-0.1.5-claude.zip",
+      "sha256": "067813d512a20b05eb6c175f001a1bc999d77d5ce16ef8bc96c0de827f136514",
+      "files": {
+        ".claude-plugin/marketplace.json": "839b62d647bfdac507c741cfbf6db3d08011ef7f40505091fe2fabe3a3b7b005",
+        ".claude-plugin/plugin.json": "35d845b015d0138ad5d45d2a1ac33e82bb6e95b45fb26ab8b4d2876402a789e6",
+        ".codex-plugin/plugin.json": "d3df0bf0be7b5325395537217ecf2d0d173e51bea97f16606222f54f753e5ba9",
+        "GEMINI.md": "c387f1a23bc4dfeb25dedb3ab6d4903b01ad16a7db7a31b7da027a93fe4ca953",
+        "INSTALL.md": "d193c548b7a6f7bf65a2d7c750858c732696b6a2edff7ac618cf50439075d1bc",
+        "README.md": "5ff8fbe2de3d5706055deedea7b28b8dba455ec09f24fb45e1f49a7d2726b8df",
+        "gemini-extension.json": "e47a8764a3f799f2bed5cac8c1b461e57a8fdd8543541d5aae8a9c8e4903fe87",
+        "plugin.json": "a20c49b351407117786146df4c0df8cc766ec4a0a7d35927441fc1845b408436",
+        "policy/POLICY.md": "96713d17e1e82dac2636dec746ed9ce5b57efd097e714ea119e59c061306133f",
+        "skills/axiom-cli-install/SKILL.md": "efee4fd60981b31580653777b43fc10ae84a1312a14aebb9bc4ede1a29839448",
+        "skills/graph-checkpoint/SKILL.md": "acc44509ade81953cc4ac92028bf0722ba85366333cf104aa1a74edd618abb0f",
+        "skills/graph-context/SKILL.md": "7b62ed7fc0db9c407e3c87a27f5789d4da9774b7624dbf0795c7c5c9ad47b072",
+        "skills/graph-doctor/SKILL.md": "34a2d9c0dc05671b59e3f3b25d26cbe5d7a267da0e1aaee2d979d73df79cc4c4",
+        "skills/graph-impact/SKILL.md": "56d4cd787530cf07bf5eae473cb2e14d5e22ad76713d1e246fdfccae2392d3d2",
+        "skills/graph-install/SKILL.md": "c430c789dbd206820dd18944d30508f368439247acbe618aedbde309779b7bc1",
+        "skills/graph-reconcile/SKILL.md": "fe30997c49637a3bba824374b36d7f4604189e6824d372ab6387cb22efd0d38d",
+        "skills/graph-update/SKILL.md": "51bfccb938717ecc73e029979f25fa4c88223be187dce10e081e24b54bb94696"
+      },
+      "package_verified": true,
+      "install": [
+        "/plugin marketplace add <extracted-package>",
+        "/plugin install axiom@axiom-skills"
+      ],
+      "native_runtime": "not_run"
+    },
+    "copilot": {
+      "archive": "axiom-skills-0.1.5-copilot.zip",
+      "sha256": "4e7b0afb89fcfcdfaf1173d8398406bc3bf0649c785703e4ccac6f36d9d03b3e",
+      "files": {
+        ".claude-plugin/plugin.json": "35d845b015d0138ad5d45d2a1ac33e82bb6e95b45fb26ab8b4d2876402a789e6",
+        ".codex-plugin/plugin.json": "d3df0bf0be7b5325395537217ecf2d0d173e51bea97f16606222f54f753e5ba9",
+        ".github/plugin/marketplace.json": "839b62d647bfdac507c741cfbf6db3d08011ef7f40505091fe2fabe3a3b7b005",
+        "GEMINI.md": "c387f1a23bc4dfeb25dedb3ab6d4903b01ad16a7db7a31b7da027a93fe4ca953",
+        "INSTALL.md": "b4297cacc1e6c11363b612321f6b309e2b6174121ce8dfaebe62c5f514c6cbc9",
+        "README.md": "5ff8fbe2de3d5706055deedea7b28b8dba455ec09f24fb45e1f49a7d2726b8df",
+        "gemini-extension.json": "e47a8764a3f799f2bed5cac8c1b461e57a8fdd8543541d5aae8a9c8e4903fe87",
+        "plugin.json": "a20c49b351407117786146df4c0df8cc766ec4a0a7d35927441fc1845b408436",
+        "policy/POLICY.md": "96713d17e1e82dac2636dec746ed9ce5b57efd097e714ea119e59c061306133f",
+        "skills/axiom-cli-install/SKILL.md": "efee4fd60981b31580653777b43fc10ae84a1312a14aebb9bc4ede1a29839448",
+        "skills/graph-checkpoint/SKILL.md": "acc44509ade81953cc4ac92028bf0722ba85366333cf104aa1a74edd618abb0f",
+        "skills/graph-context/SKILL.md": "7b62ed7fc0db9c407e3c87a27f5789d4da9774b7624dbf0795c7c5c9ad47b072",
+        "skills/graph-doctor/SKILL.md": "34a2d9c0dc05671b59e3f3b25d26cbe5d7a267da0e1aaee2d979d73df79cc4c4",
+        "skills/graph-impact/SKILL.md": "56d4cd787530cf07bf5eae473cb2e14d5e22ad76713d1e246fdfccae2392d3d2",
+        "skills/graph-install/SKILL.md": "c430c789dbd206820dd18944d30508f368439247acbe618aedbde309779b7bc1",
+        "skills/graph-reconcile/SKILL.md": "fe30997c49637a3bba824374b36d7f4604189e6824d372ab6387cb22efd0d38d",
+        "skills/graph-update/SKILL.md": "51bfccb938717ecc73e029979f25fa4c88223be187dce10e081e24b54bb94696"
+      },
+      "package_verified": true,
+      "install": [
+        "copilot plugin marketplace add <extracted-package>",
+        "copilot plugin install axiom@axiom-skills"
+      ],
+      "native_runtime": "not_run"
+    },
+    "gemini": {
+      "archive": "axiom-skills-0.1.5-gemini.zip",
+      "sha256": "cb1919e130fe9fff8a42a91f107be0e6d1bbfa2bcdab5f420d004aea2d5a7f96",
+      "files": {
+        ".claude-plugin/plugin.json": "35d845b015d0138ad5d45d2a1ac33e82bb6e95b45fb26ab8b4d2876402a789e6",
+        ".codex-plugin/plugin.json": "d3df0bf0be7b5325395537217ecf2d0d173e51bea97f16606222f54f753e5ba9",
+        "GEMINI.md": "c387f1a23bc4dfeb25dedb3ab6d4903b01ad16a7db7a31b7da027a93fe4ca953",
+        "INSTALL.md": "52c66eaf70d821bd1cbdbcc81c9848c4e39fd625d1459e78175718f26a0a9782",
+        "README.md": "5ff8fbe2de3d5706055deedea7b28b8dba455ec09f24fb45e1f49a7d2726b8df",
+        "gemini-extension.json": "e47a8764a3f799f2bed5cac8c1b461e57a8fdd8543541d5aae8a9c8e4903fe87",
+        "plugin.json": "a20c49b351407117786146df4c0df8cc766ec4a0a7d35927441fc1845b408436",
+        "policy/POLICY.md": "96713d17e1e82dac2636dec746ed9ce5b57efd097e714ea119e59c061306133f",
+        "skills/axiom-cli-install/SKILL.md": "efee4fd60981b31580653777b43fc10ae84a1312a14aebb9bc4ede1a29839448",
+        "skills/graph-checkpoint/SKILL.md": "acc44509ade81953cc4ac92028bf0722ba85366333cf104aa1a74edd618abb0f",
+        "skills/graph-context/SKILL.md": "7b62ed7fc0db9c407e3c87a27f5789d4da9774b7624dbf0795c7c5c9ad47b072",
+        "skills/graph-doctor/SKILL.md": "34a2d9c0dc05671b59e3f3b25d26cbe5d7a267da0e1aaee2d979d73df79cc4c4",
+        "skills/graph-impact/SKILL.md": "56d4cd787530cf07bf5eae473cb2e14d5e22ad76713d1e246fdfccae2392d3d2",
+        "skills/graph-install/SKILL.md": "c430c789dbd206820dd18944d30508f368439247acbe618aedbde309779b7bc1",
+        "skills/graph-reconcile/SKILL.md": "fe30997c49637a3bba824374b36d7f4604189e6824d372ab6387cb22efd0d38d",
+        "skills/graph-update/SKILL.md": "51bfccb938717ecc73e029979f25fa4c88223be187dce10e081e24b54bb94696"
+      },
+      "package_verified": true,
+      "install": [
+        "gemini extensions install <extracted-package>"
+      ],
+      "native_runtime": "not_run"
+    },
+    "antigravity": {
+      "archive": "axiom-skills-0.1.5-antigravity.zip",
+      "sha256": "0c0c8fab6650b3b3404f0f74d077649596d65425b6236920108a3dc60027ee4e",
+      "files": {
+        "INSTALL.md": "4ce543f577a4b40badd60141e2077c7582f5a91c3c3b67ce4e732671a99d891f",
+        "README.md": "cf68be72819f0f76d4172c718b81d97f679c0f73d343954abf02859136a648cb",
+        "plugin.json": "da4aca6feb231965ff2fcfe9d0f56f6a22767c5e702287394ae5d3a0d0c7219a",
+        "policy/POLICY.md": "96713d17e1e82dac2636dec746ed9ce5b57efd097e714ea119e59c061306133f",
+        "skills/axiom-cli-install/SKILL.md": "efee4fd60981b31580653777b43fc10ae84a1312a14aebb9bc4ede1a29839448",
+        "skills/graph-checkpoint/SKILL.md": "acc44509ade81953cc4ac92028bf0722ba85366333cf104aa1a74edd618abb0f",
+        "skills/graph-context/SKILL.md": "7b62ed7fc0db9c407e3c87a27f5789d4da9774b7624dbf0795c7c5c9ad47b072",
+        "skills/graph-doctor/SKILL.md": "34a2d9c0dc05671b59e3f3b25d26cbe5d7a267da0e1aaee2d979d73df79cc4c4",
+        "skills/graph-impact/SKILL.md": "56d4cd787530cf07bf5eae473cb2e14d5e22ad76713d1e246fdfccae2392d3d2",
+        "skills/graph-install/SKILL.md": "c430c789dbd206820dd18944d30508f368439247acbe618aedbde309779b7bc1",
+        "skills/graph-reconcile/SKILL.md": "fe30997c49637a3bba824374b36d7f4604189e6824d372ab6387cb22efd0d38d",
+        "skills/graph-update/SKILL.md": "51bfccb938717ecc73e029979f25fa4c88223be187dce10e081e24b54bb94696"
+      },
+      "package_verified": true,
+      "install": [
+        "agy plugin install <extracted-package>"
+      ],
+      "native_runtime": "not_run"
+    }
+  }
+}

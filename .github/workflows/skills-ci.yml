@@ -34,6 +34,13 @@ jobs:
         run: |
           VERSION=$(python -c "import json; print(json.load(open('release/skills-manifest.json'))['component_version'])")
           python -m release.build_github_release --tag "v$VERSION" --out "${{ runner.temp }}/skills-assets"
+      - name: Build standalone host plugins
+        run: python -m release.build_host_packages --source-revision "$GITHUB_SHA" --out "${{ runner.temp }}/host-assets"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: host-plugins-${{ github.sha }}
+          path: ${{ runner.temp }}/host-assets/*
+          if-no-files-found: error
       - uses: actions/upload-artifact@v4
         with:
           name: portable-skills-${{ github.sha }}

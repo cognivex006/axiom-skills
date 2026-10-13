@@ -1,0 +1,18 @@
+{
+  "task_id": "O-011",
+  "status": "done",
+  "owner": "axiom-skills",
+  "branch": "feature/o-011-portable-marketplaces",
+  "reviewed_source_revision": "eb7de3eff275fe14cf35cc7d2c5c3bf805b1c65a",
+  "checks": "230 owner tests; both package roots exact; 56-file owner manifest; five standalone archives; official AgentPlugins1.0 schema; native Codex8skills",
+  "canonical_completion": "axiom-specs evidence/completion/O-011.json; before/after validation and completion passed",
+  "limitations": "Other native host clients/VSCode UI/MCP execution not_run; no new release/tag/directory submission",
+  "artifacts": {
+    "native-codex.json": "b9d999c6221c9db7cf080ac998f348bba126847374a3e91ac464fc9abc3ac32f",
+    "pytest.txt": "7dbe8f2dc5d69d889cd313a2a24bbc5b722aedcbe56943b6888aacba9840f6ef",
+    "package-checks.txt": "ec5e339f5f1e74a5cd08376fead17a37f661591085476c9d1335c5bee7c5f497",
+    "standards.json": "9dac01913327d27c2eee7fe50d722d8c07bfaa50c304094e6b1b4af89d580a7f",
+    "host-packages.json": "191cd54e93a85132f51b9d0d81fc1a02181d53524cb65323edb3c7bf5ab7eb84",
+    "SHA256SUMS": "7cb29f041ae47298bf4b5c934e81f262c3885bc176e98bad2df6dc66bfba1ccd"
+  }
+}
