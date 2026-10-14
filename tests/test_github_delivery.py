@@ -64,7 +64,7 @@ def test_existing_output_and_corrupt_bytes_refuse(tmp_path):
         shutil.copyfile(ROOT / entry["path"], path)
     (staging / "release").mkdir()
     shutil.copyfile(ROOT / "release/skills-manifest.json", staging / "release/skills-manifest.json")
-    (staging / "skills/graph-context/SKILL.md").write_text("corrupt")
+    (staging / "skills/axge/SKILL.md").write_text("corrupt")
     with pytest.raises(ValueError, match="hash mismatch"):
         build(staging, tmp_path / "bad", version(), SOURCE)
     assert not (tmp_path / "bad").exists()

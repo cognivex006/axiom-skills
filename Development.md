@@ -135,3 +135,7 @@ The specification repository is private. Public skills CI validates the immutabl
 ## K-608 canonical bootstrap content
 
 The portable owner payload includes the exact block, gitignore fragment and template manifest under templates/bootstrap. Graphd consumes these owner-pinned bytes instead of hardcoding another policy source. The policy remains a single file at policy/POLICY.md. No template bytes, human governance or OS-specific skill copies are changed.
+
+## Unreleased workflow refactor
+
+W-002 owns the two-entrypoint router, progressive references, explicit legacy package and deterministic selector. Historical static skill checks use frozen migration inputs under tests/fixtures/legacy-skills; they are not behavioral evidence for the new router. Run owner pytest, manifest/parity checks and the real Windows engine/MCP workflow harness. Native host traces remain separate. No 0.1.8 bump/publication or main integration is authorized.

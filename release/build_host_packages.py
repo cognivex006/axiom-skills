@@ -12,7 +12,7 @@ from release.build_github_release import verify_source
 from release.verify_manifest import verify, portable_relative
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED_SKILLS = {'axm', 'graph-build', 'graph-watch', 'graph-context', 'graph-impact', 'graph-reconcile', 'graph-checkpoint', 'graph-doctor', 'graph-update', 'graph-install'}
+EXPECTED_SKILLS = {'axge', 'axm'}
 HOSTS = ('codex', 'claude', 'gemini', 'antigravity', 'copilot')
 INSTALL = {
     'codex': ['codex plugin marketplace add <extracted-package>', 'codex plugin add axiom@axiom-skills'],
@@ -98,16 +98,30 @@ def checked_packages(root: Path) -> tuple[str, dict[str, str]]:
     return version, packages
 
 
-def build(root: Path, output: Path, source_revision: str) -> dict:
+def build(root: Path, output: Path, source_revision: str, legacy: bool = False) -> dict:
     if not re.fullmatch(r'[a-f0-9]{40}', source_revision):
         raise ValueError('source revision must be an immutable Git commit')
     version, packages = checked_packages(root)
+    if legacy and tuple(int(part) for part in version.split('.')[:2]) >= (0, 2):
+        raise ValueError('legacy compatibility expired at 0.2.0')
     if output.exists() or output.is_symlink():
         raise ValueError('output must be a new directory')
     payloads = {}
     for host, package in packages.items():
         base = root / package
         files = {p.relative_to(base).as_posix(): p.read_bytes() for p in base.rglob('*') if p.is_file()}
+        if legacy:
+            manifest = json.loads((root / 'compatibility/legacy-manifest.json').read_text())
+            if manifest.get('deprecated_until') != '0.2.0':
+                raise ValueError('legacy compatibility expiry missing')
+            for name, digest in manifest['files'].items():
+                if not portable_relative(name) or not name.startswith('compatibility/legacy-skills/'):
+                    raise ValueError('unsafe legacy payload')
+                raw = (root / name).read_bytes()
+                if sha(raw) != digest:
+                    raise ValueError('legacy alias bytes changed')
+                files['skills/' + name.removeprefix('compatibility/legacy-skills/')] = raw
+            files['legacy-compatibility.json'] = (json.dumps(manifest, indent=2) + '\n').encode()
         if host in ('codex', 'claude', 'copilot'):
             entry = {'name':'axiom', 'source': {'source':'local','path':'./'} if host == 'codex' else './', 'version':version}
             if host == 'codex':
@@ -118,7 +132,7 @@ def build(root: Path, output: Path, source_revision: str) -> dict:
         files['INSTALL.md'] = (f"# Axiom skills for {host}\n\nExtract this archive into a new directory. Replace `<extracted-package>` with that directory in these commands:\n\n```text\n" + '\n'.join(INSTALL[host]) + "\n```\n\nStart a new host session. Graph queries require a separately configured Axiom runtime, solution and MCP connection. Package validation is separate from native host execution.\n").encode()
         payloads[host] = files
     output.mkdir(parents=True)
-    index = {'schema_version':1,'component':'axiom-skills','version':version,'source_revision':source_revision,'hosts':{}}
+    index = {'schema_version':1,'component':'axiom-skills','version':version,'source_revision':source_revision,'legacy_compatibility':legacy,'publication':'not_published','hosts':{}}
     for host, files in payloads.items():
         archive = output / f'axiom-skills-{version}-{host}.zip'
         with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED) as zipped:
@@ -142,7 +156,14 @@ if __name__ == '__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out',type=Path,required=True)
     parser.add_argument('--source-revision',required=True)
+    parser.add_argument('--legacy',action='store_true',help='include deprecated aliases explicitly, until 0.2.0')
     args=parser.parse_args()
     verify_source(ROOT,args.source_revision)
-    result=build(ROOT,args.out,args.source_revision)
+    if args.legacy:
+        import subprocess
+        legacy_manifest=json.loads((ROOT/'compatibility/legacy-manifest.json').read_text())
+        for name in ['compatibility/legacy-manifest.json', *legacy_manifest['files']]:
+            if subprocess.check_output(['git','show',args.source_revision+':'+name],cwd=ROOT)!=(ROOT/name).read_bytes():
+                raise ValueError('legacy payload is not bound to source revision')
+    result=build(ROOT,args.out,args.source_revision,args.legacy)
     print(f"Verified {len(result['hosts'])} standalone host packages")

@@ -1,6 +1,6 @@
 # Install the Axiom skills plugin
 
-Choose your assistant below. Start with `graph-build` to create the first graph and `graph-watch` to update it automatically as source files change. Every package contains the same ten Axiom skills. Plugin installation makes them discoverable; the [graph runtime](https://github.com/orchex006/axiom-cli) and MCP connection are configured separately.
+Choose your assistant below. Start with `axge build` to create the first graph and `axge watch` to update it automatically as source files change. Every package contains the same two Axiom workflow entrypoints. Plugin installation makes them discoverable; the [graph runtime](https://github.com/orchex006/axiom-cli) and MCP connection are configured separately.
 
 ## Codex
 
@@ -10,7 +10,7 @@ codex plugin add axiom@axiom-skills
 codex plugin list --marketplace axiom-skills
 ```
 
-Start a new session. Invoke a skill such as `$axiom:graph-context`. Update the registered repository with `codex plugin marketplace upgrade axiom-skills`; use the client plugin manager to refresh the installed package. Remove it with `codex plugin remove axiom@axiom-skills`.
+Start a new session. Invoke a skill such as `$axiom:axge`. Update the registered repository with `codex plugin marketplace upgrade axiom-skills`; use the client plugin manager to refresh the installed package. Remove it with `codex plugin remove axiom@axiom-skills`.
 
 [Official Codex plugin documentation](https://developers.openai.com/plugins/build/plugins)
 
@@ -24,7 +24,7 @@ In a Claude Code session:
 /plugin
 ```
 
-Invoke `/axiom:graph-context`, or select a skill in the plugin manager. The `/plugin` manager provides update, enable/disable and uninstall controls.
+Invoke `/axiom:axge`, or select a skill in the plugin manager. The `/plugin` manager provides update, enable/disable and uninstall controls.
 
 [Official Claude plugin documentation](https://code.claude.com/docs/en/plugins)
 
@@ -79,7 +79,7 @@ agy plugin install ./axiom-skills/plugins/axiom-agy
 agy plugin list
 ```
 
-Use `/graph-context` to invoke a skill. To refresh a local package, update the checkout and reinstall through the host's plugin manager. Remove it with `agy plugin uninstall axiom`. Antigravity's documented named marketplace installation currently accepts its official marketplace; Axiom does not claim to be listed there. Use the local package, or import it using the appropriate IDE plugin manager.
+Use `/axge` to invoke a skill. To refresh a local package, update the checkout and reinstall through the host's plugin manager. Remove it with `agy plugin uninstall axiom`. Antigravity's documented named marketplace installation currently accepts its official marketplace; Axiom does not claim to be listed there. Use the local package, or import it using the appropriate IDE plugin manager.
 
 [Official Antigravity plugin documentation](https://antigravity.google/docs/plugins?tab=cli)
 

@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+### New Features
+
+- Route graph build/watch/questions/impact/export/diagnostics through axge with selectively loaded references; keep ecosystem lifecycle under axm.
+- Ship two default skills with explicit deprecated compatibility aliases through 0.2.0, selected-snapshot exports and measured engine-cycle guidance.
+
+### Known Limitations
+
+- Workflow facades require a matching engine capability; earlier installed engines may use reconcile/serve/render. Native host execution is reported only when tested. No 0.1.8 release is published.
+
 ## 0.1.7
 
 ### Bug Fixes

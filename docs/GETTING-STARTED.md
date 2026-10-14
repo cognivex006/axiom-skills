@@ -29,29 +29,29 @@ For Claude Code, GitHub Copilot CLI, Gemini CLI or Antigravity, use [the plugin 
 
 ## 3. Connect a project and MCP
 
-Start with `$axiom:graph-build` to register the selected solution, build its first graph and verify a known symbol. Then use `$axiom:graph-watch` to keep that graph current after source files are saved. Both skills need `axiom-graphd`; automatic refresh uses its running daemon and current polling watcher. This refresh updates graph data, not application binaries.
+Start with `$axiom:axge build` to register the selected solution, build its first graph and verify a known symbol. Then use `$axiom:axge watch` to keep that graph current after source files are saved. Both workflows need `axiom-graphd`; automatic refresh uses its running daemon and current polling watcher. This refresh updates graph data, not application binaries.
 
 Use the [graph engine command reference](https://github.com/orchex006/axiom-graphd/blob/main/docs/reference/axiom-graphd.md) to register your solution and produce its graph. Configure the [MCP gateway](https://github.com/orchex006/axiom-mcp#run) with credentials scoped to that solution and add its launch configuration to your host.
 
 MCP credentials stay private. Registering a skills plugin does not create credentials, register a solution or start an MCP server.
 
-For code questions, the assistant uses `graph-context` or `graph-impact` to discover and call MCP `graph_status` / `graph_query`; CLI graph queries are setup diagnostics. Keep the engine and gateway on the same `AXIOM_HOME`, instance and repository bindings. See [Build → watch → query](guides/graph-lifecycle.md) for prerequisites, actual tool routing, bounded query examples and failure recovery.
+For code questions, the assistant uses `axge ask` or `axge impact` to discover and call MCP `graph_status` / `graph_query`; CLI graph queries are setup diagnostics. Keep the engine and gateway on the same `AXIOM_HOME`, instance and repository bindings. See [Build → watch → query](guides/graph-lifecycle.md) for prerequisites, actual tool routing, bounded query examples and failure recovery.
 
 ## 4. Try a skill
 
 In Codex, invoke the discovered skill by name:
 
 ```text
-$axiom:graph-build Build the first graph for this solution.
-$axiom:graph-watch Update the graph when I save source files.
-$axiom:graph-context Find the code relevant to this bug.
+$axiom:axge build Build the first graph for this solution.
+$axiom:axge watch Update the graph when I save source files.
+$axiom:axge ask Find the code relevant to this bug.
 ```
 
-Or choose `graph-context` in the skills picker and ask:
+Or choose `axge` in the skills picker and ask:
 
 > Find the code and relationships relevant to this bug, then read the source files needed to verify the result.
 
-Use `graph-impact` before a change, `graph-reconcile` after a set of edits, and `graph-doctor` when the graph is missing or stale. The [skill directory](../README.md#what-you-can-do) describes all ten workflows.
+Use `axge impact` for hypothetical change analysis, `axge build` for an authorized refresh, `axge export` for the selected snapshot, and `axge doctor` for diagnosis. The [workflow directory](../README.md) describes the two entrypoints.
 
 ## If the skills do not appear
 
@@ -64,3 +64,7 @@ Use `graph-impact` before a change, `graph-reconcile` after a set of edits, and 
 | Skills appear, but graph operations fail | Check the registered solution, graph freshness, MCP connection and caller credentials |
 
 Onboarding commands are checked with Codex CLI 0.162.1 on macOS Intel. Plugin discovery, graph/MCP queries and host hooks are separate checks; see [host compatibility](host-compatibility.md) for advanced adapter details.
+
+## Workflow preview
+
+The feature branch exposes only axge and axm by default. `$axge export this graph` preserves the selected project/node scope; doctor upgrade delegates to axm with an exact reviewed plan. Version is offline. Inspect installed engine help: build/watch/export and cycle measurements are unreleased additions, while earlier engines use reconcile/serve/render. Legacy aliases require the explicit compatibility package; see [migration](WORKFLOW-MIGRATION.md).

@@ -1,0 +1,1 @@
+OK immutable owner pin metadata; private specification content not fetched

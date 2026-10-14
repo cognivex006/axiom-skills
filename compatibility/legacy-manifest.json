@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "deprecated_until": "0.2.0",
+  "default_discovery": false,
+  "files": {
+    "compatibility/legacy-skills/graph-build/SKILL.md": "8172a2e8b46ff8eaee1e763d34cd95199feabbcf5348858573438d14ad8b7ce1",
+    "compatibility/legacy-skills/graph-checkpoint/SKILL.md": "366facedf7bb8538ecad25fd9749afeb22ee91c6d455bc7272d4ecc509d4bf2b",
+    "compatibility/legacy-skills/graph-context/SKILL.md": "2d4d4cb07310286c06758ac5e7d9c11aaf4bf3f8910a6210abbc14fc869011bc",
+    "compatibility/legacy-skills/graph-doctor/SKILL.md": "cdb44ffc85558db5e49bae81a0857f5bccfb3d4b5a6d065d23a11f06c2a2bdb4",
+    "compatibility/legacy-skills/graph-impact/SKILL.md": "e5b69833bf3d59ec5adbb430cdfad34654a7f817f84a78b89d15b40524e1532e",
+    "compatibility/legacy-skills/graph-install/SKILL.md": "a2563ae4f451bd2f039087c3122fa4eadc073d61b69020d26783bf5518fde15b",
+    "compatibility/legacy-skills/graph-reconcile/SKILL.md": "2ef47d0011b379cc6b33174a101e3462c443db86e0cb9a477229894a37630404",
+    "compatibility/legacy-skills/graph-update/SKILL.md": "011e3c136ccbaca70982fd7449eb73c5d1a3b46da605806939d5b6a7b88f5493",
+    "compatibility/legacy-skills/graph-watch/SKILL.md": "34b71c3fd40bfd5784e4f775aff51c360bcb8019145fd7ed2ba5566ae9af657e"
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "prompt": "Use $axge to complete this request: impact remove method RemoveFilesAsync on this project.",
+  "codex_version": "codex-cli 0.162.1",
+  "exit_code": 0,
+  "source_preserved": true,
+  "source_sha256": "f069375f2242490b80ce602d55b1121b35155b21f468b8194d7e44da248eb009",
+  "scope": "native-windows-isolated-project-with-real-read-scoped-mcp",
+  "events": [
+    {
+      "type": "thread.started"
+    },
+    {
+      "type": "turn.started"
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_0",
+        "type": "agent_message",
+        "text": "I\u2019m using the axge skill to check the impact of removing `RemoveFilesAsync`, without changing the source."
+      }
+    },
+    {
+      "type": "item.started",
+      "item": {
+        "id": "item_1",
+        "type": "mcp_tool_call",
+        "server": "axiom",
+        "tool": "list_mcp_resources",
+        "arguments": {
+          "server": "axiom"
+        },
+        "result": null,
+        "error": null,
+        "status": "in_progress"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_1",
+        "type": "mcp_tool_call",
+        "server": "axiom",
+        "tool": "list_mcp_resources",
+        "arguments": {
+          "server": "axiom"
+        },
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"server\":\"axiom\",\"resources\":[]}"
+            }
+          ],
+          "structured_content": null
+        },
+        "error": null,
+        "status": "completed"
+      }
+    },
+    {
+      "type": "item.started",
+      "item": {
+        "id": "item_2",
+        "type": "mcp_tool_call",
+        "server": "axiom",
+        "tool": "list_mcp_resource_templates",
+        "arguments": {
+          "server": "axiom"
+        },
+        "result": null,
+        "error": null,
+        "status": "in_progress"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_2",
+        "type": "mcp_tool_call",
+        "server": "axiom",
+        "tool": "list_mcp_resource_templates",
+        "arguments": {
+          "server": "axiom"
+        },
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"server\":\"axiom\",\"resourceTemplates\":[]}"
+            }
+          ],
+          "structured_content": null
+        },
+        "error": null,
+        "status": "completed"
+      }
+    },
+    {
+      "type": "item.started",
+      "item": {
+        "id": "item_3",
+        "type": "mcp_tool_call",
+        "server": "axiom",
+        "tool": "graph_version",
+        "arguments": {
+          "check_update": false
+        },
+        "result": null,
+        "error": null,
+        "status": "in_progress"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_3",
+        "type": "mcp_tool_call",
+        "server": "axiom",
+        "tool": "graph_version",
+        "arguments": {
+          "check_update": false
+        },
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "graph_version: completed"
+            }
+          ],
+          "structured_content": {
+            "schema_version": 1,
+            "components": [
+              {
+                "component": "axiom-mcp",
+                "observed": true,
+                "version": "0.1.7",
+                "spec_version": "2.0.0-draft.1",
+                "spec_revision": "73aec1d1ed190bcd7066574853340fe15102ebbe",
+                "compatible": true,
+                "reasons": []
+              },
+              {
+                "component": "axiom-graphd",
+                "observed": false,
+                "control_api": 1,
+                "reason": "control_client_not_wired"
+              },
+              {
+                "component": "axiom-specs",
+                "observed": false,
+                "reason": "not_observable_from_this_component"
+              },
+              {
+                "component": "axiom-skills",
+                "observed": false,
+                "reason": "not_observable_from_this_component"
+              }
+            ],
+            "dimensions": {
+              "component": "axiom-mcp",
+              "version": "0.1.7",
+              "spec_version": "2.0.0-draft.1",
+              "graph_schema": 1,
+              "control_api": 1,
+              "queue_schema": 1,
+              "build_revision": "73aec1d1ed190bcd7066574853340fe15102ebbe",
+              "update_status": "not_checked"
+            },
+            "compatibility": {
+              "compatible": true,
+              "runtime": {
+                "python": "3.13.14",
+                "supported": true,
+                "pinned_python": ">=3.13,<3.14",
+                "pinned_sdk": "1.28.1"
+              },
+              "sdk": {
+                "installed": "1.28.1",
+                "protocol_versions": [
+                  "2024-11-05",
+                  "2025-03-26",
+                  "2025-06-18",
+                  "2025-11-25"
+                ],
+                "protocol_minimum": "2025-11-25",
+                "reasons": []
+              },
+              "reasons": []
+            },
+            "update": {
+              "status": "not_checked",
+              "installed": "0.1.7",
+              "available": null,
+              "compatible": null,
+              "needs_restart": false,
+              "reasons": [
+                "update_check_not_requested"
+              ]
+            },
+            "warnings": []
+          }
+        },
+        "error": null,
+        "status": "completed"
+      }
+    },
+    {
+      "type": "item.started",
+      "item": {
+        "id": "item_4",
+        "type": "mcp_tool_call",
+        "server": "axiom",
+        "tool": "graph_query",
+        "arguments": {
+          "operation": "search",
+          "query": "RemoveFilesAsync"
+        },
+        "result": null,
+        "error": null,
+        "status": "in_progress"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_4",
+        "type": "mcp_tool_call",
+        "server": "axiom",
+        "tool": "graph_query",
+        "arguments": {
+          "operation": "search",
+          "query": "RemoveFilesAsync"
+        },
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "VALIDATION_ERROR"
+            }
+          ],
+          "structured_content": {
+            "code": "VALIDATION_ERROR",
+            "message": "solution_id is required and must be a non-empty string"
+          }
+        },
+        "error": null,
+        "status": "failed"
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_5",
+        "type": "agent_message",
+        "text": "I couldn\u2019t complete the impact analysis: Axiom requires a `solution_id`, but this session exposes no project binding, and policy blocked reading the workspace and axge references.\n\nAxiom MCP version `0.1.7` is available, but no graph results were retrieved. Callers, affected code, freshness, and coverage remain unverified. No source was changed.\n\nPlease provide the project\u2019s Axiom `solution_id` so I can analyze removing `RemoveFilesAsync`."
+      }
+    },
+    {
+      "type": "turn.completed",
+      "usage": {
+        "input_tokens": 188620,
+        "cached_input_tokens": 158976,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 524,
+        "reasoning_output_tokens": 47
+      }
+    }
+  ],
+  "stderr": "Reading additional input from stdin...\n2026-10-14T08:43:34.098707Z ERROR codex_core::tools::router: error=exec_command failed: CreateProcess { message: \"Rejected(\\\"`\\\\\\\"<host-path>\" -Command \\\\\\\"Get-Content .agents/skills/axge/references/impact.md; Get-Content .agents/skills/axge/references/mcp-routing.md; rg --files -g AGENTS.md -g '*policy*' -g '*axiom*'\\\\\\\"` rejected: blocked by policy\\\")\" }\n2026-10-14T08:43:49.527782Z ERROR codex_core::tools::router: error=exec_command failed: CreateProcess { message: \"Rejected(\\\"`\\\\\\\"<host-path>\" -Command \\\\\\\"Get-Content -LiteralPath '.agents/skills/axge/references/impact.md'\\\\\\\"` rejected: blocked by policy\\\")\" }\n",
+  "plugin_namespace": "not_run",
+  "desktop_ui": "not_run",
+  "status": "blocked-by-native-host-read-policy",
+  "limitations": "Initial native evaluation could not read local references/registration; missing-scope query was rejected. Retained as boundary evidence, not a successful graph analysis."
+}

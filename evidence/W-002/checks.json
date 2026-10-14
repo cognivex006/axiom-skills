@@ -1,0 +1,34 @@
+[
+  {
+    "id": "pytest",
+    "command": "python -m pytest tests -q",
+    "exit_code": 0,
+    "artifact": {
+      "path": "evidence/W-002/pytest.txt"
+    }
+  },
+  {
+    "id": "manifest",
+    "command": "python release/verify_manifest.py",
+    "exit_code": 0,
+    "artifact": {
+      "path": "evidence/W-002/manifest.txt"
+    }
+  },
+  {
+    "id": "parity",
+    "command": "python release/build_plugin_bundle.py",
+    "exit_code": 0,
+    "artifact": {
+      "path": "evidence/W-002/parity.txt"
+    }
+  },
+  {
+    "id": "pin-metadata",
+    "command": "python release/verify_spec_pin.py",
+    "exit_code": 0,
+    "artifact": {
+      "path": "evidence/W-002/pin-metadata.txt"
+    }
+  }
+]

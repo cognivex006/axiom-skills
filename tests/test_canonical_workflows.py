@@ -29,6 +29,11 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def read(relative: str) -> str:
+
+    if relative.startswith("skills/") and relative.endswith("/SKILL.md"):
+        relative = "tests/fixtures/legacy-skills/" + relative.removeprefix("skills/")
+    if relative == "plugins/axiom/skills/axm/SKILL.md":
+        relative = "tests/fixtures/legacy-skills/axm/SKILL.md"
     return (ROOT / relative).read_text(encoding="utf-8")
 
 
@@ -1401,11 +1406,11 @@ class SkillsManifestTests(unittest.TestCase):
     def test_manifest_declares_the_provisioning_skills(self):
         manifest = self.manifest()
         paths = {entry["path"] for entry in manifest["files"]}
-        self.assertIn("skills/graph-install/SKILL.md", paths)
+        self.assertIn("skills/axge/SKILL.md", paths)
         self.assertIn("skills/axm/SKILL.md", paths)
 
     def test_negative_manifest_with_an_undeclared_file_is_rejected(self):
-        root, manifest = self.stage_bundle(extra="skills/graph-context/EXTRA.md")
+        root, manifest = self.stage_bundle(extra="skills/axge/EXTRA.md")
         problems = SkillsManifestChecks.check(manifest, root)
         self.assertTrue(any("unknown file inside a declared scope" in p for p in problems), problems)
         module = load_reference_verifier()

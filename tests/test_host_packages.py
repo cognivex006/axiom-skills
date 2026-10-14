@@ -25,7 +25,7 @@ def test_every_archive_is_standalone_and_exact(tmp_path):
         with zipfile.ZipFile(archive) as z:
             z.extractall(tmp_path/host)
             assert markers[host] in z.namelist()
-            assert len([n for n in z.namelist() if n.endswith('/SKILL.md')]) == 10
+            assert len([n for n in z.namelist() if n.endswith('/SKILL.md')]) == 2
             for name, digest in row['files'].items():
                 assert hashlib.sha256((tmp_path/host/name).read_bytes()).hexdigest() == digest
             for skill in (ROOT/'skills').glob('*/SKILL.md'):
@@ -44,12 +44,37 @@ def test_existing_output_and_moving_revision_are_refused(tmp_path):
     assert not (tmp_path/'new').exists()
 
 
+def test_legacy_aliases_require_explicit_package_and_retain_current_references(tmp_path):
+    default = build(ROOT, tmp_path / 'default', SOURCE)
+    legacy = build(ROOT, tmp_path / 'legacy', SOURCE, legacy=True)
+    assert default['legacy_compatibility'] is False
+    assert legacy['legacy_compatibility'] is True
+    for host, row in legacy['hosts'].items():
+        with zipfile.ZipFile(tmp_path / 'legacy' / row['archive']) as zipped:
+            names = [n for n in zipped.namelist() if n.endswith('/SKILL.md')]
+            assert len(names) == 11
+            assert 'skills/graph-context/SKILL.md' in names
+            assert 'skills/axge/references/ask.md' in zipped.namelist()
+            assert json.loads(zipped.read('legacy-compatibility.json'))['deprecated_until'] == '0.2.0'
+        with zipfile.ZipFile(tmp_path / 'default' / default['hosts'][host]['archive']) as zipped:
+            assert 'skills/graph-context/SKILL.md' not in zipped.namelist()
+
+
+def test_mock_future_version_refuses_expired_legacy_without_output(tmp_path, monkeypatch):
+    from release import build_host_packages
+    _, packages = build_host_packages.checked_packages(ROOT)
+    monkeypatch.setattr(build_host_packages, 'checked_packages', lambda root: ('0.2.0', packages))
+    with pytest.raises(ValueError, match='expired'):
+        build(ROOT, tmp_path / 'expired', SOURCE, legacy=True)
+    assert not (tmp_path / 'expired').exists()
+
+
 @pytest.mark.parametrize('mutation',['payload','catalog','version','market-version','entrypoint'])
 def test_broken_sources_never_produce_an_archive(tmp_path,mutation):
     root=tmp_path/'source'
     shutil.copytree(ROOT,root,ignore=shutil.ignore_patterns('.git','__pycache__','.pytest_cache','evidence','.delivery'))
     if mutation=='payload':
-        p=root/'plugins/axiom-agy/skills/graph-context/SKILL.md';p.write_bytes(p.read_bytes()+b'changed')
+        p=root/'plugins/axiom-agy/skills/axge/SKILL.md';p.write_bytes(p.read_bytes()+b'changed')
     elif mutation=='catalog':
         p=root/'marketplace-plugins/catalog.json';d=json.loads(p.read_text());d['packages']['gemini']='../escape';p.write_text(json.dumps(d))
     elif mutation=='version':

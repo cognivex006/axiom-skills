@@ -2,10 +2,10 @@
   "manifest_version": 1,
   "component": "axiom-skills",
   "component_version": "0.1.7",
-  "channel": "stable",
-  "released": true,
+  "channel": "development",
+  "released": false,
   "spec_version": "2.0.0-draft.1",
-  "spec_revision": "73aec1d1ed190bcd7066574853340fe15102ebbe",
+  "spec_revision": "10b5e190695c75058fb176f35425ad01d840a4e8",
   "install_policy": {
     "declared_scope": [
       "policy",
@@ -42,87 +42,121 @@
       "bytes": 5153
     },
     {
-      "path": "skills/graph-context/SKILL.md",
+      "path": "skills/axge/references/ask.md",
       "role": "skill",
-      "sha256": "bccea783011dc1e9fc54a21cc289d20ad3c9233611fd596cfd27b5ed3aece46b",
-      "bytes": 5604
+      "sha256": "6b68e3556813d3f92ba39a412a058a18009f4744c06c162d24e6d3cb6f01b22f",
+      "bytes": 5641
     },
     {
-      "path": "skills/graph-reconcile/SKILL.md",
+      "path": "skills/axge/references/build.md",
       "role": "skill",
-      "sha256": "9d6d2ed03daef01acabe87e1ef848a221d4a722653b441dc814113f97dae370e",
-      "bytes": 4181
+      "sha256": "2facc02bb65223414328f0f78a2a9c010c15d7e440fc16bea8248cf17e775eac",
+      "bytes": 4601
     },
     {
-      "path": "skills/graph-impact/SKILL.md",
+      "path": "skills/axge/references/doctor.md",
       "role": "skill",
-      "sha256": "0bf6abc413d257a710a7dc43b254cb60aca8c2135d08ca7526f097bdf93c1127",
-      "bytes": 4914
+      "sha256": "7afed1f80c63e8636e3cce66bce456daca05a3a4024fe3171aba1a4a817b8e5f",
+      "bytes": 5542
     },
     {
-      "path": "skills/graph-checkpoint/SKILL.md",
+      "path": "skills/axge/references/export.md",
       "role": "skill",
-      "sha256": "acc44509ade81953cc4ac92028bf0722ba85366333cf104aa1a74edd618abb0f",
-      "bytes": 5821
+      "sha256": "744a7bc234e78a7ee3a86973adc808f31858676d81beed880261fa2c47276ae3",
+      "bytes": 2585
     },
     {
-      "path": "skills/graph-doctor/SKILL.md",
+      "path": "skills/axge/references/freshness.md",
       "role": "skill",
-      "sha256": "34a2d9c0dc05671b59e3f3b25d26cbe5d7a267da0e1aaee2d979d73df79cc4c4",
-      "bytes": 5558
+      "sha256": "87a4304fbb53c5790f0d5bc750884c17338a099873286d791c2b2078b237feac",
+      "bytes": 3964
     },
     {
-      "path": "skills/graph-update/SKILL.md",
+      "path": "skills/axge/references/graph-quality.md",
       "role": "skill",
-      "sha256": "45e0711eaf1f6d2935178da8a6d4e8975d111a0fe77797208b2bcda81de99072",
-      "bytes": 5540
+      "sha256": "540de669728576bd60fe0bab8641d7bd2adbe19d0dc0466d88aecfd01af3294f",
+      "bytes": 1364
     },
     {
-      "path": "skills/graph-install/SKILL.md",
+      "path": "skills/axge/references/impact.md",
       "role": "skill",
-      "sha256": "e438ce2c23f3d7e573eb9ab79c4ae2353969af5248b1a7b971ee7b448566fb74",
-      "bytes": 10284
+      "sha256": "1800205242a83246db592eb40e152ba9276e8d5721785611f1a278e3f40b55cd",
+      "bytes": 4908
+    },
+    {
+      "path": "skills/axge/references/mcp-routing.md",
+      "role": "skill",
+      "sha256": "07be9b2095ce99138ffbe9ada959f7d4f21d64b895b6a18e28352e3ab0e7dca2",
+      "bytes": 1344
+    },
+    {
+      "path": "skills/axge/references/runtime-capabilities.md",
+      "role": "skill",
+      "sha256": "fb5311705ca93b20d1443c16eb4697b49e5de6778629c9f078bb732baeb40ef8",
+      "bytes": 2288
+    },
+    {
+      "path": "skills/axge/references/version.md",
+      "role": "skill",
+      "sha256": "0e6430e3991d614d65789c0a05079cc6c9118c4fa31765c21f73eccabf6e155c",
+      "bytes": 587
+    },
+    {
+      "path": "skills/axge/references/watch.md",
+      "role": "skill",
+      "sha256": "669fba461111c39341489dacb03a612d65a4bb51834aef3ab758c65fa0410d36",
+      "bytes": 5230
+    },
+    {
+      "path": "skills/axge/scripts/select_workflow.py",
+      "role": "skill",
+      "sha256": "74d2b17f503f6cba3c5975273d34efcb4cddcd2c12903ca31d355f06a4b68b01",
+      "bytes": 3271,
+      "capabilities": [
+        "read",
+        "execute"
+      ]
+    },
+    {
+      "path": "skills/axge/SKILL.md",
+      "role": "skill",
+      "sha256": "3f01dcce67e26eca1f5d515a934c341fcd55040850ac284a8071532ba552fb17",
+      "bytes": 3984
+    },
+    {
+      "path": "skills/axm/references/installation.md",
+      "role": "skill",
+      "sha256": "6fefbd74d9c38f6a0b73be1ff0fa6d84abbd27064d9695abcd9ea034d62d0605",
+      "bytes": 1617
+    },
+    {
+      "path": "skills/axm/references/upgrade.md",
+      "role": "skill",
+      "sha256": "45d20c43039e2bdc4847c8006a0a64dd56d5d8c8cc00e0a1b470de0704d0420d",
+      "bytes": 1326
     },
     {
       "path": "skills/axm/SKILL.md",
       "role": "skill",
-      "sha256": "187234fafb52a6af403d2fc4e64d7050f0de6a40f3515b77ed4ff879a02ce187",
-      "bytes": 18213
+      "sha256": "2341e8c3bfa9b53100217e0392c1caede876cdc52e16cd7a1b8426f69e06d845",
+      "bytes": 1871
     },
     {
-      "path": "adapters/codex/instructions.md",
-      "role": "host-adapter",
-      "sha256": "f177624b7d54e60348fef831d9324ee7dabaeb26a8a18d95d2d2d2cab143572e",
-      "bytes": 4533
-    },
-    {
-      "path": "adapters/claude/instructions.md",
-      "role": "host-adapter",
-      "sha256": "3d04fbdaac100329fcf05a6caaf6be980894e27081ac41ed494a2ad2e3c4348f",
-      "bytes": 5530
-    },
-    {
-      "path": "adapters/gemini/instructions.md",
-      "role": "host-adapter",
-      "sha256": "a1dc0353bb2293e7f47f50daa346c67ae51bef96b6c2eb47c221c0b134a40353",
-      "bytes": 5027
-    },
-    {
-      "path": "adapters/antigravity/instructions.md",
-      "role": "host-adapter",
-      "sha256": "85d0076088fac66675dbc1274e236eee409ba4b75f505e32b81aac32e6a70bed",
-      "bytes": 5210
-    },
-    {
-      "path": "adapters/codex/hooks/graph_stop.py",
+      "path": "adapters/antigravity/hooks/graph_stop.py",
       "role": "host-hook",
       "capabilities": [
         "read",
         "write",
         "execute"
       ],
-      "sha256": "bc5e62750c96ee14c59c4c90fe21f73fdb68930c8b017d6021a41f58912e94ed",
-      "bytes": 11558
+      "sha256": "e93e80ff4ea1ecfc57e84151f6d7a668b2d4568462b4852abcee71d3c482bf2b",
+      "bytes": 12919
+    },
+    {
+      "path": "adapters/antigravity/instructions.md",
+      "role": "host-adapter",
+      "sha256": "85d0076088fac66675dbc1274e236eee409ba4b75f505e32b81aac32e6a70bed",
+      "bytes": 5210
     },
     {
       "path": "adapters/claude/hooks/graph_stop.py",
@@ -147,26 +181,39 @@
       "bytes": 12218
     },
     {
-      "path": "adapters/gemini/hooks/graph_after_agent.py",
-      "role": "host-hook",
-      "capabilities": [
-        "read",
-        "write",
-        "execute"
-      ],
-      "sha256": "24473d21399a3d4e7bd0512fc358df927527e65e68eb87bb4e35a9580162e9c1",
-      "bytes": 12850
+      "path": "adapters/claude/instructions.md",
+      "role": "host-adapter",
+      "sha256": "3d04fbdaac100329fcf05a6caaf6be980894e27081ac41ed494a2ad2e3c4348f",
+      "bytes": 5530
     },
     {
-      "path": "adapters/antigravity/hooks/graph_stop.py",
+      "path": "adapters/codex/hooks/graph_stop.py",
       "role": "host-hook",
       "capabilities": [
         "read",
         "write",
         "execute"
       ],
-      "sha256": "e93e80ff4ea1ecfc57e84151f6d7a668b2d4568462b4852abcee71d3c482bf2b",
-      "bytes": 12919
+      "sha256": "bc5e62750c96ee14c59c4c90fe21f73fdb68930c8b017d6021a41f58912e94ed",
+      "bytes": 11558
+    },
+    {
+      "path": "adapters/codex/instructions.md",
+      "role": "host-adapter",
+      "sha256": "f177624b7d54e60348fef831d9324ee7dabaeb26a8a18d95d2d2d2cab143572e",
+      "bytes": 4533
+    },
+    {
+      "path": "adapters/common/cancellation.md",
+      "role": "host-hook-contract",
+      "sha256": "596ae4dd9acccd4eee8d65623e40f3bceeb811c0ccf624be47a6d6308ca4c613",
+      "bytes": 4680
+    },
+    {
+      "path": "adapters/common/degraded_policy.json",
+      "role": "host-hook-policy",
+      "sha256": "92125d9958f7b12ba84072e716d4b307c2124370cb3ba892773e6c0d55472a0a",
+      "bytes": 2326
     },
     {
       "path": "adapters/common/hook_runtime.py",
@@ -178,22 +225,27 @@
       "bytes": 8877
     },
     {
-      "path": "adapters/common/degraded_policy.json",
-      "role": "host-hook-policy",
-      "sha256": "92125d9958f7b12ba84072e716d4b307c2124370cb3ba892773e6c0d55472a0a",
-      "bytes": 2326
-    },
-    {
-      "path": "adapters/common/cancellation.md",
-      "role": "host-hook-contract",
-      "sha256": "596ae4dd9acccd4eee8d65623e40f3bceeb811c0ccf624be47a6d6308ca4c613",
-      "bytes": 4680
-    },
-    {
       "path": "adapters/compatibility.json",
       "role": "host-adapter-compatibility",
       "sha256": "d0a4e0a2d1d4d79f432b29e68768bc3b85d47edb21dfecd8e60eaba82e47e92e",
       "bytes": 12778
+    },
+    {
+      "path": "adapters/gemini/hooks/graph_after_agent.py",
+      "role": "host-hook",
+      "capabilities": [
+        "read",
+        "write",
+        "execute"
+      ],
+      "sha256": "24473d21399a3d4e7bd0512fc358df927527e65e68eb87bb4e35a9580162e9c1",
+      "bytes": 12850
+    },
+    {
+      "path": "adapters/gemini/instructions.md",
+      "role": "host-adapter",
+      "sha256": "a1dc0353bb2293e7f47f50daa346c67ae51bef96b6c2eb47c221c0b134a40353",
+      "bytes": 5027
     },
     {
       "path": "plugins/axiom/.claude-plugin/plugin.json",
@@ -208,22 +260,16 @@
       "bytes": 793
     },
     {
-      "path": "plugins/axiom/GEMINI.md",
-      "role": "plugin-package",
-      "sha256": "c387f1a23bc4dfeb25dedb3ab6d4903b01ad16a7db7a31b7da027a93fe4ca953",
-      "bytes": 369
-    },
-    {
-      "path": "plugins/axiom/README.md",
-      "role": "plugin-package",
-      "sha256": "5ff8fbe2de3d5706055deedea7b28b8dba455ec09f24fb45e1f49a7d2726b8df",
-      "bytes": 1060
-    },
-    {
       "path": "plugins/axiom/gemini-extension.json",
       "role": "plugin-package",
       "sha256": "d16a4b9166155ccd363027627f70cc8bee6026dd7b40227c0bb9a594d60c953e",
       "bytes": 156
+    },
+    {
+      "path": "plugins/axiom/GEMINI.md",
+      "role": "plugin-package",
+      "sha256": "c387f1a23bc4dfeb25dedb3ab6d4903b01ad16a7db7a31b7da027a93fe4ca953",
+      "bytes": 369
     },
     {
       "path": "plugins/axiom/plugin.json",
@@ -238,52 +284,228 @@
       "bytes": 5153
     },
     {
+      "path": "plugins/axiom/README.md",
+      "role": "plugin-package",
+      "sha256": "6dd2d8787c3a5c10ec00c6e398d99e416d092a1501a568976b3f212a7ddba069",
+      "bytes": 1049
+    },
+    {
+      "path": "plugins/axiom/skills/axge/references/ask.md",
+      "role": "plugin-package",
+      "sha256": "6b68e3556813d3f92ba39a412a058a18009f4744c06c162d24e6d3cb6f01b22f",
+      "bytes": 5641
+    },
+    {
+      "path": "plugins/axiom/skills/axge/references/build.md",
+      "role": "plugin-package",
+      "sha256": "2facc02bb65223414328f0f78a2a9c010c15d7e440fc16bea8248cf17e775eac",
+      "bytes": 4601
+    },
+    {
+      "path": "plugins/axiom/skills/axge/references/doctor.md",
+      "role": "plugin-package",
+      "sha256": "7afed1f80c63e8636e3cce66bce456daca05a3a4024fe3171aba1a4a817b8e5f",
+      "bytes": 5542
+    },
+    {
+      "path": "plugins/axiom/skills/axge/references/export.md",
+      "role": "plugin-package",
+      "sha256": "744a7bc234e78a7ee3a86973adc808f31858676d81beed880261fa2c47276ae3",
+      "bytes": 2585
+    },
+    {
+      "path": "plugins/axiom/skills/axge/references/freshness.md",
+      "role": "plugin-package",
+      "sha256": "87a4304fbb53c5790f0d5bc750884c17338a099873286d791c2b2078b237feac",
+      "bytes": 3964
+    },
+    {
+      "path": "plugins/axiom/skills/axge/references/graph-quality.md",
+      "role": "plugin-package",
+      "sha256": "540de669728576bd60fe0bab8641d7bd2adbe19d0dc0466d88aecfd01af3294f",
+      "bytes": 1364
+    },
+    {
+      "path": "plugins/axiom/skills/axge/references/impact.md",
+      "role": "plugin-package",
+      "sha256": "1800205242a83246db592eb40e152ba9276e8d5721785611f1a278e3f40b55cd",
+      "bytes": 4908
+    },
+    {
+      "path": "plugins/axiom/skills/axge/references/mcp-routing.md",
+      "role": "plugin-package",
+      "sha256": "07be9b2095ce99138ffbe9ada959f7d4f21d64b895b6a18e28352e3ab0e7dca2",
+      "bytes": 1344
+    },
+    {
+      "path": "plugins/axiom/skills/axge/references/runtime-capabilities.md",
+      "role": "plugin-package",
+      "sha256": "fb5311705ca93b20d1443c16eb4697b49e5de6778629c9f078bb732baeb40ef8",
+      "bytes": 2288
+    },
+    {
+      "path": "plugins/axiom/skills/axge/references/version.md",
+      "role": "plugin-package",
+      "sha256": "0e6430e3991d614d65789c0a05079cc6c9118c4fa31765c21f73eccabf6e155c",
+      "bytes": 587
+    },
+    {
+      "path": "plugins/axiom/skills/axge/references/watch.md",
+      "role": "plugin-package",
+      "sha256": "669fba461111c39341489dacb03a612d65a4bb51834aef3ab758c65fa0410d36",
+      "bytes": 5230
+    },
+    {
+      "path": "plugins/axiom/skills/axge/scripts/select_workflow.py",
+      "role": "plugin-package",
+      "sha256": "74d2b17f503f6cba3c5975273d34efcb4cddcd2c12903ca31d355f06a4b68b01",
+      "bytes": 3271,
+      "capabilities": [
+        "read",
+        "execute"
+      ]
+    },
+    {
+      "path": "plugins/axiom/skills/axge/SKILL.md",
+      "role": "plugin-package",
+      "sha256": "3f01dcce67e26eca1f5d515a934c341fcd55040850ac284a8071532ba552fb17",
+      "bytes": 3984
+    },
+    {
+      "path": "plugins/axiom/skills/axm/references/installation.md",
+      "role": "plugin-package",
+      "sha256": "6fefbd74d9c38f6a0b73be1ff0fa6d84abbd27064d9695abcd9ea034d62d0605",
+      "bytes": 1617
+    },
+    {
+      "path": "plugins/axiom/skills/axm/references/upgrade.md",
+      "role": "plugin-package",
+      "sha256": "45d20c43039e2bdc4847c8006a0a64dd56d5d8c8cc00e0a1b470de0704d0420d",
+      "bytes": 1326
+    },
+    {
       "path": "plugins/axiom/skills/axm/SKILL.md",
       "role": "plugin-package",
-      "sha256": "187234fafb52a6af403d2fc4e64d7050f0de6a40f3515b77ed4ff879a02ce187",
-      "bytes": 18213
+      "sha256": "2341e8c3bfa9b53100217e0392c1caede876cdc52e16cd7a1b8426f69e06d845",
+      "bytes": 1871
     },
     {
-      "path": "plugins/axiom/skills/graph-checkpoint/SKILL.md",
+      "path": "plugins/axiom-agy/plugin.json",
       "role": "plugin-package",
-      "sha256": "acc44509ade81953cc4ac92028bf0722ba85366333cf104aa1a74edd618abb0f",
-      "bytes": 5821
+      "sha256": "da4aca6feb231965ff2fcfe9d0f56f6a22767c5e702287394ae5d3a0d0c7219a",
+      "bytes": 166
     },
     {
-      "path": "plugins/axiom/skills/graph-context/SKILL.md",
+      "path": "plugins/axiom-agy/policy/POLICY.md",
       "role": "plugin-package",
-      "sha256": "bccea783011dc1e9fc54a21cc289d20ad3c9233611fd596cfd27b5ed3aece46b",
-      "bytes": 5604
+      "sha256": "96713d17e1e82dac2636dec746ed9ce5b57efd097e714ea119e59c061306133f",
+      "bytes": 5153
     },
     {
-      "path": "plugins/axiom/skills/graph-doctor/SKILL.md",
+      "path": "plugins/axiom-agy/README.md",
       "role": "plugin-package",
-      "sha256": "34a2d9c0dc05671b59e3f3b25d26cbe5d7a267da0e1aaee2d979d73df79cc4c4",
-      "bytes": 5558
+      "sha256": "1f71b9ffaf48b2dd194473d889cbeceff3a863bebdf51693dfdfc3432fe1d13b",
+      "bytes": 554
     },
     {
-      "path": "plugins/axiom/skills/graph-impact/SKILL.md",
+      "path": "plugins/axiom-agy/skills/axge/references/ask.md",
       "role": "plugin-package",
-      "sha256": "0bf6abc413d257a710a7dc43b254cb60aca8c2135d08ca7526f097bdf93c1127",
-      "bytes": 4914
+      "sha256": "6b68e3556813d3f92ba39a412a058a18009f4744c06c162d24e6d3cb6f01b22f",
+      "bytes": 5641
     },
     {
-      "path": "plugins/axiom/skills/graph-install/SKILL.md",
+      "path": "plugins/axiom-agy/skills/axge/references/build.md",
       "role": "plugin-package",
-      "sha256": "e438ce2c23f3d7e573eb9ab79c4ae2353969af5248b1a7b971ee7b448566fb74",
-      "bytes": 10284
+      "sha256": "2facc02bb65223414328f0f78a2a9c010c15d7e440fc16bea8248cf17e775eac",
+      "bytes": 4601
     },
     {
-      "path": "plugins/axiom/skills/graph-reconcile/SKILL.md",
+      "path": "plugins/axiom-agy/skills/axge/references/doctor.md",
       "role": "plugin-package",
-      "sha256": "9d6d2ed03daef01acabe87e1ef848a221d4a722653b441dc814113f97dae370e",
-      "bytes": 4181
+      "sha256": "7afed1f80c63e8636e3cce66bce456daca05a3a4024fe3171aba1a4a817b8e5f",
+      "bytes": 5542
     },
     {
-      "path": "plugins/axiom/skills/graph-update/SKILL.md",
+      "path": "plugins/axiom-agy/skills/axge/references/export.md",
       "role": "plugin-package",
-      "sha256": "45e0711eaf1f6d2935178da8a6d4e8975d111a0fe77797208b2bcda81de99072",
-      "bytes": 5540
+      "sha256": "744a7bc234e78a7ee3a86973adc808f31858676d81beed880261fa2c47276ae3",
+      "bytes": 2585
+    },
+    {
+      "path": "plugins/axiom-agy/skills/axge/references/freshness.md",
+      "role": "plugin-package",
+      "sha256": "87a4304fbb53c5790f0d5bc750884c17338a099873286d791c2b2078b237feac",
+      "bytes": 3964
+    },
+    {
+      "path": "plugins/axiom-agy/skills/axge/references/graph-quality.md",
+      "role": "plugin-package",
+      "sha256": "540de669728576bd60fe0bab8641d7bd2adbe19d0dc0466d88aecfd01af3294f",
+      "bytes": 1364
+    },
+    {
+      "path": "plugins/axiom-agy/skills/axge/references/impact.md",
+      "role": "plugin-package",
+      "sha256": "1800205242a83246db592eb40e152ba9276e8d5721785611f1a278e3f40b55cd",
+      "bytes": 4908
+    },
+    {
+      "path": "plugins/axiom-agy/skills/axge/references/mcp-routing.md",
+      "role": "plugin-package",
+      "sha256": "07be9b2095ce99138ffbe9ada959f7d4f21d64b895b6a18e28352e3ab0e7dca2",
+      "bytes": 1344
+    },
+    {
+      "path": "plugins/axiom-agy/skills/axge/references/runtime-capabilities.md",
+      "role": "plugin-package",
+      "sha256": "fb5311705ca93b20d1443c16eb4697b49e5de6778629c9f078bb732baeb40ef8",
+      "bytes": 2288
+    },
+    {
+      "path": "plugins/axiom-agy/skills/axge/references/version.md",
+      "role": "plugin-package",
+      "sha256": "0e6430e3991d614d65789c0a05079cc6c9118c4fa31765c21f73eccabf6e155c",
+      "bytes": 587
+    },
+    {
+      "path": "plugins/axiom-agy/skills/axge/references/watch.md",
+      "role": "plugin-package",
+      "sha256": "669fba461111c39341489dacb03a612d65a4bb51834aef3ab758c65fa0410d36",
+      "bytes": 5230
+    },
+    {
+      "path": "plugins/axiom-agy/skills/axge/scripts/select_workflow.py",
+      "role": "plugin-package",
+      "sha256": "74d2b17f503f6cba3c5975273d34efcb4cddcd2c12903ca31d355f06a4b68b01",
+      "bytes": 3271,
+      "capabilities": [
+        "read",
+        "execute"
+      ]
+    },
+    {
+      "path": "plugins/axiom-agy/skills/axge/SKILL.md",
+      "role": "plugin-package",
+      "sha256": "3f01dcce67e26eca1f5d515a934c341fcd55040850ac284a8071532ba552fb17",
+      "bytes": 3984
+    },
+    {
+      "path": "plugins/axiom-agy/skills/axm/references/installation.md",
+      "role": "plugin-package",
+      "sha256": "6fefbd74d9c38f6a0b73be1ff0fa6d84abbd27064d9695abcd9ea034d62d0605",
+      "bytes": 1617
+    },
+    {
+      "path": "plugins/axiom-agy/skills/axm/references/upgrade.md",
+      "role": "plugin-package",
+      "sha256": "45d20c43039e2bdc4847c8006a0a64dd56d5d8c8cc00e0a1b470de0704d0420d",
+      "bytes": 1326
+    },
+    {
+      "path": "plugins/axiom-agy/skills/axm/SKILL.md",
+      "role": "plugin-package",
+      "sha256": "2341e8c3bfa9b53100217e0392c1caede876cdc52e16cd7a1b8426f69e06d845",
+      "bytes": 1871
     },
     {
       "path": ".agents/plugins/marketplace.json",
@@ -298,16 +520,16 @@
       "bytes": 340
     },
     {
-      "path": "marketplace-plugins/README.md",
-      "role": "plugin-marketplace",
-      "sha256": "6b84911f3e192442f09c7789914b33f08f4dd37f14b5156bd7e59042ff212ae5",
-      "bytes": 5623
-    },
-    {
       "path": "marketplace-plugins/catalog.json",
       "role": "plugin-marketplace",
       "sha256": "ce07de4dc85d381bb3f4fde565d4007f33906278bb3f8d5d8bc53874ee6506ba",
       "bytes": 722
+    },
+    {
+      "path": "marketplace-plugins/README.md",
+      "role": "plugin-marketplace",
+      "sha256": "0f0341258fbd21a1a6ceff138b54da3a9626ab00380903d665a33661bda9259a",
+      "bytes": 5608
     },
     {
       "path": "templates/bootstrap/AGENTS.block.md",
@@ -328,112 +550,10 @@
       "bytes": 2398
     },
     {
-      "path": "plugins/axiom-agy/README.md",
-      "role": "plugin-package",
-      "sha256": "cf68be72819f0f76d4172c718b81d97f679c0f73d343954abf02859136a648cb",
-      "bytes": 563
-    },
-    {
-      "path": "plugins/axiom-agy/plugin.json",
-      "role": "plugin-package",
-      "sha256": "da4aca6feb231965ff2fcfe9d0f56f6a22767c5e702287394ae5d3a0d0c7219a",
-      "bytes": 166
-    },
-    {
-      "path": "plugins/axiom-agy/policy/POLICY.md",
-      "role": "plugin-package",
-      "sha256": "96713d17e1e82dac2636dec746ed9ce5b57efd097e714ea119e59c061306133f",
-      "bytes": 5153
-    },
-    {
-      "path": "plugins/axiom-agy/skills/axm/SKILL.md",
-      "role": "plugin-package",
-      "sha256": "187234fafb52a6af403d2fc4e64d7050f0de6a40f3515b77ed4ff879a02ce187",
-      "bytes": 18213
-    },
-    {
-      "path": "plugins/axiom-agy/skills/graph-checkpoint/SKILL.md",
-      "role": "plugin-package",
-      "sha256": "acc44509ade81953cc4ac92028bf0722ba85366333cf104aa1a74edd618abb0f",
-      "bytes": 5821
-    },
-    {
-      "path": "plugins/axiom-agy/skills/graph-context/SKILL.md",
-      "role": "plugin-package",
-      "sha256": "bccea783011dc1e9fc54a21cc289d20ad3c9233611fd596cfd27b5ed3aece46b",
-      "bytes": 5604
-    },
-    {
-      "path": "plugins/axiom-agy/skills/graph-doctor/SKILL.md",
-      "role": "plugin-package",
-      "sha256": "34a2d9c0dc05671b59e3f3b25d26cbe5d7a267da0e1aaee2d979d73df79cc4c4",
-      "bytes": 5558
-    },
-    {
-      "path": "plugins/axiom-agy/skills/graph-impact/SKILL.md",
-      "role": "plugin-package",
-      "sha256": "0bf6abc413d257a710a7dc43b254cb60aca8c2135d08ca7526f097bdf93c1127",
-      "bytes": 4914
-    },
-    {
-      "path": "plugins/axiom-agy/skills/graph-install/SKILL.md",
-      "role": "plugin-package",
-      "sha256": "e438ce2c23f3d7e573eb9ab79c4ae2353969af5248b1a7b971ee7b448566fb74",
-      "bytes": 10284
-    },
-    {
-      "path": "plugins/axiom-agy/skills/graph-reconcile/SKILL.md",
-      "role": "plugin-package",
-      "sha256": "9d6d2ed03daef01acabe87e1ef848a221d4a722653b441dc814113f97dae370e",
-      "bytes": 4181
-    },
-    {
-      "path": "plugins/axiom-agy/skills/graph-update/SKILL.md",
-      "role": "plugin-package",
-      "sha256": "45e0711eaf1f6d2935178da8a6d4e8975d111a0fe77797208b2bcda81de99072",
-      "bytes": 5540
-    },
-    {
       "path": ".github/plugin/marketplace.json",
       "role": "plugin-marketplace",
       "sha256": "55522f57a4381e075c39ca9ceca60032987b59b007b2ad686089054403f66d3b",
       "bytes": 366
-    },
-    {
-      "path": "skills/graph-build/SKILL.md",
-      "role": "skill",
-      "sha256": "dcdf03e65e31f525bff879a834fa83268cf9f62dfd1b00b07f18cb216229a330",
-      "bytes": 4187
-    },
-    {
-      "path": "plugins/axiom/skills/graph-build/SKILL.md",
-      "role": "plugin-package",
-      "sha256": "dcdf03e65e31f525bff879a834fa83268cf9f62dfd1b00b07f18cb216229a330",
-      "bytes": 4187
-    },
-    {
-      "path": "plugins/axiom-agy/skills/graph-build/SKILL.md",
-      "role": "plugin-package",
-      "sha256": "dcdf03e65e31f525bff879a834fa83268cf9f62dfd1b00b07f18cb216229a330",
-      "bytes": 4187
-    },
-    {
-      "path": "skills/graph-watch/SKILL.md",
-      "role": "skill",
-      "sha256": "d768a32083980193794a63c2c7054e0f5eaef9833c40e3e337af4daa88544cea",
-      "bytes": 4637
-    },
-    {
-      "path": "plugins/axiom/skills/graph-watch/SKILL.md",
-      "role": "plugin-package",
-      "sha256": "d768a32083980193794a63c2c7054e0f5eaef9833c40e3e337af4daa88544cea",
-      "bytes": 4637
-    },
-    {
-      "path": "plugins/axiom-agy/skills/graph-watch/SKILL.md",
-      "role": "plugin-package",
-      "sha256": "d768a32083980193794a63c2c7054e0f5eaef9833c40e3e337af4daa88544cea",
-      "bytes": 4637
     }
   ]
 }

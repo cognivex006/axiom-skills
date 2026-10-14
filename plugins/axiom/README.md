@@ -12,6 +12,6 @@ codex plugin list --marketplace axiom-skills
 
 The package root contains `.agents/plugins/marketplace.json` and this `plugins/axiom` directory. Open a new session after installation; restart the desktop app if new skills do not appear.
 
-Choose `graph-context` to find relevant code, `graph-impact` before editing, or `graph-doctor` to diagnose an unavailable graph. Graph operations need the Axiom runtime and a configured MCP connection. This plugin does not start a server or change host permissions.
+Choose `axge` to find relevant code, `axge impact` before editing, or `axge doctor` to diagnose an unavailable graph. Graph operations need the Axiom runtime and a configured MCP connection. This plugin does not start a server or change host permissions.
 
 [Installation guide](https://github.com/orchex006/axiom-skills/blob/main/marketplace-plugins/README.md) · [Getting started](https://github.com/orchex006/axiom-skills/blob/main/docs/GETTING-STARTED.md)

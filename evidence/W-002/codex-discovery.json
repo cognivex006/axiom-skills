@@ -1,0 +1,16 @@
+{
+  "codex_version": "codex-cli 0.162.1",
+  "platform": "Windows",
+  "machine": "AMD64",
+  "method": "native skills/list",
+  "discovery_scope": "isolated-project",
+  "plugin_namespace": "not_run",
+  "skills": {
+    "axge": "3f01dcce67e26eca1f5d515a934c341fcd55040850ac284a8071532ba552fb17",
+    "axm": "2341e8c3bfa9b53100217e0392c1caede876cdc52e16cd7a1b8426f69e06d845"
+  },
+  "enabled": true,
+  "model_turn_started": false,
+  "desktop_ui": "not_run",
+  "graph_mcp_execution": "not_run"
+}
