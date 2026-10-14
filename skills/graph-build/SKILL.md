@@ -5,7 +5,7 @@ description: Create the first Axiom code graph for a selected solution using the
 
 # Build a code graph
 
-The skill teaches the assistant how to coordinate `axiom-graphd`; the engine performs inventory, parsing, dependency analysis and graph publication. It cannot build a graph without the installed engine and a supported analyzer. MCP exposes graph tools to the assistant; it does not replace the engine.
+The skill teaches the assistant how to coordinate `axge`; the engine performs inventory, parsing, dependency analysis and graph publication. It cannot build a graph without the installed engine and a supported analyzer. MCP exposes graph tools to the assistant; it does not replace the engine.
 
 ## Resolve the target
 

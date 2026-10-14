@@ -402,20 +402,20 @@
     {
       "path": "skills/graph-build/SKILL.md",
       "role": "skill",
-      "sha256": "cce88f4428503e51ba4001e5d763c087e018a11efe7b666c95e9b86f2f4d3b45",
-      "bytes": 4195
+      "sha256": "dcdf03e65e31f525bff879a834fa83268cf9f62dfd1b00b07f18cb216229a330",
+      "bytes": 4187
     },
     {
       "path": "plugins/axiom/skills/graph-build/SKILL.md",
       "role": "plugin-package",
-      "sha256": "cce88f4428503e51ba4001e5d763c087e018a11efe7b666c95e9b86f2f4d3b45",
-      "bytes": 4195
+      "sha256": "dcdf03e65e31f525bff879a834fa83268cf9f62dfd1b00b07f18cb216229a330",
+      "bytes": 4187
     },
     {
       "path": "plugins/axiom-agy/skills/graph-build/SKILL.md",
       "role": "plugin-package",
-      "sha256": "cce88f4428503e51ba4001e5d763c087e018a11efe7b666c95e9b86f2f4d3b45",
-      "bytes": 4195
+      "sha256": "dcdf03e65e31f525bff879a834fa83268cf9f62dfd1b00b07f18cb216229a330",
+      "bytes": 4187
     },
     {
       "path": "skills/graph-watch/SKILL.md",
