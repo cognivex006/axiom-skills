@@ -20,7 +20,7 @@ Ask the assistant to use `graph-build` for the selected repository and solution.
 $axiom:graph-build Build the first graph for this solution and verify a known symbol.
 ```
 
-The skill uses actual `axiom-graphd solution register`, `reconcile` and `status` commands. A bounded CLI query can serve as a setup smoke check before MCP is configured. Normal assistant questions use MCP once it is connected. An empty graph or an unsupported language is not successful indexing.
+The skill uses actual `axge solution register`, `reconcile` and `status` commands. A bounded CLI query can serve as a setup smoke check before MCP is configured. Normal assistant questions use MCP once it is connected. An empty graph or an unsupported language is not successful indexing.
 
 See the [engine command reference](https://github.com/orchex006/axiom-graphd/blob/main/docs/reference/axiom-graphd.md) for operator commands.
 
@@ -32,7 +32,7 @@ Ask for `graph-watch` after the first graph is published:
 $axiom:graph-watch Keep this graph current when I save source files and verify one refresh.
 ```
 
-The skill checks for an existing service and reuses it. An authorized foreground session runs `axiom-graphd serve`; the daemon owns detection, dirty-scope reconciliation and publication. `serve` covers registrations in its instance, so inspect that scope before starting it. There is no per-solution `serve --solution` flag.
+The skill checks for an existing service and reuses it. An authorized foreground session runs `axge serve`; the daemon owns detection, dirty-scope reconciliation and publication. `serve` covers registrations in its instance, so inspect that scope before starting it. There is no per-solution `serve --solution` flag.
 
 The current engine polls files. A save should produce a later graph generation containing the change. Verify that within a deadline without manually reconciling between the save and observation. Pending work, ignored paths and unsupported files remain explicit. This automatic graph refresh does not restart or hot reload the application being analyzed.
 

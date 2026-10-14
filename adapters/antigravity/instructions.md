@@ -14,7 +14,7 @@ Antigravity ships as an IDE surface and a CLI surface, and the two have separate
 configuration paths and hook behaviour. Resolve them separately and never assume one
 profile's paths apply to the other.
 
-- Run `axiom host detect` and record the installed host version, the documented and tested
+- Run `axm host detect` and record the installed host version, the documented and tested
   capabilities, the template match and any warning.
 - Record the pin in the host matrix (`compatibility/host-matrix.json`) with the exact version,
   operating system, surface (`ide` or `cli`), protocol version, adapter version and feature

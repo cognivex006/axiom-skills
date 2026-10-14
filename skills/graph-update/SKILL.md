@@ -21,14 +21,14 @@ or approval behaviour, and it never replaces the host's own update consent.
 
 ## Procedure
 
-1. **Establish the installed version before you plan.** Run `axiom skills version` for the
+1. **Establish the installed version before you plan.** Run `axsk version` for the
    bundle, or `axiom --version --all` for the whole installation. Record `installed`,
    `available`, `compatible`, `channel`, `schema_range`, `update_policy`, the `source`
    origin and `needs_restart` for every component in scope. **Never report an unknown or
    offline result as up to date.** An offline check reports the last successful check time
    and the staleness of that information instead of guessing.
-2. **Check and plan, never apply in the same step.** Run `axiom skills check` and then
-   `axiom update plan` (or `axiom update check/plan` on a component CLI). The plan states the
+2. **Check and plan, never apply in the same step.** Run `axsk check` and then
+   `axm engine update plan` (or `axm engine update check/plan` on a component CLI). The plan states the
    old and new versions, the artifacts and their exact hashes, download origin, backup and
    disk requirements, schema or data migrations, service interruption and drain, host
    reconnect needs, bootstrap or managed-instruction changes, and the rollback limits. The
@@ -40,7 +40,7 @@ or approval behaviour, and it never replaces the host's own update consent.
    blanket "keep it up to date" statement is not scoped approval, and approval for one
    component is not approval for another.
 4. **Apply only a plan digest that a human approved for this exact scope.** Run
-   `axiom update apply --plan <digest>`. Apply MUST re-verify the installed state, the trust
+   `axm engine update apply --plan <digest>`. Apply MUST re-verify the installed state, the trust
    metadata and the plan digest, and MUST refuse instead of silently replanning: if anything
    has drifted, the plan is stale, so re-check, re-plan and ask for approval again.
 5. **Roll back only on evidence.** Rollback is allowed only when the current after-hash of

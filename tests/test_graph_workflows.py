@@ -13,7 +13,7 @@ def test_build_and_watch_have_distinct_discovery_and_real_engine_commands():
     assert 'reconcile --solution <solution-id> --scope full' in build
     assert 'query context --solution' in build and 'supported analyzer' in build
     assert 'name: graph-watch' in watch and 'source files change' in watch
-    assert 'axiom-graphd serve' in watch and 'axiom service status' in watch
+    assert 'axge serve' in watch and 'axm service status' in watch
     assert 'Do not call manual `reconcile`' in watch
     assert 'polling' in watch and 'bounded deadline' in watch
     assert 'Stop only a foreground process started by this skill' in watch

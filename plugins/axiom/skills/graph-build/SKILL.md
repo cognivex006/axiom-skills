@@ -11,7 +11,7 @@ The skill teaches the assistant how to coordinate `axiom-graphd`; the engine per
 
 Read repository instructions and `.axiom/agent/POLICY.md` if present. Resolve the repository roots, selected solution/project IDs, existing registration, supported source languages and the intended `AXIOM_HOME`. Keep the same instance home across daemon, operator commands and MCP. Ask for missing scope; do not infer permission to index unrelated repositories.
 
-Use `axiom-graphd version --json`, `axiom-graphd solution list --json` and `axiom-graphd status --solution <solution-id> --json`. A missing executable is a prerequisite failure, not a successful graph build. Offer the installation guide; do not silently install software.
+Use `axge version --json`, `axge solution list --json` and `axge status --solution <solution-id> --json`. A missing executable is a prerequisite failure, not a successful graph build. Offer the installation guide; do not silently install software.
 
 ## Register when needed
 
@@ -30,8 +30,8 @@ The corresponding binding uses the actual absolute repository root:
 Review the dry-run before applying registration:
 
 ```text
-axiom-graphd solution register --config <solution.json> --bindings <bindings.json> --dry-run --json
-axiom-graphd solution register --config <solution.json> --bindings <bindings.json> --apply --json
+axge solution register --config <solution.json> --bindings <bindings.json> --dry-run --json
+axge solution register --config <solution.json> --bindings <bindings.json> --apply --json
 ```
 
 Apply only within the user's authorized setup scope. Preserve existing registration and human files. Do not alter source files, project manifests or ignore rules to make indexing appear successful.
@@ -41,9 +41,9 @@ Apply only within the user's authorized setup scope. Preserve existing registrat
 The initial build, or an explicitly requested full rebuild, uses:
 
 ```text
-axiom-graphd reconcile --solution <solution-id> --scope full --json
-axiom-graphd status --solution <solution-id> --json
-axiom-graphd query context --solution <solution-id> --symbol <known-symbol> --max-nodes 20 --max-bytes 8192 --json
+axge reconcile --solution <solution-id> --scope full --json
+axge status --solution <solution-id> --json
+axge query context --solution <solution-id> --symbol <known-symbol> --max-nodes 20 --max-bytes 8192 --json
 ```
 
 The CLI query above is a bounded setup smoke check when MCP is not yet connected. Once MCP is available, verify through its discovered `graph_status` and `graph_query` tools instead. Answer the user's code questions through MCP using `graph-context`; do not use CLI queries as the assistant's normal graph interface.

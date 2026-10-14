@@ -22,7 +22,7 @@ not host runtime verification.
 
 ## 1. Before you configure a host
 
-1. Probe the host and pin what was actually observed: `axiom host detect --json` reports the
+1. Probe the host and pin what was actually observed: `axm host detect --json` reports the
    installed host version, the documented and tested capabilities, the template match and any
    warning. It is the documented CLI surface for host detection
    (`repo-seeds/axiom-graphd/docs/21-INSTALLATION.md` §F in the spec package).

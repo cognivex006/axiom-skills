@@ -12,7 +12,7 @@ widens them.
 
 Before this adapter is written into a repository, probe the host and pin what was observed.
 
-- Run `axiom host detect` and record the installed host version, the documented and tested
+- Run `axm host detect` and record the installed host version, the documented and tested
   capabilities, the template match and any warning.
 - Record the pin in the host matrix (`compatibility/host-matrix.json`) with the exact version,
   operating system, protocol version, adapter version and feature status. A capability that

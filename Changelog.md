@@ -4,6 +4,10 @@
 
 ### Documentation
 
+- Teach the four canonical commands: `axm`, `axsk`, `axge` and `axmp`. Align graph build/watch, skills management and MCP setup with the actual runtime entrypoints.
+
+### Documentation
+
 - Rename the CLI workflow skill to `axm`, matching the command used for installation, updates and diagnostics. Codex discovers it as `axiom:axm`; package layouts and onboarding use the same name.
 
 - Connect initial graph builds, automatic source-change refresh and MCP-backed code questions in skills and onboarding. Explain engine/analyzer requirements, instance-wide daemon watching, scoped MCP access, operation-specific query arguments and freshness limits.

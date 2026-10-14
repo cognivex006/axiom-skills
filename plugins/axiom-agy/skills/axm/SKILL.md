@@ -6,7 +6,7 @@ description: Install, repair, check, update or remove Axiom through the released
 # Axiom command-line workflow
 
 Use this skill when an agent is asked to install, update, repair or remove the distributed
-`axiom-cli` entrypoint on a target host, or to report which target it actually verified and which
+`axm` entrypoint on a target host, or to report which target it actually verified and which
 one stayed unverified.
 
 This skill extends the ecosystem installation skill `skills/graph-install/SKILL.md`; it does not
@@ -33,22 +33,20 @@ Updating an existing installation is also one command:
 - Windows x64: `powershell -ExecutionPolicy Bypass -c "irm https://github.com/orchex006/axiom-cli/releases/latest/download/update.ps1 | iex"`
 - macOS, Linux x64 and WSL2: `curl -fsSL https://github.com/orchex006/axiom-cli/releases/latest/download/update.sh | sh`
 
-The update script runs the installation's own `axm update` (or `axiom-cli update` before 0.1.5),
+The update script runs the installation's own `axm update`,
 upgrades a 0.1.0/0.1.2 layout through the verified install hand-off, stops without change when
 nothing is installed, and stops while leftover `AXIOM_CLI_INSTALL_ROOT`, `AXIOM_ENGINE_BIN` or
 `AXIOM_HOME` variables are set. Offer it when no Axiom command is on PATH.
 
-**Command name.** `axm` (`axm.exe` on Windows) is the short name of `axiom-cli` (installed from 0.1.5): the same program, a byte-identical copy in the same `bin`, with identical verbs, options
-and exit codes. Use `axm` for every verb. When `axm` is not found but `axiom-cli` is (0.1.4 or
-older), use `axiom-cli` with the same verbs, or offer the update command, which brings `axm`.
+**Public commands.** Use `axm` for ecosystem orchestration, `axsk` for skills management, `axge` for graph operations and `axmp` for MCP. Repository and package identifiers in release URLs are not executable names. Check actual `--help` and installed versions before invoking a command; if a canonical entrypoint is missing, report it and guide the user through the approved update rather than inventing success.
 
-The script verifies the release archive's SHA-256 and hands off to `axiom-cli install`, which prints
+The script verifies the release archive's SHA-256 and hands off to `axm install`, which prints
 the plan (version, components, install root, PATH change, size) and asks `Proceed? [Y/n]` once.
 
 **The confirmation belongs to the human.** Show the human the plan and ask them before the
 confirming step. Never answer the prompt, pass `--yes` / `-Yes` or set `AXIOM_INSTALL_YES=1` on your
 own initiative, and never invent or copy an approval digest the human did not approve. When the
-human explicitly asks for an unattended install, `--yes` (or `axiom-cli install --yes` from an
+human explicitly asks for an unattended install, `--yes` (or `axm install --yes` from an
 extracted release) is the documented non-interactive form; `--no-modify-path` skips the PATH
 change. After the install, in a new terminal: `axm version`, `axm doctor` (diagnosis starts here),
 `axm update` (checks the recorded channel, shows the plan, asks once) and `axm uninstall` (keeps
@@ -56,12 +54,12 @@ user data).
 
 **Legacy installations.** A 0.1.0/0.1.2 CLI store, a 0.1.2 bootstrap root such as
 `%USERPROFILE%\axiom`, a stale `axiom-cli` earlier on PATH or leftover `AXIOM_*` variables are
-reported by `axm doctor` (`axiom-cli doctor` on older installs). Point the human to the legacy adoption shown in the install plan
-(in place for a CLI store, `axiom-cli install --adopt <path>` for a bootstrap root, otherwise side
+reported by `axm doctor` (`axm doctor` on older installs). Point the human to the legacy adoption shown in the install plan
+(in place for a CLI store, `axm install --adopt <path>` for a bootstrap root, otherwise side
 by side); never delete a legacy tree yourself.
 
-**Automation fallback only.** `axiom-cli install --dry-run` followed by
-`axiom-cli install --apply --approve-digest <sha256>` remains for agents and CI that must bind an
+**Automation fallback only.** `axm install --dry-run` followed by
+`axm install --apply --approve-digest <sha256>` remains for agents and CI that must bind an
 approval to an exact plan digest the human reviewed. The 0.1.2 two-script procedure
 (separate bootstrap and CLI installer scripts with hand-copied digests) is historical and is not an
 install path.
@@ -149,11 +147,11 @@ authority.
    version for an `undeclared-pending` row.
 
 5. **Install the target's pinned component set, then verify.** Use the one-line command above (or
-   `axiom-cli install` from an extracted release); `axiom-cli install` installs or
+   `axm install` from an extracted release); `axm install` installs or
    repairs this platform's pinned component set into one per-user root with one `bin` and one
    `installed.json`. An install result envelope must name every
    installed artifact, its version and its sha256. Verify with `axm doctor` and `axm version`
-   (`axiom-cli doctor` and `axiom-cli version` on 0.1.4 or older) and record the result per component and per target; a successful download is
+   (`axm doctor` and `axm version` on 0.1.4 or older) and record the result per component and per target; a successful download is
    not a completed installation.
 
 6. **Update through the recorded channel only.** A bare `axm update` (or the update one-liner) reads the channel source

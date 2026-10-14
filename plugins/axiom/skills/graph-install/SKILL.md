@@ -71,8 +71,8 @@ capability requirements; read them from the manifest and never restate a version
    `axiom-mcp` (the gateway; it consumes the installed core, its schema and the registered
    solution), then position 3 `axiom-skills` (policy, skills and host adapters; it wires hosts to an
    already installed core and gateway). Use the entrypoint verbs the contract declares:
-   `axiom install plan --bundle <verified-local-bundle> --out install-plan.json` and then
-   `axiom install apply --plan install-plan.json`. The order is not a preference: an installation
+   `axm engine install plan --bundle <verified-local-bundle> --out install-plan.json` and then
+   `axm engine install apply --plan install-plan.json`. The order is not a preference: an installation
    that installs the gateway or the bundle before the core release has no supported state to reach.
 
 4. **Approve the exact plan.** The apply reuses the planner and approval rules frozen by
@@ -90,7 +90,7 @@ capability requirements; read them from the manifest and never restate a version
    completed installation.
 
 6. **Hand off to host wiring.** After the bundle is installed, wire the host with
-   `axiom-skills/docs/guides/hosts.md`: probe the host with `axiom host detect --json`, pin the
+   `axiom-skills/docs/guides/hosts.md`: probe the host with `axm host detect --json`, pin the
    exact installed version, the surface and each capability in `compatibility/host-matrix.json`,
    declare the enforcement level explicitly, and read `policy/POLICY.md`. Never auto-write an
    assumed hook configuration. This skill stops at the handoff; host wiring is that guide's

@@ -1,5 +1,12 @@
 # Axiom Skills
 
+| Component | CLI Command | คำอ่าน | Responsibility |
+|---|---|---|---|
+| Axiom CLI | `axm` | แอ็กซ์-เอ็ม | Main CLI / Orchestrator |
+| Axiom Skills | `axsk` | แอ็กซ์-สกิล | Skills Manager |
+| Axiom Graph Engine | `axge` | แอ็กซ์-จี | Graph Engine |
+| Axiom MCP | `axmp` | แอ็กซ์-เอ็ม-พี | MCP Server / Gateway |
+
 Give your coding assistant a repeatable workflow for understanding code, assessing changes and keeping an Axiom code graph current.
 
 Axiom packages ten skills in one plugin. Skills teach the assistant how to use the tools: `axiom-graphd` builds the graph, its daemon watches saved source changes and publishes updates, and `axiom-mcp` serves the assistant's graph questions.

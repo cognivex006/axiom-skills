@@ -9,19 +9,19 @@ The engine watches or polls source files, marks changed scope, reconciles and pu
 
 ## Preconditions
 
-Resolve the existing solution/project registration and the same `AXIOM_HOME` used by the graph runtime. Verify `axiom-graphd version --json` and the current `axiom-graphd status --solution <solution-id> --json`. Use `graph-build` if the initial graph is missing. Preserve project files, bindings and credentials.
+Resolve the existing solution/project registration and the same `AXIOM_HOME` used by the graph runtime. Verify `axge version --json` and the current `axge status --solution <solution-id> --json`. Use `graph-build` if the initial graph is missing. Preserve project files, bindings and credentials.
 
-Inspect `axiom service status --json` before starting another daemon. Reuse the managed service if it is already running. Starting or changing persistent service configuration must stay within the user's authorized scope; do not install a service merely to answer a read-only question.
+Inspect `axm service status --component axiom-graphd --json` before starting another daemon. Reuse the managed service if it is already running. Starting or changing persistent service configuration must stay within the user's authorized scope; do not install a service merely to answer a read-only question.
 
 ## Start continuous refresh
 
 For an authorized foreground session, run the actual installed command as program plus argv:
 
 ```text
-axiom-graphd serve
+axge serve
 ```
 
-Keep its process handle and diagnostics. A foreground loop is long-lived; use an asynchronous process session rather than waiting indefinitely for it to exit. Do not fabricate `axiom-graphd watch` or run a second writer while the instance lock is held. Use the supported supervisor for an explicitly requested persistent service.
+Keep its process handle and diagnostics. A foreground loop is long-lived; use an asynchronous process session rather than waiting indefinitely for it to exit. Do not fabricate `axge watch` or run a second writer while the instance lock is held. Use the supported supervisor for an explicitly requested persistent service.
 
 `serve` watches the registrations in the selected instance; it has no per-solution `--solution` switch. Inspect that instance's registrations before starting it. If they include repositories outside the authorized scope, resolve that scope or use an approved dedicated instance. Keep its `AXIOM_HOME` and bindings aligned with MCP. The MCP process serves the assistant's requests; file watching belongs to `axiom-graphd`, not MCP or the skill.
 
@@ -34,8 +34,8 @@ Record the current published generation and a bounded query result for a known s
 Within a bounded deadline, inspect:
 
 ```text
-axiom-graphd status --solution <solution-id> --json
-axiom-graphd query context --solution <solution-id> --symbol <changed-symbol> --max-nodes 20 --max-bytes 8192 --json
+axge status --solution <solution-id> --json
+axge query context --solution <solution-id> --symbol <changed-symbol> --max-nodes 20 --max-bytes 8192 --json
 ```
 
 Confirm that a later generation reflects the changed source. Do not call manual `reconcile` between the save and this verification: that would demonstrate manual refresh rather than the watcher. Inspect queue/freshness/coverage if a save is not reflected; surface unsupported files, ignored paths, read-only mounts or watcher degradation instead of claiming success.

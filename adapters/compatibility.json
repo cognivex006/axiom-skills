@@ -100,7 +100,7 @@
       "repository_test_evidence": [
         {
           "path": "adapters/codex/instructions.md",
-          "sha256": "ae2f2ccd846d32b259e0f331848b38c3d9b4d7a8eecac55d3eaef35a2b48e767",
+          "sha256": "f177624b7d54e60348fef831d9324ee7dabaeb26a8a18d95d2d2d2cab143572e",
           "test_class": "CodexAdapterTests"
         },
         {
@@ -174,7 +174,7 @@
       "repository_test_evidence": [
         {
           "path": "adapters/claude/instructions.md",
-          "sha256": "9a451af192fe555f5a7c05c92ee0e4a84e7c6c3b4f0ee12b4c32dcd6c493b98b",
+          "sha256": "3d04fbdaac100329fcf05a6caaf6be980894e27081ac41ed494a2ad2e3c4348f",
           "test_class": "ClaudeAdapterTests"
         },
         {
@@ -253,7 +253,7 @@
       "repository_test_evidence": [
         {
           "path": "adapters/gemini/instructions.md",
-          "sha256": "17fa158de76f8be5ad05c6d48d0cbe323bb075fbefeeb3124522b58e2e0fcd97",
+          "sha256": "a1dc0353bb2293e7f47f50daa346c67ae51bef96b6c2eb47c221c0b134a40353",
           "test_class": "GeminiAdapterTests"
         },
         {
@@ -335,7 +335,7 @@
       "repository_test_evidence": [
         {
           "path": "adapters/antigravity/instructions.md",
-          "sha256": "51839a81266a134f6f5ce499ea24b1b05e0cecb04ff004d0876935e82c9901e3",
+          "sha256": "85d0076088fac66675dbc1274e236eee409ba4b75f505e32b81aac32e6a70bed",
           "test_class": "AntigravityAdapterTests"
         },
         {
