@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+### Bug Fixes
+
+- Teach install and diagnostic workflows to check the engine-linked SQLite driver by actual SQL operations, with version numbers informational. Prebuilt installations no longer ask for a Rust compiler or separate SQLite package.
+- Align all host plugin payloads with installation versus gateway checks and the private `bin/graphd-engine/` layout.
+
+- Correct the repository marketplace guide to list ten skills and align the optional Copilot catalog version with the plugin. Check declared marketplace versions before packaging. Published standalone 0.1.6 host packages already include the correct version and ten skills.
+
+Changes after the latest release are recorded here.
+
 ### Documentation
 
 - Use the canonical public commands in all current examples; access private engine operations through `axm engine`.
@@ -13,12 +22,6 @@
 - Rename the CLI workflow skill to `axm`, matching the command used for installation, updates and diagnostics. Codex discovers it as `axiom:axm`; package layouts and onboarding use the same name.
 
 - Connect initial graph builds, automatic source-change refresh and MCP-backed code questions in skills and onboarding. Explain engine/analyzer requirements, instance-wide daemon watching, scoped MCP access, operation-specific query arguments and freshness limits.
-
-### Bug Fixes
-
-- Correct the repository marketplace guide to list ten skills and align the optional Copilot catalog version with the plugin. Check declared marketplace versions before packaging. Published standalone 0.1.6 host packages already include the correct version and ten skills.
-
-Changes after the latest release are recorded here.
 
 ## 0.1.6
 

@@ -138,13 +138,18 @@ authority.
    reports its result. A verb whose production behaviour is not yet built must answer `NotReady`
    with a stated reason and must not return an empty success envelope.
 
-4. **Check each mandatory prerequisite against the dependency table.** The Rust toolchain, the
-   Python interpreter and the SQLite driver are mandatory for the components the table names;
-   Node.js, WSL, Bash and Docker are not, and Docker serves only the optional container channel. On
-   a clean Windows or macOS host, do not assume a usable system Python interpreter: the install
-   plan must include an approved runtime or explicitly provision one. A missing mandatory
-   dependency is reported and refuses the install by name, and the distribution must not guess a
-   version for an `undeclared-pending` row.
+4. **Check the runtimes actually needed by the installation.** Prebuilt releases do not need a
+   Rust toolchain; it is a source-build prerequisite only. The Python interpreter used by MCP
+   must satisfy its supported runtime range, and the SQLite driver linked into the graph engine
+   must open a connection and execute SQL. SQLite version numbers are informational: do not
+   require a matching version or stop because a version source is `undeclared-pending`.
+   `axm doctor` verifies the installed MCP runtime and asks the graph engine for its SQLite
+   probe; do not substitute a system `sqlite3` executable or Python's SQLite module. A failed
+   connection/query is a real failure: name it and repair with `axm install`. Existing schema,
+   journal, ownership and checksum checks still apply. Node.js, WSL and Bash are not required;
+   Docker serves only the optional container channel. The private installation engine lives
+   under `bin/graphd-engine/`; let install/update migrate older owned layouts and use only
+   `axm`, `axsk`, `axge` and `axmp` as public commands.
 
 5. **Install the target's pinned component set, then verify.** Use the one-line command above (or
    `axm install` from an extracted release); `axm install` installs or
@@ -193,7 +198,7 @@ and a case the host cannot perform is `not_run` with its exact command and its e
 | positive | the host is a declared delivery target and the entrypoint is present: `windows-x64` on Windows, `macos-x64` on macOS, `container-linux-x64` in the published container | drive `install`, `update`, `doctor`, `version` and `uninstall` through the entrypoint and record the per-verb result; a verb that answers `NotReady` with exit code 4 is recorded as `unverified` for that leg, never as `passed`, and the run does not become a completed installation |
 | declared but not yet verified | a target the contract declares that this host is not: `linux-x64`, `macos-arm64` or `wsl2-linux-x64` | `unverified` with its declared tier (`deferred` or `finish-first`), its `runtime_verified: false` state and the reason no matching execution record exists; WSL2 requires separate WSL2 evidence |
 | undeclared platform | an os/arch pair no delivery platform declares, for example `windows-arm64` or `linux-arm64` | `refused` by name before any write; record the observed os and arch and the ids the contract does declare |
-| missing mandatory dependency | a prerequisite the contract marks mandatory is absent or unknown on this host: the Rust toolchain, the Python interpreter or the SQLite driver | `refused` by name before any write, naming the prerequisite and its `mandatory: yes` row; a non-mandatory row (`nodejs`, `wsl`, `docker`, `bash`) never refuses an install |
+| missing mandatory dependency | a prerequisite the contract marks mandatory is absent or unknown on this host: the provisioned Python interpreter or the engine-linked SQLite driver (not a source-build Rust toolchain) | `refused` by name before any write, naming the prerequisite and its `mandatory: yes` row; a non-mandatory row (`nodejs`, `wsl`, `docker`, `bash`) never refuses an install |
 
 ## Forbidden set
 

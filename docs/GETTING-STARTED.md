@@ -11,7 +11,7 @@ axm version
 axm doctor
 ```
 
-These commands check the installed ecosystem. Project registration and AI-host setup are separate. Once the plugin is installed, `$axiom:axm` guides install, repair, update, doctor, version and uninstall through the same `axm` command.
+These commands check the installed ecosystem. Project registration and AI-host setup are separate. Once the plugin is installed, `$axiom:axm` guides install, repair, update, doctor, version and uninstall through the same `axm` command. SQLite readiness means the graph engine can open and query its linked driver; no matching version or separate system SQLite install is required. Prebuilt releases need no Rust compiler. Use `axm doctor --verbose` for runtime paths and detailed evidence, and `axmp doctor` for gateway credentials and query/control readiness. The CLI manages its private `bin/graphd-engine/` directory, including migration of owned older layouts.
 
 ## 2. Add the skills to Codex
 

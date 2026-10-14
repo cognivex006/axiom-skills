@@ -60,11 +60,15 @@ capability requirements; read them from the manifest and never restate a version
    `interpreter`, `toolchain`, `runtime`, `native_dependency` or `approval` - as satisfied,
    unsatisfied or unknown, before any write. Every declared prerequisite is probed and reported
    satisfied, unsatisfied or unknown. When a required prerequisite is unsatisfied or unknown, refuse
-   the mutation by name and report it. A row whose version source is `undeclared` (for example the
-   patched SQLite runtime version, which the pack records as unconfigured) is not satisfiable and
-   not checkable: report it as unknown and never guess a version for it. Progress may never skip a
-   probe, present an undeclared prerequisite as satisfied, or claim a category the Human path must
-   still produce.
+   the mutation by name and report it. SQLite readiness comes from the engine-linked driver's
+   actual open/create/write/read probe; its version is informational, so a missing version
+   manifest or a different SQLite version is not a blocker. Do not require a system `sqlite3`
+   command or a Rust compiler for a prebuilt release. Preserve schema, journal, integrity,
+   ownership and MCP runtime compatibility checks. Run `axm doctor` for installation health;
+   use `axmp doctor` for gateway credentials and query/control readiness. A passing installation
+   check does not establish project graph freshness or AI-host plugin discovery.
+   The private installation engine is in `bin/graphd-engine/`; install/update handle verified
+   older layouts. Do not move user project state or invoke the private binary directly.
 
 3. **Install in the contract order, and only that order.** Position 1 `axiom-graphd` (the core
    release; it carries the private installation engine called through `axm engine`), then position 2
