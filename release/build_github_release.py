@@ -58,15 +58,18 @@ def build(root: Path, output: Path, tag: str, source_revision: str) -> Path:
               "portable": True, "publication": "not_published"}
     (output / "RELEASE-SOURCES.json").write_text(json.dumps(record, indent=2) + "\n", encoding="utf-8", newline="\n")
     (output / "SOURCE-REVISION.txt").write_text(source_revision + "\n", encoding="utf-8", newline="\n")
+    changelog = (root / "Changelog.md").read_text(encoding="utf-8")
+    entries = re.findall(r"^## " + re.escape(manifest["component_version"]) + r"\s*\n(.*?)(?=^## |\Z)", changelog, re.M | re.S)
+    if len(entries) != 1:
+        raise ValueError("require exactly one release changelog entry")
+    changes = re.sub(r"^### ", "## ", entries[0].strip(), flags=re.M)
     (output / "RELEASE-NOTES.md").write_text(
-        "# Axiom portable skills " + manifest["component_version"] + "\n\n"
-        "Ten skills for Codex, Claude Code, Gemini CLI, Antigravity and Copilot. "
-        "New graph-build creates and verifies the first code graph; graph-watch keeps it current "
-        "on source saves using the installed graph daemon and its polling watcher. "
-        "Download the portable bundle or the standalone plugin for your assistant. "
-        "No OS-specific skill variants, certification, signing or attestation prerequisite. "
-        "Host runtime hooks remain version/capability-specific and unverified where not exercised. "
-        "This bundle does not install the Axiom runtime.\n", encoding="utf-8", newline="\n")
+        "# Axiom Skills " + manifest["component_version"] + "\n\n" + changes + "\n\n"
+        "Ten skills and standalone plugins for Codex, Claude Code, Gemini CLI, Antigravity and Copilot. "
+        "Use the axm workflow for installation and diagnostics, graph-build for the first graph, "
+        "graph-watch for automatic graph refresh and MCP for graph questions. "
+        "This bundle does not install the Axiom runtime. Live host behavior remains unverified where not exercised.\n",
+        encoding="utf-8", newline="\n")
     checksum = "".join(hashlib.sha256(path.read_bytes()).hexdigest() + "  " + path.name + "\n"
                        for path in sorted(output.iterdir()) if path.is_file())
     (output / "SHA256SUMS").write_text(checksum, encoding="utf-8", newline="\n")

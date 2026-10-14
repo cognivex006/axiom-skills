@@ -43,9 +43,9 @@ a package-manager default, a network `latest` lookup or a branch tip for an unde
 ## Bundle metadata
 
 This skill ships inside the `axiom-skills` bundle declared by `release/skills-manifest.json`:
-component version `0.1.6` on channel `draft`, spec baseline `2.0.0-draft.1`, host protocol
-minimum 1. The manifest, not this file, is the authority for the bundle version and the host
-capability requirements; read them from the manifest and never restate a version from memory.
+read `component_version`, `channel`, `spec_version` and the host protocol minimum from
+that manifest. It is the authority for bundle identity and host capability requirements; do not
+substitute a version copied from documentation or remembered from an earlier release.
 
 ## Procedure
 
