@@ -4,9 +4,11 @@
 
 ### Documentation
 
+- Use the canonical public commands in all current examples; access private engine operations through `axm engine`.
+
+
 - Teach the four canonical commands: `axm`, `axsk`, `axge` and `axmp`. Align graph build/watch, skills management and MCP setup with the actual runtime entrypoints.
 
-### Documentation
 
 - Rename the CLI workflow skill to `axm`, matching the command used for installation, updates and diagnostics. Codex discovers it as `axiom:axm`; package layouts and onboarding use the same name.
 

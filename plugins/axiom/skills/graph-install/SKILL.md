@@ -56,7 +56,7 @@ capability requirements; read them from the manifest and never restate a version
    not declare.
 
 2. **Probe before any write, and stop on an unsatisfied or unknown prerequisite.** Run the
-   contract's probe verb `axiom doctor --all --json` and record every prerequisite row - class
+   contract's probe verb `axm engine doctor --all --json` and record every prerequisite row - class
    `interpreter`, `toolchain`, `runtime`, `native_dependency` or `approval` - as satisfied,
    unsatisfied or unknown, before any write. Every declared prerequisite is probed and reported
    satisfied, unsatisfied or unknown. When a required prerequisite is unsatisfied or unknown, refuse
@@ -67,7 +67,7 @@ capability requirements; read them from the manifest and never restate a version
    still produce.
 
 3. **Install in the contract order, and only that order.** Position 1 `axiom-graphd` (the core
-   release; it carries the `axiom` CLI that performs every remaining install), then position 2
+   release; it carries the private installation engine called through `axm engine`), then position 2
    `axiom-mcp` (the gateway; it consumes the installed core, its schema and the registered
    solution), then position 3 `axiom-skills` (policy, skills and host adapters; it wires hosts to an
    already installed core and gateway). Use the entrypoint verbs the contract declares:
@@ -85,7 +85,7 @@ capability requirements; read them from the manifest and never restate a version
    silently replan.
 
 5. **Verify each component with the documented command.** Verify with the contract's
-   `axiom doctor --all --json` probe over the components actually installed and record the result
+   `axm engine doctor --all --json` probe over the components actually installed and record the result
    per component. A successful download, an unpacked archive or an exit-zero of one step is not a
    completed installation.
 
@@ -97,7 +97,7 @@ capability requirements; read them from the manifest and never restate a version
    procedure.
 
 7. **Report honestly.** The run ends at the same recorded verification result the Human path
-   produces: `axiom version --all --json` and `axiom doctor --all --json` over the same installed
+   produces: `axm engine version --all --json` and `axm engine doctor --all --json` over the same installed
    revisions. Report each component and each applicable evidence category (`install`, `queue`,
    `guard`, `watcher`, `path`, `migration`, `update`) as verified, unverified or unbuilt with its
    evidence. A path permitted to end less verified than the Human path is rejected; report a step

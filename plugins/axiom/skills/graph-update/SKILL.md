@@ -5,7 +5,7 @@ description: Check and plan an axiom component or skills-bundle update, obtain s
 
 # Approved version update
 
-Use this skill when the skills bundle, the `axiom` CLI, `axiom-graphd` or `axiom-mcp` may
+Use this skill when the skills bundle, the Axiom CLI (`axm`), `axiom-graphd` or `axiom-mcp` may
 need an update: a version report, a compatibility warning, a published release note, or an
 explicit request to move to a newer and compatible version.
 

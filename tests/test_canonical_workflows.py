@@ -629,10 +629,10 @@ class GraphInstallChecks:
     HANDOFF_MARKER = "Hand off to host wiring."
     REPORT_MARKER = "report a step the agent could not execute as partial or unverified"
     COMMANDS = (
-        "axiom doctor --all --json",
+        "axm engine doctor --all --json",
         "axm engine install plan",
         "axm engine install apply",
-        "axiom version --all --json",
+        "axm engine version --all --json",
         "axm host detect --json",
     )
     ORDER = ("axiom-graphd", "axiom-mcp", "axiom-skills")

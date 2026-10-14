@@ -87,7 +87,7 @@ Read, in order, before installing anything:
 4. `skills/graph-install/SKILL.md` for the ecosystem install path this skill extends;
 5. `policy/POLICY.md` for the boundary this skill runs under.
 
-Declared dependencies of this path: the distributed executable `axiom-cli` (`axiom-cli.exe` on
+Declared dependencies of this path: the distributed executable `axm` (`axm.exe` on
 Windows) and the per-platform artifact of the target. Where a version, a URL, a channel name or a
 signature is not defined by an owner repository or manifest, it is recorded as **undeclared** and
 is never invented.
@@ -130,7 +130,7 @@ authority.
    undeclared platform is a refusal by name, not a best-effort install.
 
 3. **Probe and drive every verb through the distributed entrypoint only.** Use `axm`
-   (`axm.exe` on Windows), the short name of `axiom-cli`, or `axiom-cli` itself on 0.1.4 or older,
+   (`axm.exe` on Windows)
    for `install`, `update` (`check`, `plan`, `apply`, `rollback`),
    `doctor`, `version` and `uninstall`, with `--json` for the machine-readable envelope. Never call
    an internal installer, a repository script or a private engine entrypoint directly; where a
@@ -178,7 +178,7 @@ authority.
    is not runtime evidence for any native target.
 
 9. **Report honestly and end at the Human result.** The run ends at the same recorded verification
-   result the Human path produces (`axiom version --all --json` and `axiom doctor --all --json`
+   result the Human path produces (`axm engine version --all --json` and `axm engine doctor --all --json`
    over the same installed revisions). Report per target: executed or unverified, the artifact
    versions with their sha256, the execution evidence, and every leg this run could not exercise.
 
