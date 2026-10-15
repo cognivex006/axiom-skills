@@ -1,0 +1,56 @@
+{
+  "repository": "axiom-skills",
+  "version": "0.1.9",
+  "release_id": 413448488,
+  "release_url": "https://github.com/orchex006/axiom-skills/releases/tag/v0.1.9",
+  "source_revision": "8a31b67a37dd3c1772883a706961ae8da58bc887",
+  "tag_verified": true,
+  "latest_verified": true,
+  "all_listed_sha256_verified": true,
+  "assets": {
+    "RELEASE-NOTES.md": {
+      "sha256": "548b7b9b31bf3dd87214202e09a02260fa9a294c6ce7a952fca7a97690189929",
+      "bytes": 583
+    },
+    "RELEASE-SOURCES.json": {
+      "sha256": "b48c318fd14970ccd95f34361eae240eb21b3897cee7301e556b115342baf9cc",
+      "bytes": 391
+    },
+    "SOURCE-REVISION.txt": {
+      "sha256": "61433221dcfd875744f86e0c88dd5d7f72deaa9517521d4d20fcb3a23452d64d",
+      "bytes": 41
+    },
+    "axiom-skills-0.1.9.zip": {
+      "sha256": "80562524c868142eb365e83f47cf6783f5064a2185ea9d895a39235287790804",
+      "bytes": 136886
+    },
+    "HOST-SOURCE-REVISION.txt": {
+      "sha256": "61433221dcfd875744f86e0c88dd5d7f72deaa9517521d4d20fcb3a23452d64d",
+      "bytes": 41
+    },
+    "axiom-skills-0.1.9-antigravity.zip": {
+      "sha256": "6d0071f54460f3ad7631f5fbed66365e39f23709e2707898673d2d430de07a84",
+      "bytes": 29041
+    },
+    "axiom-skills-0.1.9-claude.zip": {
+      "sha256": "df28956561d26b198555ecbd77ba90a03e9ff758bb7f48a8702510e96164aa58",
+      "bytes": 30967
+    },
+    "axiom-skills-0.1.9-codex.zip": {
+      "sha256": "376e483726c785524924ec8aa6dd711fd9d761a44dece9d1c3857ff555433d9b",
+      "bytes": 31039
+    },
+    "axiom-skills-0.1.9-copilot.zip": {
+      "sha256": "f003e193eb4c52bcf0a6f8a21f26849866699b6fa0f3ad9a5f7d9f8016479ebc",
+      "bytes": 30971
+    },
+    "axiom-skills-0.1.9-gemini.zip": {
+      "sha256": "9656487792f88595704aead0e5a378677c9b0d4db494a642730f6ffb827122fd",
+      "bytes": 30702
+    },
+    "host-packages.json": {
+      "sha256": "9023ce1afd9ab6b84cc390ab12f21b9a0e3443ac5a5603f0da1ee747dda61ef5",
+      "bytes": 14826
+    }
+  }
+}
