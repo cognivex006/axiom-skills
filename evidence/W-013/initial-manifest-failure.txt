@@ -1,0 +1,312 @@
+............F........................................................... [ 29%]
+F....................................................................... [ 58%]
+.F...........F..F.............F...................F......FFFF........... [ 87%]
+...F.......F.....F..............                                         [100%]
+================================== FAILURES ===================================
+_____ test_complete_canonical_bootstrap_inputs_are_owned_and_hash_pinned ______
+
+    def test_complete_canonical_bootstrap_inputs_are_owned_and_hash_pinned():
+        owner = json.loads((ROOT / "release/skills-manifest.json").read_text())
+        content = json.loads((ROOT / "templates/bootstrap/manifest.json").read_text())
+        declared = {entry["path"]: entry for entry in owner["files"]}
+        expected = content["templates"] + [content["single_policy_source"]]
+        for entry in expected:
+            path = entry["path"]
+            raw = (ROOT / path).read_bytes()
+            assert path in declared
+            assert declared[path]["sha256"] == entry["sha256"] == hashlib.sha256(raw).hexdigest()
+            assert declared[path]["bytes"] == entry["bytes"] == len(raw)
+        assert content["install_policy"]["policy_source_count"] == 1
+>       assert verify(ROOT / "release/skills-manifest.json", ROOT) == []
+E       AssertionError: assert ['executable ..._workflow.py'] == []
+E
+E         Left contains 2 more items, first extra item: 'executable lacks valid capability review: plugins/axiom/skills/axge/scripts/select_workflow.py'
+E         Use -v to get more diff
+
+tests\test_bootstrap_bundle.py:23: AssertionError
+___ SkillsManifestTests.test_reference_verifier_accepts_the_shipped_bundle ____
+
+self = <test_canonical_workflows.SkillsManifestTests testMethod=test_reference_verifier_accepts_the_shipped_bundle>
+
+    def test_reference_verifier_accepts_the_shipped_bundle(self):
+        module = load_reference_verifier()
+        problems = module.verify(ROOT / "release" / "skills-manifest.json", ROOT)
+>       self.assertEqual(problems, [])
+E       AssertionError: Lists differ: ['executable lacks valid capability review[153 chars].py'] != []
+E
+E       First list contains 2 additional elements.
+E       First extra element 0:
+E       'executable lacks valid capability review: plugins/axiom/skills/axge/scripts/select_workflow.py'
+E
+E       + []
+E       - ['executable lacks valid capability review: '
+E       -  'plugins/axiom/skills/axge/scripts/select_workflow.py',
+E       -  'executable lacks valid capability review: '
+E       -  'plugins/axiom-agy/skills/axge/scripts/select_workflow.py']
+
+tests\test_canonical_workflows.py:1396: AssertionError
+_ AdapterManifestCoverageTests.test_reference_verifier_accepts_the_bundle_with_the_new_adapters _
+
+self = <test_canonical_workflows.AdapterManifestCoverageTests testMethod=test_reference_verifier_accepts_the_bundle_with_the_new_adapters>
+
+    def test_reference_verifier_accepts_the_bundle_with_the_new_adapters(self):
+        module = load_reference_verifier()
+>       self.assertEqual(module.verify(ROOT / "release" / "skills-manifest.json", ROOT), [])
+E       AssertionError: Lists differ: ['executable lacks valid capability review[153 chars].py'] != []
+E
+E       First list contains 2 additional elements.
+E       First extra element 0:
+E       'executable lacks valid capability review: plugins/axiom/skills/axge/scripts/select_workflow.py'
+E
+E       + []
+E       - ['executable lacks valid capability review: '
+E       -  'plugins/axiom/skills/axge/scripts/select_workflow.py',
+E       -  'executable lacks valid capability review: '
+E       -  'plugins/axiom-agy/skills/axge/scripts/select_workflow.py']
+
+tests\test_canonical_workflows.py:2842: AssertionError
+_____________ test_checked_archive_is_deterministic_and_complete ______________
+
+tmp_path = WindowsPath('<local-path>/AppData/Local/Temp/pytest-of-006006/pytest-14/test_checked_archive_is_determ0')
+
+    def test_checked_archive_is_deterministic_and_complete(tmp_path):
+>       first = build(ROOT, tmp_path / "a", version(), SOURCE)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_github_delivery.py:23:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('<local-path>/axiom-skills')
+output = WindowsPath('<local-path>/AppData/Local/Temp/pytest-of-006006/pytest-14/test_checked_archive_is_determ0/a')
+tag = 'v0.1.9', source_revision = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+
+    def build(root: Path, output: Path, tag: str, source_revision: str) -> Path:
+        manifest_path = root / "release/skills-manifest.json"
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if tag != "v" + manifest["component_version"]:
+            raise ValueError("tag does not match component version")
+        if not re.fullmatch(r"[0-9a-f]{40}", source_revision):
+            raise ValueError("source revision must be an immutable Git commit")
+        problems = verify(manifest_path, root)
+        if problems:
+>           raise ValueError("; ".join(problems))
+E           ValueError: executable lacks valid capability review: plugins/axiom/skills/axge/scripts/select_workflow.py; executable lacks valid capability review: plugins/axiom-agy/skills/axge/scripts/select_workflow.py
+
+release\build_github_release.py:32: ValueError
+________________ test_existing_output_and_corrupt_bytes_refuse ________________
+
+tmp_path = WindowsPath('<local-path>/AppData/Local/Temp/pytest-of-006006/pytest-14/test_existing_output_and_corru0')
+
+    def test_existing_output_and_corrupt_bytes_refuse(tmp_path):
+        out = tmp_path / "out"
+        out.mkdir()
+        sentinel = out / "human.txt"
+        sentinel.write_text("preserve")
+>       with pytest.raises(ValueError, match="new directory"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'new directory'
+E         Actual message: 'executable lacks valid capability review: plugins/axiom/skills/axge/scripts/select_workflow.py; executable lacks valid capability review: plugins/axiom-agy/skills/axge/scripts/select_workflow.py'
+
+tests\test_github_delivery.py:56: AssertionError
+_ GitignoreFragmentStructureTests.test_shipped_manifest_verifier_still_accepts_the_bundle _
+
+self = <test_gitignore_fragment.GitignoreFragmentStructureTests testMethod=test_shipped_manifest_verifier_still_accepts_the_bundle>
+
+    def test_shipped_manifest_verifier_still_accepts_the_bundle(self) -> None:
+        spec = importlib.util.spec_from_file_location(
+            "v2008_verify_manifest", ROOT / "release" / "verify_manifest.py"
+        )
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+>       self.assertEqual([], module.verify(ROOT / "release" / "skills-manifest.json", ROOT))
+E       AssertionError: Lists differ: [] != ['executable lacks valid capability review[153 chars].py']
+E
+E       Second list contains 2 additional elements.
+E       First extra element 0:
+E       'executable lacks valid capability review: plugins/axiom/skills/axge/scripts/select_workflow.py'
+E
+E       - []
+E       + ['executable lacks valid capability review: '
+E       +  'plugins/axiom/skills/axge/scripts/select_workflow.py',
+E       +  'executable lacks valid capability review: '
+E       +  'plugins/axiom-agy/skills/axge/scripts/select_workflow.py']
+
+tests\test_gitignore_fragment.py:223: AssertionError
+_ HostCompatibilityDriftTests.test_shipped_manifest_verifier_still_accepts_the_bundle _
+
+self = <test_host_compatibility.HostCompatibilityDriftTests testMethod=test_shipped_manifest_verifier_still_accepts_the_bundle>
+
+    def test_shipped_manifest_verifier_still_accepts_the_bundle(self) -> None:
+        spec = importlib.util.spec_from_file_location(
+            "v2028_verify_manifest", ROOT / "release" / "verify_manifest.py"
+        )
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        problems = module.verify(ROOT / "release" / "skills-manifest.json", ROOT)
+>       self.assertEqual([], problems)
+E       AssertionError: Lists differ: [] != ['executable lacks valid capability review[153 chars].py']
+E
+E       Second list contains 2 additional elements.
+E       First extra element 0:
+E       'executable lacks valid capability review: plugins/axiom/skills/axge/scripts/select_workflow.py'
+E
+E       - []
+E       + ['executable lacks valid capability review: '
+E       +  'plugins/axiom/skills/axge/scripts/select_workflow.py',
+E       +  'executable lacks valid capability review: '
+E       +  'plugins/axiom-agy/skills/axge/scripts/select_workflow.py']
+
+tests\test_host_compatibility.py:304: AssertionError
+_________________ test_every_archive_is_standalone_and_exact __________________
+
+tmp_path = WindowsPath('<local-path>/AppData/Local/Temp/pytest-of-006006/pytest-14/test_every_archive_is_standalo0')
+
+    def test_every_archive_is_standalone_and_exact(tmp_path):
+>       first = build(ROOT, tmp_path/'a', SOURCE)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_host_packages.py:16:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+release\build_host_packages.py:104: in build
+    version, packages = checked_packages(root)
+                        ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('<local-path>/axiom-skills')
+
+    def checked_packages(root: Path) -> tuple[str, dict[str, str]]:
+        problems = verify(root / 'release/skills-manifest.json', root)
+        if problems:
+>           raise ValueError('; '.join(problems))
+E           ValueError: executable lacks valid capability review: plugins/axiom/skills/axge/scripts/select_workflow.py; executable lacks valid capability review: plugins/axiom-agy/skills/axge/scripts/select_workflow.py
+
+release\build_host_packages.py:33: ValueError
+____________ test_existing_output_and_moving_revision_are_refused _____________
+
+tmp_path = WindowsPath('<local-path>/AppData/Local/Temp/pytest-of-006006/pytest-14/test_existing_output_and_movin0')
+
+    def test_existing_output_and_moving_revision_are_refused(tmp_path):
+        out=tmp_path/'existing';out.mkdir();sentinel=out/'human.txt';sentinel.write_text('keep')
+>       with pytest.raises(ValueError,match='new directory'):build(ROOT,out,SOURCE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'new directory'
+E         Actual message: 'executable lacks valid capability review: plugins/axiom/skills/axge/scripts/select_workflow.py; executable lacks valid capability review: plugins/axiom-agy/skills/axge/scripts/select_workflow.py'
+
+tests\test_host_packages.py:41: AssertionError
+_ test_legacy_aliases_require_explicit_package_and_retain_current_references __
+
+tmp_path = WindowsPath('<local-path>/AppData/Local/Temp/pytest-of-006006/pytest-14/test_legacy_aliases_require_ex0')
+
+    def test_legacy_aliases_require_explicit_package_and_retain_current_references(tmp_path):
+>       default = build(ROOT, tmp_path / 'default', SOURCE)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_host_packages.py:48:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+release\build_host_packages.py:104: in build
+    version, packages = checked_packages(root)
+                        ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('<local-path>/axiom-skills')
+
+    def checked_packages(root: Path) -> tuple[str, dict[str, str]]:
+        problems = verify(root / 'release/skills-manifest.json', root)
+        if problems:
+>           raise ValueError('; '.join(problems))
+E           ValueError: executable lacks valid capability review: plugins/axiom/skills/axge/scripts/select_workflow.py; executable lacks valid capability review: plugins/axiom-agy/skills/axge/scripts/select_workflow.py
+
+release\build_host_packages.py:33: ValueError
+_______ test_mock_future_version_refuses_expired_legacy_without_output ________
+
+tmp_path = WindowsPath('<local-path>/AppData/Local/Temp/pytest-of-006006/pytest-14/test_mock_future_version_refus0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001FF0ACD6C40>
+
+    def test_mock_future_version_refuses_expired_legacy_without_output(tmp_path, monkeypatch):
+        from release import build_host_packages
+>       _, packages = build_host_packages.checked_packages(ROOT)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_host_packages.py:65:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('<local-path>/axiom-skills')
+
+    def checked_packages(root: Path) -> tuple[str, dict[str, str]]:
+        problems = verify(root / 'release/skills-manifest.json', root)
+        if problems:
+>           raise ValueError('; '.join(problems))
+E           ValueError: executable lacks valid capability review: plugins/axiom/skills/axge/scripts/select_workflow.py; executable lacks valid capability review: plugins/axiom-agy/skills/axge/scripts/select_workflow.py
+
+release\build_host_packages.py:33: ValueError
+_ HostsGuideDriftTests.test_shipped_manifest_verifier_still_accepts_the_bundle _
+
+self = <test_hosts_guide.HostsGuideDriftTests testMethod=test_shipped_manifest_verifier_still_accepts_the_bundle>
+
+    def test_shipped_manifest_verifier_still_accepts_the_bundle(self) -> None:
+        spec = importlib.util.spec_from_file_location(
+            "d008_verify_manifest", ROOT / "release" / "verify_manifest.py"
+        )
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        problems = module.verify(ROOT / "release" / "skills-manifest.json", ROOT)
+>       self.assertEqual([], problems)
+E       AssertionError: Lists differ: [] != ['executable lacks valid capability review[153 chars].py']
+E
+E       Second list contains 2 additional elements.
+E       First extra element 0:
+E       'executable lacks valid capability review: plugins/axiom/skills/axge/scripts/select_workflow.py'
+E
+E       - []
+E       + ['executable lacks valid capability review: '
+E       +  'plugins/axiom/skills/axge/scripts/select_workflow.py',
+E       +  'executable lacks valid capability review: '
+E       +  'plugins/axiom-agy/skills/axge/scripts/select_workflow.py']
+
+tests\test_hosts_guide.py:263: AssertionError
+_________ test_owner_manifest_pins_spec_and_reviews_every_executable __________
+
+    def test_owner_manifest_pins_spec_and_reviews_every_executable() -> None:
+        manifest = json.loads(MANIFEST.read_text())
+        assert manifest["spec_revision"] == json.loads((ROOT / "spec.lock.json").read_text())["spec_revision"]
+>       assert verify(MANIFEST, ROOT) == []
+E       AssertionError: assert ['executable ..._workflow.py'] == []
+E
+E         Left contains 2 more items, first extra item: 'executable lacks valid capability review: plugins/axiom/skills/axge/scripts/select_workflow.py'
+E         Use -v to get more diff
+
+tests\test_release_manifest_handoff.py:29: AssertionError
+__________ test_full_owner_payload_stages_for_distribution_converter __________
+
+tmp_path = WindowsPath('<local-path>/AppData/Local/Temp/pytest-of-006006/pytest-14/test_full_owner_payload_stages0')
+
+    def test_full_owner_payload_stages_for_distribution_converter(tmp_path: Path) -> None:
+        output = tmp_path / "owner source ไทย"
+        command = [sys.executable, "release/build_engine_source.py", "--out", str(output)]
+        built = subprocess.run(command, cwd=ROOT, capture_output=True, text=True)
+>       assert built.returncode == 0, built.stdout + built.stderr
+E       AssertionError: FAIL executable lacks valid capability review: plugins/axiom/skills/axge/scripts/select_workflow.py
+E         FAIL executable lacks valid capability review: plugins/axiom-agy/skills/axge/scripts/select_workflow.py
+E
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['<local-path>\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', 'release/build_en...nFAIL executable lacks valid capability review: plugins/axiom-agy/skills/axge/scripts/select_workflow.py\n', stderr='').returncode
+
+tests\test_release_manifest_handoff.py:87: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_bootstrap_bundle.py::test_complete_canonical_bootstrap_inputs_are_owned_and_hash_pinned
+FAILED tests/test_canonical_workflows.py::SkillsManifestTests::test_reference_verifier_accepts_the_shipped_bundle
+FAILED tests/test_canonical_workflows.py::AdapterManifestCoverageTests::test_reference_verifier_accepts_the_bundle_with_the_new_adapters
+FAILED tests/test_github_delivery.py::test_checked_archive_is_deterministic_and_complete
+FAILED tests/test_github_delivery.py::test_existing_output_and_corrupt_bytes_refuse
+FAILED tests/test_gitignore_fragment.py::GitignoreFragmentStructureTests::test_shipped_manifest_verifier_still_accepts_the_bundle
+FAILED tests/test_host_compatibility.py::HostCompatibilityDriftTests::test_shipped_manifest_verifier_still_accepts_the_bundle
+FAILED tests/test_host_packages.py::test_every_archive_is_standalone_and_exact
+FAILED tests/test_host_packages.py::test_existing_output_and_moving_revision_are_refused
+FAILED tests/test_host_packages.py::test_legacy_aliases_require_explicit_package_and_retain_current_references
+FAILED tests/test_host_packages.py::test_mock_future_version_refuses_expired_legacy_without_output
+FAILED tests/test_hosts_guide.py::HostsGuideDriftTests::test_shipped_manifest_verifier_still_accepts_the_bundle
+FAILED tests/test_release_manifest_handoff.py::test_owner_manifest_pins_spec_and_reviews_every_executable
+FAILED tests/test_release_manifest_handoff.py::test_full_owner_payload_stages_for_distribution_converter
+14 failed, 234 passed in 46.17s

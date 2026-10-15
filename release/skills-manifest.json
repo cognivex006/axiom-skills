@@ -1,7 +1,7 @@
 {
   "manifest_version": 1,
   "component": "axiom-skills",
-  "component_version": "0.1.8",
+  "component_version": "0.1.9",
   "channel": "stable",
   "released": true,
   "spec_version": "2.0.0-draft.1",
@@ -227,7 +227,7 @@
     {
       "path": "adapters/compatibility.json",
       "role": "host-adapter-compatibility",
-      "sha256": "aec162590ce3e90f2648186d55daa723b78c6cf04541dd19c6292fa56cd2f00f",
+      "sha256": "8c110228a875d8c36d4e30a79af4cb39486fb4d45759f8b05dbecf2cf0f1a96f",
       "bytes": 12778
     },
     {
@@ -248,21 +248,39 @@
       "bytes": 5027
     },
     {
+      "path": "templates/bootstrap/AGENTS.block.md",
+      "role": "bootstrap-content",
+      "sha256": "39c2b714efbcfdf61f62ff60f43616254d4fb855c9babe0c2c871d1be4d06f5d",
+      "bytes": 314
+    },
+    {
+      "path": "templates/bootstrap/gitignore.fragment",
+      "role": "bootstrap-content",
+      "sha256": "8dcda848864ed6321d18c2e11c44055992a13f0275f53f1d32e9c03e1b35849f",
+      "bytes": 1636
+    },
+    {
+      "path": "templates/bootstrap/manifest.json",
+      "role": "bootstrap-content",
+      "sha256": "be134c02a8afaa2e048e9d9512f01ddf165f1e28e3e4ed7e90bd23bd202a84c3",
+      "bytes": 2398
+    },
+    {
       "path": "plugins/axiom/.claude-plugin/plugin.json",
       "role": "plugin-package",
-      "sha256": "03cf62fc415f6cbb5e44a9970ed665b00c83f0c817c91651a2f25cd081760b38",
+      "sha256": "cb05ac9d60d1a60894c19bda0540752a9fc3fb0c69f0117254708ca8f182e952",
       "bytes": 165
     },
     {
       "path": "plugins/axiom/.codex-plugin/plugin.json",
       "role": "plugin-package",
-      "sha256": "74a8a13574db75b72ad209857e487ce857f64882262bf039e8faaa467019286d",
+      "sha256": "784cdc1cc6abc7ae620f0b5fb22f3c29e2c9816399ff16d84f21ff4babd704a5",
       "bytes": 793
     },
     {
       "path": "plugins/axiom/gemini-extension.json",
       "role": "plugin-package",
-      "sha256": "cd2fd329f585623500362dc91ea0d09fa26a309649ec20c019f870840f029a37",
+      "sha256": "eef3a88976ed5c38dd0ffa4b962b6bf5c77e6a757d1fab84087837eb6c8aa29c",
       "bytes": 156
     },
     {
@@ -274,7 +292,7 @@
     {
       "path": "plugins/axiom/plugin.json",
       "role": "plugin-package",
-      "sha256": "ef9836929e47e01d633f1bc9d112825668eb74497f631f7ce978e9abd9bccf3d",
+      "sha256": "3b0deea5851652eda598d32a784a04aa5581d00ebc2d68cd540bcf2a91276698",
       "bytes": 436
     },
     {
@@ -532,27 +550,9 @@
       "bytes": 5608
     },
     {
-      "path": "templates/bootstrap/AGENTS.block.md",
-      "role": "bootstrap-content",
-      "sha256": "39c2b714efbcfdf61f62ff60f43616254d4fb855c9babe0c2c871d1be4d06f5d",
-      "bytes": 314
-    },
-    {
-      "path": "templates/bootstrap/gitignore.fragment",
-      "role": "bootstrap-content",
-      "sha256": "8dcda848864ed6321d18c2e11c44055992a13f0275f53f1d32e9c03e1b35849f",
-      "bytes": 1636
-    },
-    {
-      "path": "templates/bootstrap/manifest.json",
-      "role": "bootstrap-content",
-      "sha256": "be134c02a8afaa2e048e9d9512f01ddf165f1e28e3e4ed7e90bd23bd202a84c3",
-      "bytes": 2398
-    },
-    {
       "path": ".github/plugin/marketplace.json",
       "role": "plugin-marketplace",
-      "sha256": "498378392e255377a77558182bcc987a768ede1b3bcfcbad0bdd40b786e4c75e",
+      "sha256": "c1ce95d428dd59991348eb11266b38ef3dae7fcfa47b6bc792f9c9518ac7daa4",
       "bytes": 366
     }
   ]

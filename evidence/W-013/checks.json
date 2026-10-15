@@ -1,0 +1,35 @@
+[
+  {
+    "id": "pytest",
+    "command": [
+      "python",
+      "-m",
+      "pytest",
+      "tests",
+      "-q"
+    ],
+    "exit_code": 0,
+    "environment": "native Windows",
+    "redaction": "Machine-local path prefixes replaced"
+  },
+  {
+    "id": "manifest",
+    "command": [
+      "python",
+      "release/verify_manifest.py"
+    ],
+    "exit_code": 0,
+    "environment": "native Windows",
+    "redaction": "Machine-local path prefixes replaced"
+  },
+  {
+    "id": "parity",
+    "command": [
+      "python",
+      "release/build_plugin_bundle.py"
+    ],
+    "exit_code": 0,
+    "environment": "native Windows",
+    "redaction": "Machine-local path prefixes replaced"
+  }
+]

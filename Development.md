@@ -143,3 +143,7 @@ W-002 owns the two-entrypoint router, progressive references, explicit legacy pa
 ## Authorized 0.1.8 release
 
 The user request on 2026-10-15 supersedes the prior W-002 feature-only delivery restriction for this release. W-006 prepares version 0.1.8; exact manifest/parity, CI and independent shared contract review remain required.
+
+## Authorized 0.1.9 patch release
+
+The user request on 2026-10-15 authorizes the 0.1.9 patch set. W-013 changes version and packaging metadata only; CLI owns the legacy-store adoption fix. Existing immutable pins, required owner/native checks and review/publication gates remain in force.
