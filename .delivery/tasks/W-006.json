@@ -1,0 +1,24 @@
+{
+  "task_id": "W-006",
+  "source_repo": "axiom-skills",
+  "branch": "feature/w-006-release-018",
+  "source_revision": "81dfbf0579a6f421cf27a072107cdb80ce831a4e",
+  "local_commit_sha": "81dfbf0579a6f421cf27a072107cdb80ce831a4e",
+  "verified_remote_branch_sha": "81dfbf0579a6f421cf27a072107cdb80ce831a4e",
+  "push_remote": "https://github.com/orchex006/axiom-skills.git",
+  "release_source_revision": "81dfbf0579a6f421cf27a072107cdb80ce831a4e",
+  "component_version": "0.1.8",
+  "delivery_state": "integrated",
+  "main_integration": "verified release source integrated",
+  "primary_checkout": ".",
+  "release": "published",
+  "release_url": "https://github.com/orchex006/axiom-skills/releases/tag/v0.1.8",
+  "all_downloaded_checksums_verified": true,
+  "source_ci": {
+    "conclusion": "success",
+    "headSha": "81dfbf0579a6f421cf27a072107cdb80ce831a4e",
+    "status": "completed",
+    "url": "https://github.com/orchex006/axiom-skills/actions/runs/38671482266"
+  },
+  "note": "This is an evidence-only follow-up. Immutable release tags/assets are unchanged; the canonical publication receipt records the final delivery commit."
+}
