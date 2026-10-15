@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.1.8
+
 ### New Features
 
 - Route graph build/watch/questions/impact/export/diagnostics through axge with selectively loaded references; keep ecosystem lifecycle under axm.
@@ -9,7 +11,7 @@
 
 ### Known Limitations
 
-- Workflow facades require a matching engine capability; earlier installed engines may use reconcile/serve/render. Native host execution is reported only when tested. No 0.1.8 release is published.
+- Workflow facades require a matching engine capability; earlier installed engines may use reconcile/serve/render. Native host execution is reported only when tested. Complete method call graphs and universal host runtime support are not claimed.
 
 ## 0.1.7
 

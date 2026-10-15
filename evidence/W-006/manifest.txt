@@ -1,0 +1,1 @@
+OK skills bundle verification: component=axiom-skills version=0.1.8 channel=stable files=80 scopes=policy,skills,adapters,plugins,.agents/plugins,.claude-plugin,marketplace-plugins,templates/bootstrap,.github/plugin

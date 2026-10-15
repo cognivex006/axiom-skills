@@ -1,0 +1,26 @@
+[
+  {
+    "command": [
+      "python",
+      "-m",
+      "pytest",
+      "tests",
+      "-q"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python",
+      "release/verify_manifest.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python",
+      "release/build_plugin_bundle.py"
+    ],
+    "exit_code": 0
+  }
+]

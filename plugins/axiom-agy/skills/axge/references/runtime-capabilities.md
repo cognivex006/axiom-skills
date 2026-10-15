@@ -1,7 +1,7 @@
 # Runtime capabilities
 
 Check installed `axge --help`, `axge version --json` and discovered MCP schemas.
-The unreleased workflow facade supports build/watch/export. Released 0.1.7 engines
+The 0.1.8 workflow facade supports build/watch/export. Earlier 0.1.7 engines
 may only expose reconcile/serve/render; do not infer these new verbs from skill names.
 
 | Skill intent | Facade when supported | Earlier capability |
