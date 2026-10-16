@@ -65,8 +65,8 @@ def build(root: Path, output: Path, tag: str, source_revision: str) -> Path:
     changes = re.sub(r"^### ", "## ", entries[0].strip(), flags=re.M)
     (output / "RELEASE-NOTES.md").write_text(
         "# Axiom Skills " + manifest["component_version"] + "\n\n" + changes + "\n\n"
-        "Two workflow entrypoints and standalone plugins for Codex, Claude Code, Gemini CLI, Antigravity and Copilot. "
-        "Use the axm workflow for installation and diagnostics, axge build for the first graph, "
+        "One unified axsk workflow skill and standalone plugins for Codex, Claude Code, Gemini CLI, Antigravity and Copilot. "
+        "Use axm for runtime and host installation and diagnostics, axge build for the first graph, "
         "axge watch for automatic graph refresh and MCP for graph questions. "
         "This bundle does not install the Axiom runtime. Live host behavior remains unverified where not exercised.\n",
         encoding="utf-8", newline="\n")

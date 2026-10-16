@@ -13,5 +13,6 @@
   "plugins/axiom/plugin.json": "285c9d141f0465b2d158c7b4cde2a047b1bf4f5dcb35877b6a59733608cda769",
   "release/record_plugin_files.py": "e5733b169cc2d788e7ba296542e72708f19f6c6fdbad85ebd49b15be006ac0f5",
   "release/skills-manifest.json": "2b829c1a6861f7f83719d023c9e7b1fee547c361d62238ddf5370084c09f2b14",
-  "spec.lock.json": "c49d7da5796cc1e0c9d315f8fe8176afc0d0a50366a7be7e0371edde3580a951"
+  "spec.lock.json": "c49d7da5796cc1e0c9d315f8fe8176afc0d0a50366a7be7e0371edde3580a951",
+  "release/build_github_release.py": "b8d7db7a62cb848aa3db253bc0b8307731f18290264506eac08456b414326ee5"
 }
