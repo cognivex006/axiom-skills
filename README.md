@@ -14,8 +14,16 @@ axm skills install codex
 ```
 
 Open a new agent session and confirm the discovered skill. A host may display
-`$axiom:axsk` or another native namespace. The initial managed adapter is Codex;
-[other host instructions](marketplace-plugins/README.md) remain available.
+`$axiom:axsk` or another native namespace. Version 0.1.11 also supports Claude Code:
+
+```powershell
+axm skills install claude
+axm skills doctor claude
+```
+
+Claude Code uses `/axiom:axsk` in a new session. Claude registration uses user
+scope and requires its native client on PATH. Other hosts retain
+[their documented setup](marketplace-plugins/README.md).
 
 ## Update
 
@@ -26,7 +34,9 @@ axm skills doctor codex
 
 Managed host content is refreshed from verified installed runtime content during
 installation. To refresh only the host registration, use `axm skills update codex`.
-Runtime and plugin registration results are reported separately.
+Runtime and plugin registration results are reported separately. Use `claude`
+with the same host lifecycle commands for Claude Code; both registered hosts are
+refreshed by a managed runtime update.
 
 ## Use the skill
 

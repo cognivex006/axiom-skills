@@ -13,7 +13,7 @@ axm doctor
 
 These commands check the installed ecosystem. Project registration and AI-host setup are separate. Once the plugin is installed, `$axiom:axsk` guides install, repair, update, doctor, version and uninstall through the same `axm` command. SQLite readiness means the graph engine can open and query its linked driver; no matching version or separate system SQLite install is required. Prebuilt releases need no Rust compiler. Use `axm doctor --verbose` for runtime paths and detailed evidence, and `axmp doctor` for gateway credentials and query/control readiness. The CLI manages its private `bin/graphd-engine/` directory, including migration of owned older layouts.
 
-## 2. Add the skills to Codex
+## 2. Add the skills to your agent
 
 The managed host commands require Axiom 0.1.10 or later. For an immutable
 0.1.9 installation, update the runtime first or use its versioned manual plugin guide:
@@ -26,7 +26,11 @@ axm skills doctor codex
 The manager registers a retained snapshot of the verified installed skills bundle.
 Open a new agent session; restart the desktop app if discovery is stale. The host
 may expose `$axiom:axsk`. Registration does not establish a successful MCP query.
-Other host setup remains in [plugin installation](../marketplace-plugins/README.md).
+For Claude Code, version 0.1.11 adds `axm skills install claude` and
+`axm skills doctor claude`, using its native client and user scope. In a new
+Claude Code session, invoke `/axiom:axsk`. Update, uninstall and recover use the
+same host argument. Other host setup remains in
+[plugin installation](../marketplace-plugins/README.md).
 
 ## 3. Connect a project and MCP
 
@@ -48,11 +52,11 @@ $axiom:axsk watch Update the graph when I save source files.
 $axiom:axsk ask Find the code relevant to this bug.
 ```
 
-Or choose `axge` in the skills picker and ask:
+Or choose `axsk` in the skills picker and ask:
 
 > Find the code and relationships relevant to this bug, then read the source files needed to verify the result.
 
-Use `axge impact` for hypothetical change analysis, `axge build` for an authorized refresh, `axge export` for the selected snapshot, and `axge doctor` for diagnosis. The [workflow directory](../README.md) describes the two entrypoints.
+Use `axge impact` for hypothetical change analysis, `axge build` for an authorized refresh, `axge export` for the selected snapshot, and `axge doctor` for diagnosis. The [workflow directory](../README.md) describes the unified entrypoint.
 
 ## If the skills do not appear
 

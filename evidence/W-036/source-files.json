@@ -1,0 +1,17 @@
+{
+  "tests/test_plugin_review_recording.py": "809725f0f58875b830b50bd1e61a45b28ba69102e4e5ac58a627bc69432add42",
+  ".github/plugin/marketplace.json": "f09234db83e99750797b4ebe69c7ddf23022e80389a999534915ce05cab6899c",
+  "Changelog.md": "2779aa87f17d5c35e366dd73758a69d1d1b5243826d7a78d5d535a94d776b079",
+  "Development.md": "dfb292b24c579a83afd58d3cf3c788a987182eca1693ff5fc06a28d83690f939",
+  "README.md": "622205a9ca90a488e164b7b5ab2b8ed1a95a8ce0e6ca08e924b136a4d4180aa3",
+  "adapters/compatibility.json": "b5f351b46fd374bd3ea6640c1aecf4c1f216c552052417ca966be18763a9ead5",
+  "docs/GETTING-STARTED.md": "7c27120ffd64598080e2b5b4aa66a9ddf3f033a85c20db57202bc9a5831904e1",
+  "gemini-extension.json": "5f9c27f7d6ef54707ce9161ced3acd51811edff587d73844ff760731659ce96b",
+  "plugins/axiom/.claude-plugin/plugin.json": "6e7ce80760ca4819301447c0dbe0e8c2829fb044f44c5ac4e70fec531075e474",
+  "plugins/axiom/.codex-plugin/plugin.json": "5981e915c18e317239583b516a79de4b28e0a922a30673984e64756c82d5c94f",
+  "plugins/axiom/gemini-extension.json": "5f9c27f7d6ef54707ce9161ced3acd51811edff587d73844ff760731659ce96b",
+  "plugins/axiom/plugin.json": "285c9d141f0465b2d158c7b4cde2a047b1bf4f5dcb35877b6a59733608cda769",
+  "release/record_plugin_files.py": "e5733b169cc2d788e7ba296542e72708f19f6c6fdbad85ebd49b15be006ac0f5",
+  "release/skills-manifest.json": "2b829c1a6861f7f83719d023c9e7b1fee547c361d62238ddf5370084c09f2b14",
+  "spec.lock.json": "c49d7da5796cc1e0c9d315f8fe8176afc0d0a50366a7be7e0371edde3580a951"
+}

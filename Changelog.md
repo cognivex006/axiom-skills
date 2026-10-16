@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.1.11
+
+### Documentation
+
+- Explain managed Claude Code onboarding through axm, host-specific skill invocation and the distinction between registration, discovery and graph-query readiness.
+
 ## 0.1.10
 
 ### New Features

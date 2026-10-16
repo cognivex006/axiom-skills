@@ -14,6 +14,7 @@ SCOPES = ("plugins", ".agents/plugins", ".claude-plugin", "marketplace-plugins",
 def main() -> int:
     data = json.loads(MANIFEST.read_text(encoding="utf-8"))
     files = data["files"]
+    reviewed = {entry["path"]: entry for entry in files}
     files[:] = [entry for entry in files if not any(
         entry["path"] == scope or entry["path"].startswith(scope + "/")
         for scope in SCOPES
@@ -23,12 +24,22 @@ def main() -> int:
             if not path.is_file():
                 continue
             raw = path.read_bytes()
-            files.append({
-                "path": path.relative_to(ROOT).as_posix(),
+            relative = path.relative_to(ROOT).as_posix()
+            digest = hashlib.sha256(raw).hexdigest()
+            entry = {
+                "path": relative,
                 "role": "plugin-package" if scope == "plugins" else "plugin-marketplace",
-                "sha256": hashlib.sha256(raw).hexdigest(),
+                "sha256": digest,
                 "bytes": len(raw),
-            })
+            }
+            # Retain an existing byte-bound review, or the exact canonical mirror's
+            # review. Changed/unreviewed executable bytes still fail verification.
+            canonical = "/".join(relative.split("/")[2:]) if scope == "plugins" else ""
+            for review in (reviewed.get(relative), reviewed.get(canonical)):
+                if review and review.get("sha256") == digest and review.get("capabilities"):
+                    entry["capabilities"] = list(review["capabilities"])
+                    break
+            files.append(entry)
     scopes = data["install_policy"]["declared_scope"]
     for scope in SCOPES:
         if scope not in scopes:

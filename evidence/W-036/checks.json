@@ -1,0 +1,46 @@
+[
+  {
+    "id": "owner-tests",
+    "command": [
+      "python",
+      "-m",
+      "pytest",
+      "tests",
+      "-q"
+    ],
+    "exit_code": 0,
+    "artifact": "evidence/W-036/owner-tests.txt",
+    "sha256": "e05a311f125661fc97eb1ac819523649b9afa9469c45b2464e6fa778624faa37"
+  },
+  {
+    "id": "manifest",
+    "command": [
+      "python",
+      "release/verify_manifest.py"
+    ],
+    "exit_code": 0,
+    "artifact": "evidence/W-036/manifest.txt",
+    "sha256": "f0ff7af5ac75bdda2b6ca2e346652fd0ada47bcebb3b09a3512d7013f36603e0"
+  },
+  {
+    "id": "package-parity",
+    "command": [
+      "python",
+      "release/build_plugin_bundle.py"
+    ],
+    "exit_code": 0,
+    "artifact": "evidence/W-036/package-parity.txt",
+    "sha256": "354167af36e487ee7be2ed5b288ec7e07889f9f19536c18754ea73e81987392d"
+  },
+  {
+    "id": "skill-validation",
+    "command": [
+      "python",
+      "<user-path>",
+      "skills/axsk"
+    ],
+    "exit_code": 0,
+    "artifact": "evidence/W-036/skill-validation.txt",
+    "sha256": "db349825903d66adffea3ecf1bd8e1803043e8a71cf1a051235dabc5371f5bb0"
+  }
+]
