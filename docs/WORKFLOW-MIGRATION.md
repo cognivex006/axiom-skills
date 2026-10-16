@@ -1,6 +1,6 @@
 # Workflow migration
 
-The development package discovers one skill, `axsk`. Published 0.1.9 and earlier
+Version 0.1.10 discovers one skill, `axsk`. Published 0.1.9 and earlier
 packages remain immutable. Terminal management uses `axm skills`; `$axsk` is an
 agent intent router. Existing terminal `axsk` forwards its earlier verbs during
 migration and explains the new management command.

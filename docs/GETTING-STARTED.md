@@ -15,9 +15,8 @@ These commands check the installed ecosystem. Project registration and AI-host s
 
 ## 2. Add the skills to Codex
 
-The managed host commands are an unpublished development addition. For a released
-0.1.9 installation use its versioned manual plugin guide. With a build containing
-the managed adapter:
+The managed host commands require Axiom 0.1.10 or later. For an immutable
+0.1.9 installation, update the runtime first or use its versioned manual plugin guide:
 
 ```powershell
 axm skills install codex

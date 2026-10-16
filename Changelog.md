@@ -2,9 +2,15 @@
 
 ## Unreleased
 
+## 0.1.10
+
 ### New Features
 
 - Unify default agent workflows under axsk, retain an explicit compatibility package, and lead guides with installation, update and agent onboarding.
+
+### Known Limitations
+
+- The managed host adapter initially supports Codex. Other hosts retain manual registration. Host discovery and graph-query readiness require their own checks; portable bundle tests do not certify every AI host.
 
 ## 0.1.9
 

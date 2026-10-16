@@ -6,7 +6,7 @@ project graphs. The plugin supplies workflow instructions and focused references
 ## Install
 
 Install the runtime using the [Axiom installer](https://github.com/orchex006/axiom-cli#install-and-update).
-The managed setup below is an unpublished development addition. Published 0.1.9
+The managed setup below requires Axiom 0.1.10 or later. Published 0.1.9
 keeps its original two skill names and [manual plugin registration](https://github.com/orchex006/axiom-skills/blob/v0.1.9/marketplace-plugins/README.md).
 
 ```powershell

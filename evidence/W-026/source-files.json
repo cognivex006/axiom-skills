@@ -1,0 +1,15 @@
+{
+  ".github/plugin/marketplace.json": "ea193b3645423adbe9d67632cbea3e6829211dc7ae0c8c762b3b6ee422b22d1d",
+  "Changelog.md": "2e4ada781d20ccdc9e4ecfaad33981fb89c856112bf40482cdf48af081cf5daa",
+  "Development.md": "23b6d6de3b961d1a127cfb454c0546ced3895a9c9fae2a8134710806aa84ed3c",
+  "README.md": "a57e9a68b13930afb8b91d662d90c4dbf9448337bd9d0842c052873b4b9ec0c4",
+  "adapters/compatibility.json": "195d08c1738e5672a2262085ed61d6702523c4e010c8860286d9068c9e3258e1",
+  "docs/GETTING-STARTED.md": "db42f18d94606e09cb7bcfc68b1c62ab1dbe0b0c419f0ad3a868b55b860a6e92",
+  "docs/WORKFLOW-MIGRATION.md": "174136dd623109d6d294ece7577e1d24dd72fe2d0dae8ac3e9d84db96c65881a",
+  "gemini-extension.json": "3435cfb75ed8c39ac527a1ea54ec9715055a59645607bfae33c2691ffc91552b",
+  "plugins/axiom/.claude-plugin/plugin.json": "973607d1a86e59bb80d2dd15440bea90be7b63919f4688a3243a6a3ac11ac1da",
+  "plugins/axiom/.codex-plugin/plugin.json": "f7d73285dd3ccf486e04e32569a3d3de78e551054c5b4bd667f49ea1376d4fb2",
+  "plugins/axiom/gemini-extension.json": "3435cfb75ed8c39ac527a1ea54ec9715055a59645607bfae33c2691ffc91552b",
+  "plugins/axiom/plugin.json": "989e6cc8dc0594eb7251beb5a7f642cb5be423bc903800646770cd3720f0d4d9",
+  "release/skills-manifest.json": "84896adb13ab8372404bd729fe5542876efbb92fb1a9446b8ae06e7f4546c591"
+}
