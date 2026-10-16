@@ -1,0 +1,15 @@
+{
+  "task_id": "W-036",
+  "source_repo": "axiom-skills",
+  "branch": "feature/w-036-skills-011",
+  "source_revision": "2cfc035181b89f68bb68438cc2105b763e4e720a",
+  "local_commit_sha": "2cfc035181b89f68bb68438cc2105b763e4e720a",
+  "push_remote": "https://github.com/orchex006/axiom-skills.git",
+  "verified_source_remote_branch_sha": "2cfc035181b89f68bb68438cc2105b763e4e720a",
+  "delivery_state": "pushed",
+  "observed_at": "2026-10-16T10:39:40.648337+00:00",
+  "release": "0.1.11 authorized; required native/tag/artifact gates remain",
+  "main_integration": "not_performed",
+  "verification": "Required final local checks passed; exact selected-head native CI is recorded by canonical handoff.",
+  "note": "Historical source-push observation. This receipt-only descendant changes no product bytes."
+}
