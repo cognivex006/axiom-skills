@@ -1,47 +1,67 @@
 # Axiom Skills
 
-Unreleased workflow preview on the feature branch. Published 0.1.7 remains unchanged;
-this work does not publish or prepare a 0.1.8 release.
+Use `$axsk` in your agent to build, watch, query, inspect impact and export Axiom
+project graphs. The plugin supplies workflow instructions and focused references.
 
-Tell your assistant what graph work you need. Default discovery has two entrypoints:
-`axge` for graph workflows and `axm` for ecosystem installation/update.
+## Install
 
-```text
-$axge build
-$axge watch
-$axge ask the relation from method PingPong on this project
-$axge impact remove method RemoveFilesAsync
-$axge export this graph
-$axge doctor
-$axge doctor upgrade
-$axge version
-$axm install
-$axm update
+Install the runtime using the [Axiom installer](https://github.com/orchex006/axiom-cli#install-and-update).
+The managed setup below is an unpublished development addition. Published 0.1.9
+keeps its original two skill names and [manual plugin registration](https://github.com/orchex006/axiom-skills/blob/v0.1.9/marketplace-plugins/README.md).
+
+```powershell
+axm skills install codex
 ```
 
-Text after a skill is an intent, not a shell command. Impact removal is analysis-only.
-Codex plugins may use `$axiom:axge`; other hosts retain their own namespace. Only
-actual host discovery confirms invocation syntax. Graph reads use discovered,
-authenticated MCP tools and bounded source evidence.
+Open a new agent session and confirm the discovered skill. A host may display
+`$axiom:axsk` or another native namespace. The initial managed adapter is Codex;
+[other host instructions](marketplace-plugins/README.md) remain available.
 
-Follow [getting started](docs/GETTING-STARTED.md) for runtime, plugin and MCP setup,
-[host installation](marketplace-plugins/README.md) for package entrypoints, and
-[graph lifecycle](docs/guides/graph-lifecycle.md) for selected workflows and limits.
-Installed users do not need private specs or contributor task cards.
+## Update
 
-The engine creates/refreshes the graph; the watcher owns source changes. Builds are
-incremental unless a full rebuild is explicitly requested. Read-only questions and
-exports do not start services, install software or reconcile implicitly. Ask/impact
-reports retain generation, freshness, coverage and unresolved/truncated limits.
-Exports retain selected scope and verified snapshot provenance.
+```powershell
+axm update
+axm skills doctor codex
+```
 
-This branch adds build/watch/export facades and measured engine cycles. Inspect
-installed help before using them: older 0.1.7 engines use reconcile/serve/render and
-may lack JSON export or cycle telemetry. An installed plugin is separate from a
-working graph/MCP connection. Unrun host behavior is unverified.
+Managed host content is refreshed from verified installed runtime content during
+installation. To refresh only the host registration, use `axm skills update codex`.
+Runtime and plugin registration results are reported separately.
 
-Legacy graph-* entrypoints are available only in an explicit compatibility package
-until 0.2.0; see [migration](docs/WORKFLOW-MIGRATION.md). Existing released packages
-are immutable. Default packages contain two skills, including their references.
+## Use the skill
 
-For contributors, read [Development.md](Development.md) and [Changelog.md](Changelog.md).
+```text
+$axsk build
+$axsk watch
+$axsk ask Find callers of PingPong across projects A, B and C.
+$axsk impact What would removing RemoveFilesAsync affect?
+$axsk export this graph
+$axsk doctor
+$axsk version
+```
+
+Text after the skill is an agent intent. The workflow resolves registered
+projects, discovers scoped MCP tools and keeps the returned generation vectors.
+For questions spanning solutions it makes bounded calls per solution and reports
+their individual provenance. Graph coverage and unresolved edges stay explicit;
+source is consulted when graph evidence is insufficient or needs verification.
+
+## Verify the connection
+
+`axm doctor` checks the runtime. `axm skills doctor codex` checks host registration.
+A new session establishes skill discovery. An authenticated graph query verifies
+the project/MCP connection. These checks are reported separately.
+
+See [Get started](docs/GETTING-STARTED.md), [graph lifecycle](docs/guides/graph-lifecycle.md)
+and [migration](docs/WORKFLOW-MIGRATION.md). Existing terminal `axsk` is deprecated;
+all managed installation and update operations belong to `axm`.
+
+## Components and compatibility
+
+`axm` owns runtime and host lifecycle; `axge` analyzes source and publishes graphs;
+`axmp` serves the local graph API/MCP connection. The agent skill is `axsk`.
+Default packages contain one skill and its references. Explicit compatibility
+packages retain prior `axge`/`axm` and graph-* skills through the documented window.
+Published releases and historical payloads remain immutable.
+
+For contributors, see [Development](Development.md) and [Changelog](Changelog.md).

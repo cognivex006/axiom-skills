@@ -1406,8 +1406,9 @@ class SkillsManifestTests(unittest.TestCase):
     def test_manifest_declares_the_provisioning_skills(self):
         manifest = self.manifest()
         paths = {entry["path"] for entry in manifest["files"]}
-        self.assertIn("skills/axge/SKILL.md", paths)
-        self.assertIn("skills/axm/SKILL.md", paths)
+        self.assertIn("skills/axsk/SKILL.md", paths)
+        self.assertNotIn("skills/axge/SKILL.md", paths)
+        self.assertNotIn("skills/axm/SKILL.md", paths)
 
     def test_negative_manifest_with_an_undeclared_file_is_rejected(self):
         root, manifest = self.stage_bundle(extra="skills/axge/EXTRA.md")

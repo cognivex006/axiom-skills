@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_internal_barriers_and_checkpoint_have_no_default_discovery():
     assert not list((ROOT / "skills").glob("graph-*/SKILL.md"))
-    references = ROOT / "skills/axge/references"
+    references = ROOT / "skills/axsk/references"
     assert (references / "freshness.md").is_file()
     assert (references / "export.md").is_file()
     assert "staged" in (references / "export.md").read_text()

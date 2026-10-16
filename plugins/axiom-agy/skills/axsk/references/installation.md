@@ -23,3 +23,5 @@ Preserve source, user data, old owned generations and human files. Modified/unow
 legacy installations require an explicit adoption/repair plan; never delete them.
 Apply only the reviewed target/state, verify installed `axm version` and `axm doctor`,
 and retain existing rollback semantics. Report failed/NotReady/not_run legs honestly.
+
+For managed Codex onboarding use supported `axm install --host codex` or `axm skills install codex`; inspect the plan and preserve existing marketplaces. After registration open a new session and verify the discovered skill. `axm skills doctor codex` reports registration separately from MCP query readiness. Other hosts require their documented adapters.

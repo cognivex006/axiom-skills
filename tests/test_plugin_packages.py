@@ -52,7 +52,7 @@ class PluginPackageTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             candidate = Path(temp) / "axiom"
             shutil.copytree(PLUGIN, candidate)
-            packaged = candidate / "skills" / "axge" / "SKILL.md"
+            packaged = candidate / "skills" / "axsk" / "SKILL.md"
             packaged.write_bytes(packaged.read_bytes() + b"\nchanged\n")
             result = subprocess.run(
                 [sys.executable, str(ROOT / "release" / "build_plugin_bundle.py"), "--plugin-root", str(candidate)],
@@ -62,7 +62,7 @@ class PluginPackageTests(unittest.TestCase):
                 check=False,
             )
             self.assertNotEqual(result.returncode, 0)
-            self.assertIn("skills/axge/SKILL.md", result.stdout.replace("\\", "/"))
+            self.assertIn("skills/axsk/SKILL.md", result.stdout.replace("\\", "/"))
 
 
 if __name__ == "__main__":

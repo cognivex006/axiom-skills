@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### New Features
+
+- Unify default agent workflows under axsk, retain an explicit compatibility package, and lead guides with installation, update and agent onboarding.
+
 ## 0.1.9
 
 ### Chores

@@ -292,7 +292,7 @@ class HostCompatibilityDriftTests(unittest.TestCase):
         self.assertEqual(["policy", "skills", "adapters", "plugins", ".agents/plugins", ".claude-plugin", "marketplace-plugins", "templates/bootstrap", ".github/plugin"], scopes)
         for added in ("docs", "tests"):
             self.assertNotIn(added, scopes, f"{added}/ must stay outside the hashed bundle scope")
-        self.assertTrue(any(row["path"].startswith("skills/axge/references/") for row in manifest["files"]))
+        self.assertTrue(any(row["path"].startswith("skills/axsk/references/") for row in manifest["files"]))
 
     def test_shipped_manifest_verifier_still_accepts_the_bundle(self) -> None:
         spec = importlib.util.spec_from_file_location(

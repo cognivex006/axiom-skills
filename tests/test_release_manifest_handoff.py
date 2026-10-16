@@ -29,7 +29,7 @@ def test_owner_manifest_pins_spec_and_reviews_every_executable() -> None:
     assert verify(MANIFEST, ROOT) == []
     executable = [entry for entry in manifest["files"] if entry["path"].endswith(".py")]
     assert len(executable) == 9
-    assert {entry["path"] for entry in executable if "select_workflow" in entry["path"]} == {"skills/axge/scripts/select_workflow.py", "plugins/axiom/skills/axge/scripts/select_workflow.py", "plugins/axiom-agy/skills/axge/scripts/select_workflow.py"}
+    assert {entry["path"] for entry in executable if "select_workflow" in entry["path"]} == {"skills/axsk/scripts/select_workflow.py", "plugins/axiom/skills/axsk/scripts/select_workflow.py", "plugins/axiom-agy/skills/axsk/scripts/select_workflow.py"}
     assert all("execute" in entry["capabilities"] for entry in executable)
 
 
@@ -75,9 +75,9 @@ def test_path_escape_and_undeclared_payload_refuse(tmp_path: Path) -> None:
 
     for scope in json.loads(MANIFEST.read_text())["install_policy"]["declared_scope"]:
         shutil.copytree(ROOT / scope, tmp_path / scope)
-    extra = tmp_path / "skills/axge/undeclared.md"
+    extra = tmp_path / "skills/axsk/undeclared.md"
     extra.write_text("not reviewed")
-    assert "unknown file inside a declared scope fails install: skills/axge/undeclared.md" in verify(MANIFEST, tmp_path)
+    assert "unknown file inside a declared scope fails install: skills/axsk/undeclared.md" in verify(MANIFEST, tmp_path)
 
 
 def test_full_owner_payload_stages_for_distribution_converter(tmp_path: Path) -> None:

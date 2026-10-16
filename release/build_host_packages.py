@@ -12,7 +12,7 @@ from release.build_github_release import verify_source
 from release.verify_manifest import verify, portable_relative
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED_SKILLS = {'axge', 'axm'}
+EXPECTED_SKILLS = {'axsk'}
 HOSTS = ('codex', 'claude', 'gemini', 'antigravity', 'copilot')
 INSTALL = {
     'codex': ['codex plugin marketplace add <extracted-package>', 'codex plugin add axiom@axiom-skills'],
@@ -122,6 +122,14 @@ def build(root: Path, output: Path, source_revision: str, legacy: bool = False) 
                     raise ValueError('legacy alias bytes changed')
                 files['skills/' + name.removeprefix('compatibility/legacy-skills/')] = raw
             files['legacy-compatibility.json'] = (json.dumps(manifest, indent=2) + '\n').encode()
+            previous = json.loads((root / 'compatibility/workflow-v019-manifest.json').read_text())
+            for name, digest in previous['files'].items():
+                if not portable_relative(name) or not name.startswith('compatibility/workflow-v019/skills/'):
+                    raise ValueError('unsafe previous workflow path')
+                raw = (root / name).read_bytes()
+                if sha(raw) != digest:
+                    raise ValueError('previous workflow compatibility bytes changed')
+                files[name.removeprefix('compatibility/workflow-v019/')] = raw
         if host in ('codex', 'claude', 'copilot'):
             entry = {'name':'axiom', 'source': {'source':'local','path':'./'} if host == 'codex' else './', 'version':version}
             if host == 'codex':
@@ -162,7 +170,9 @@ if __name__ == '__main__':
     if args.legacy:
         import subprocess
         legacy_manifest=json.loads((ROOT/'compatibility/legacy-manifest.json').read_text())
-        for name in ['compatibility/legacy-manifest.json', *legacy_manifest['files']]:
+        previous = json.loads((ROOT/'compatibility/workflow-v019-manifest.json').read_text())
+        for name in ['compatibility/legacy-manifest.json', *legacy_manifest['files'],
+                     'compatibility/workflow-v019-manifest.json', *previous['files']]:
             if subprocess.check_output(['git','show',args.source_revision+':'+name],cwd=ROOT)!=(ROOT/name).read_bytes():
                 raise ValueError('legacy payload is not bound to source revision')
     result=build(ROOT,args.out,args.source_revision,args.legacy)

@@ -51,7 +51,7 @@ def verify(args):
         prompt += "\n\nCurrent project context from the registered fixture:\n" + config.read_text()
         prompt += "\nSelected editor source src/Example.cs:\n" + source.read_text()
         for name in ("impact", "mcp-routing"):
-            prompt += f"\nAvailable skill reference .agents/skills/axge/references/{name}.md:\n" + (ROOT / f"skills/axge/references/{name}.md").read_text(encoding="utf-8")
+            prompt += f"\nAvailable skill reference .agents/skills/axsk/references/{name}.md:\n" + (ROOT / f"skills/axsk/references/{name}.md").read_text(encoding="utf-8")
         import anyio
         schemas = anyio.run(discovered_schemas, mcp_args, env, root / "discovery.log")
         prompt += "\nTool metadata discovered from this fixture's actual authenticated MCP stdio server:\n" + json.dumps(schemas)

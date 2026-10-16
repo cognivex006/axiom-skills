@@ -1,8 +1,14 @@
 # Install the Axiom skills plugin
 
-Choose your assistant below. Start with `axge build` to create the first graph and `axge watch` to update it automatically as source files change. Every package contains the same two Axiom workflow entrypoints. Plugin installation makes them discoverable; the [graph runtime](https://github.com/orchex006/axiom-cli) and MCP connection are configured separately.
+Choose your assistant below. Start with `axge build` to create the first graph and `axge watch` to update it automatically as source files change. Development packages contain the single axsk workflow entrypoint; published 0.1.9 retains its two earlier entrypoints. Plugin installation makes them discoverable; the [graph runtime](https://github.com/orchex006/axiom-cli) and MCP connection are configured separately.
 
 ## Codex
+
+For a build containing managed onboarding, use `axm skills install codex` and
+`axm skills doctor codex`, then open a new session. These commands are unpublished;
+0.1.9 users can use the direct client commands below. They remain the advanced
+manual path for diagnosing or managing an independently registered marketplace.
+
 
 ```sh
 codex plugin marketplace add orchex006/axiom-skills
@@ -10,7 +16,7 @@ codex plugin add axiom@axiom-skills
 codex plugin list --marketplace axiom-skills
 ```
 
-Start a new session. Invoke a skill such as `$axiom:axge`. Update the registered repository with `codex plugin marketplace upgrade axiom-skills`; use the client plugin manager to refresh the installed package. Remove it with `codex plugin remove axiom@axiom-skills`.
+Start a new session. Invoke a skill such as `$axiom:axsk`. Update the registered repository with `codex plugin marketplace upgrade axiom-skills`; use the client plugin manager to refresh the installed package. Remove it with `codex plugin remove axiom@axiom-skills`.
 
 [Official Codex plugin documentation](https://developers.openai.com/plugins/build/plugins)
 
@@ -24,7 +30,7 @@ In a Claude Code session:
 /plugin
 ```
 
-Invoke `/axiom:axge`, or select a skill in the plugin manager. The `/plugin` manager provides update, enable/disable and uninstall controls.
+Invoke `/axiom:axsk`, or select a skill in the plugin manager. The `/plugin` manager provides update, enable/disable and uninstall controls.
 
 [Official Claude plugin documentation](https://code.claude.com/docs/en/plugins)
 
@@ -79,7 +85,7 @@ agy plugin install ./axiom-skills/plugins/axiom-agy
 agy plugin list
 ```
 
-Use `/axge` to invoke a skill. To refresh a local package, update the checkout and reinstall through the host's plugin manager. Remove it with `agy plugin uninstall axiom`. Antigravity's documented named marketplace installation currently accepts its official marketplace; Axiom does not claim to be listed there. Use the local package, or import it using the appropriate IDE plugin manager.
+Use `/axsk` to invoke a skill. To refresh a local package, update the checkout and reinstall through the host's plugin manager. Remove it with `agy plugin uninstall axiom`. Antigravity's documented named marketplace installation currently accepts its official marketplace; Axiom does not claim to be listed there. Use the local package, or import it using the appropriate IDE plugin manager.
 
 [Official Antigravity plugin documentation](https://antigravity.google/docs/plugins?tab=cli)
 
@@ -91,8 +97,8 @@ The build tooling produces a separate standalone ZIP for each host with a source
 
 ## Compatibility and verification
 
-Codex skill discovery is verified on the installed macOS Intel client. All five package layouts, canonical skill parity and archives are tested. Claude, Gemini, AGY and Copilot native installation remains unrun on this machine because their clients are absent; package verification does not prove native runtime, hook behavior or graph/MCP readiness.
+Historical Codex discovery evidence covers the prior package on macOS Intel. The unified axsk package requires fresh host-session discovery evidence. All five package layouts, canonical skill parity and archives are tested. Claude, Gemini, AGY and Copilot native installation remains unrun on this machine because their clients are absent; package verification does not prove native runtime, hook behavior or graph/MCP readiness.
 
 Other assistants that implement Agent Skills can consume the `skills/<name>/SKILL.md` folders according to their documented discovery rules. Axiom advertises a host-specific plugin entrypoint only when that host's format is documented.
 
-See [Get started](../docs/GETTING-STARTED.md) and the [skill directory](../README.md#what-you-can-do).
+See [Get started](../docs/GETTING-STARTED.md) and the [skill directory](../README.md#use-the-skill).

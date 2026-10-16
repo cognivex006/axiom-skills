@@ -1,0 +1,22 @@
+{
+  "deprecated_until": "0.2.0",
+  "default_discovery": false,
+  "files": {
+    "compatibility/workflow-v019/skills/axge/SKILL.md": "3f01dcce67e26eca1f5d515a934c341fcd55040850ac284a8071532ba552fb17",
+    "compatibility/workflow-v019/skills/axm/SKILL.md": "2341e8c3bfa9b53100217e0392c1caede876cdc52e16cd7a1b8426f69e06d845",
+    "compatibility/workflow-v019/skills/axm/references/installation.md": "6fefbd74d9c38f6a0b73be1ff0fa6d84abbd27064d9695abcd9ea034d62d0605",
+    "compatibility/workflow-v019/skills/axm/references/upgrade.md": "45d20c43039e2bdc4847c8006a0a64dd56d5d8c8cc00e0a1b470de0704d0420d",
+    "compatibility/workflow-v019/skills/axge/references/ask.md": "6b68e3556813d3f92ba39a412a058a18009f4744c06c162d24e6d3cb6f01b22f",
+    "compatibility/workflow-v019/skills/axge/references/build.md": "2facc02bb65223414328f0f78a2a9c010c15d7e440fc16bea8248cf17e775eac",
+    "compatibility/workflow-v019/skills/axge/references/doctor.md": "7afed1f80c63e8636e3cce66bce456daca05a3a4024fe3171aba1a4a817b8e5f",
+    "compatibility/workflow-v019/skills/axge/references/export.md": "744a7bc234e78a7ee3a86973adc808f31858676d81beed880261fa2c47276ae3",
+    "compatibility/workflow-v019/skills/axge/references/freshness.md": "87a4304fbb53c5790f0d5bc750884c17338a099873286d791c2b2078b237feac",
+    "compatibility/workflow-v019/skills/axge/references/graph-quality.md": "540de669728576bd60fe0bab8641d7bd2adbe19d0dc0466d88aecfd01af3294f",
+    "compatibility/workflow-v019/skills/axge/references/impact.md": "1800205242a83246db592eb40e152ba9276e8d5721785611f1a278e3f40b55cd",
+    "compatibility/workflow-v019/skills/axge/references/mcp-routing.md": "07be9b2095ce99138ffbe9ada959f7d4f21d64b895b6a18e28352e3ab0e7dca2",
+    "compatibility/workflow-v019/skills/axge/references/runtime-capabilities.md": "3d5acd6e9fda54b92649cbb9c016b4589d1493c0bd654356d1526476b2cd0bb1",
+    "compatibility/workflow-v019/skills/axge/references/version.md": "0e6430e3991d614d65789c0a05079cc6c9118c4fa31765c21f73eccabf6e155c",
+    "compatibility/workflow-v019/skills/axge/references/watch.md": "669fba461111c39341489dacb03a612d65a4bb51834aef3ab758c65fa0410d36",
+    "compatibility/workflow-v019/skills/axge/scripts/select_workflow.py": "74d2b17f503f6cba3c5975273d34efcb4cddcd2c12903ca31d355f06a4b68b01"
+  }
+}

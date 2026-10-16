@@ -11,25 +11,27 @@ axm version
 axm doctor
 ```
 
-These commands check the installed ecosystem. Project registration and AI-host setup are separate. Once the plugin is installed, `$axiom:axm` guides install, repair, update, doctor, version and uninstall through the same `axm` command. SQLite readiness means the graph engine can open and query its linked driver; no matching version or separate system SQLite install is required. Prebuilt releases need no Rust compiler. Use `axm doctor --verbose` for runtime paths and detailed evidence, and `axmp doctor` for gateway credentials and query/control readiness. The CLI manages its private `bin/graphd-engine/` directory, including migration of owned older layouts.
+These commands check the installed ecosystem. Project registration and AI-host setup are separate. Once the plugin is installed, `$axiom:axsk` guides install, repair, update, doctor, version and uninstall through the same `axm` command. SQLite readiness means the graph engine can open and query its linked driver; no matching version or separate system SQLite install is required. Prebuilt releases need no Rust compiler. Use `axm doctor --verbose` for runtime paths and detailed evidence, and `axmp doctor` for gateway credentials and query/control readiness. The CLI manages its private `bin/graphd-engine/` directory, including migration of owned older layouts.
 
 ## 2. Add the skills to Codex
 
-```sh
-codex plugin marketplace add orchex006/axiom-skills
-codex plugin add axiom@axiom-skills
-codex plugin list --marketplace axiom-skills
+The managed host commands are an unpublished development addition. For a released
+0.1.9 installation use its versioned manual plugin guide. With a build containing
+the managed adapter:
+
+```powershell
+axm skills install codex
+axm skills doctor codex
 ```
 
-For a local checkout or the complete unpacked skills bundle, pass that directory to `codex plugin marketplace add` instead of the GitHub repository. The directory must contain `.agents/plugins/marketplace.json` and `plugins/axiom/`.
-
-Start a new Codex session. If the desktop app still shows the old plugin list, restart it. A plugin being listed confirms installation; it does not prove that a graph query or a host completion hook works.
-
-For Claude Code, GitHub Copilot CLI, Gemini CLI or Antigravity, use [the plugin installation guide](../marketplace-plugins/README.md).
+The manager registers a retained snapshot of the verified installed skills bundle.
+Open a new agent session; restart the desktop app if discovery is stale. The host
+may expose `$axiom:axsk`. Registration does not establish a successful MCP query.
+Other host setup remains in [plugin installation](../marketplace-plugins/README.md).
 
 ## 3. Connect a project and MCP
 
-Start with `$axiom:axge build` to register the selected solution, build its first graph and verify a known symbol. Then use `$axiom:axge watch` to keep that graph current after source files are saved. Both workflows need `axiom-graphd`; automatic refresh uses its running daemon and current polling watcher. This refresh updates graph data, not application binaries.
+Start with `$axiom:axsk build` to register the selected solution, build its first graph and verify a known symbol. Then use `$axiom:axsk watch` to keep that graph current after source files are saved. Both workflows need `axiom-graphd`; automatic refresh uses its running daemon and current polling watcher. This refresh updates graph data, not application binaries.
 
 Use the [graph engine command reference](https://github.com/orchex006/axiom-graphd/blob/main/docs/reference/axiom-graphd.md) to register your solution and produce its graph. Configure the [MCP gateway](https://github.com/orchex006/axiom-mcp#run) with credentials scoped to that solution and add its launch configuration to your host.
 
@@ -42,9 +44,9 @@ For code questions, the assistant uses `axge ask` or `axge impact` to discover a
 In Codex, invoke the discovered skill by name:
 
 ```text
-$axiom:axge build Build the first graph for this solution.
-$axiom:axge watch Update the graph when I save source files.
-$axiom:axge ask Find the code relevant to this bug.
+$axiom:axsk build Build the first graph for this solution.
+$axiom:axsk watch Update the graph when I save source files.
+$axiom:axsk ask Find the code relevant to this bug.
 ```
 
 Or choose `axge` in the skills picker and ask:
@@ -57,14 +59,10 @@ Use `axge impact` for hypothetical change analysis, `axge build` for an authoriz
 
 | Symptom | Check or fix |
 |---|---|
-| `axm` says skills are installed, but Codex shows none | Register the marketplace and install `axiom@axiom-skills` using step 2 |
-| Marketplace exists, but the plugin is not installed | Run `codex plugin add axiom@axiom-skills` |
+| `axm` says skills are installed, but Codex shows none | Run `axm skills install codex` on a build containing the adapter |
+| Marketplace exists, but the plugin is not installed | Run `axm skills install codex` |
 | An existing session shows no new skills | Start a new session; restart the desktop app if needed |
 | `codex plugin` is not recognized | Check `codex --version` and the current [Codex plugin documentation](https://developers.openai.com/plugins/build/plugins) before changing the installation |
 | Skills appear, but graph operations fail | Check the registered solution, graph freshness, MCP connection and caller credentials |
 
-Onboarding commands are checked with Codex CLI 0.162.1 on macOS Intel. Plugin discovery, graph/MCP queries and host hooks are separate checks; see [host compatibility](host-compatibility.md) for advanced adapter details.
-
-## Workflow preview
-
-The feature branch exposes only axge and axm by default. `$axge export this graph` preserves the selected project/node scope; doctor upgrade delegates to axm with an exact reviewed plan. Version is offline. Inspect installed engine help: build/watch/export and cycle measurements are unreleased additions, while earlier engines use reconcile/serve/render. Legacy aliases require the explicit compatibility package; see [migration](WORKFLOW-MIGRATION.md).
+Historical direct plugin onboarding was observed on Codex CLI 0.162.1 on macOS Intel. The new managed adapter has separate native contract-fixture coverage; actual new-session skill discovery and authenticated graph access require their own host verification. See [host compatibility](host-compatibility.md).

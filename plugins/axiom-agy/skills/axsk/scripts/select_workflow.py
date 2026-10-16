@@ -52,7 +52,7 @@ def select(prompt: str) -> dict:
     elif text.startswith(("ask ", "หา caller", "who calls ", "find callers ")):
         workflow = "ask"
     if workflow:
-        owner = "axm" if workflow == "upgrade" else "axge"
+        owner = "axsk"
         result.update(workflow=workflow, reference=f"skills/{owner}/references/{workflow}.md",
                       read_only=workflow not in ("build", "watch", "upgrade"),
                       full_rebuild=text == "full rebuild", reason="Selected reference only; host authorization governs tools")

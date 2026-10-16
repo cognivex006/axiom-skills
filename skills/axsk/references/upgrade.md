@@ -1,7 +1,7 @@
 # Ecosystem upgrade
 
 Inspect actual installed `axm --help`, version/doctor and recorded channel/metadata.
-Use only the update syntax the installed parser supports. `axge doctor upgrade`
+Use only the update syntax the installed parser supports. `axsk doctor upgrade`
 diagnoses graph/schema/MCP compatibility and delegates here; it does not create an
 updater or equate source refresh with software/schema upgrade.
 
@@ -19,3 +19,5 @@ When no canonical entrypoint exists, offer the owner-published update.ps1/update
 handoff from an exact reviewed release, preserve old data and diagnose leftover
 environment overrides. After apply record actual versions, health, rollback/state
 and unsupported/unverified features. An approved plan alone is not an applied upgrade.
+
+For an Axiom-managed Codex plugin use `axm skills update codex` to refresh the verified installed content. A failed/interrupted host change retains recovery data; inspect `axm skills recover codex` and its exact plan before retrying. A runtime success with failed host setup is partial, not a complete agent setup.

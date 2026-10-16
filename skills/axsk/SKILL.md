@@ -1,13 +1,13 @@
 ---
-name: axge
-description: Build, watch, export or diagnose an Axiom code graph, and answer code relationship or hypothetical impact questions through scoped MCP tools. Use for graph requests in English or Thai; installation and ecosystem updates belong to axm.
+name: axsk
+description: Build, watch, query, analyze impact or export Axiom project graphs, diagnose readiness, and guide authorized ecosystem or agent setup. Use for graph work and Axiom lifecycle requests in English or Thai.
 ---
 
 # Axiom graph workflows
 
-Interpret the user's intent; text after `$axge` is not automatically shell argv.
+Interpret the user's intent; text after `$axsk` is not automatically shell argv.
 Plain requests such as "หา caller ของ PingPong ในโปรเจกต์นี้" also activate this skill.
-Host plugins may require `$axiom:axge` or `/axiom:axge`; report only syntax the host
+Host plugins may require `$axiom:axsk` or `/axiom:axsk`; report only syntax the host
 actually discovers. Installation, discovery, authenticated MCP and successful graph
 queries are separate states.
 
@@ -27,7 +27,7 @@ Load only the reference for the requested workflow:
 | impact, remove-method analysis, ผลกระทบ | [impact](references/impact.md) | Hypothetical analysis; no source deletion |
 | export, save selected graph, ส่งออก | [export](references/export.md) | Verified selected snapshot artifact; no rebuild/index mutation |
 | doctor, diagnose, ตรวจสุขภาพ | [doctor](references/doctor.md) | Read-only diagnosis |
-| doctor upgrade | [doctor](references/doctor.md), then axm upgrade reference | Diagnosis/plan/delegation; exact lifecycle approval |
+| doctor upgrade | [doctor](references/doctor.md), then the upgrade reference | Diagnosis/plan/delegation; exact lifecycle approval |
 | version, รุ่น | [version](references/version.md) | Offline installed facts; unknown is not up-to-date |
 
 For graph reads also load [MCP routing](references/mcp-routing.md). For build/export
@@ -52,3 +52,25 @@ generation/provenance, freshness, coverage, truncation/unresolved limits and art
 For build/watch include actual engine cycle duration and status; unavailable metrics
 are null with reasons. An exit code, PID, empty graph or discovered tool alone is not
 success. Pending remains pending. Preserve human source, Git index and shared services.
+
+## Ecosystem and agent lifecycle
+
+For install, repair or host setup load [installation](references/installation.md).
+For update/upgrade load [upgrade](references/upgrade.md). Terminal operations use
+`axm`; this skill never owns a second updater or installer. Host skills management
+uses `axm skills install|update|doctor|uninstall HOST` or `axm skills list`. Inspect
+installed help and report unsupported hosts instead of inventing capabilities.
+For uninstall inspect the exact `axm uninstall` plan, preserve user data and use
+the established authorization. Never turn a read-only question into a mutation.
+
+## Multiple project graphs
+
+Project A can query registered B/C through the same authorized MCP runtime.
+Discover the relevant solution/project IDs, use bounded multi-project queries
+within one solution, and bounded calls per solution when they differ. Retain
+each returned generation vector; do not claim an atomic cross-solution view.
+The local gateway retains verified graph generations with bounded memory and
+can expire after three idle hours. Discover or start a gateway only when setup
+is authorized; reconnect/reinitialize after idle exit. Prefer graph search and
+traversal for relevant evidence. Read source when graph coverage or source spans
+are insufficient, and retain unresolved/dynamic relationship limits.

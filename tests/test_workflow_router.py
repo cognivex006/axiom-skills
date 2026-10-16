@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPT = ROOT / "skills/axge/scripts/select_workflow.py"
+SCRIPT = ROOT / "skills/axsk/scripts/select_workflow.py"
 
 
 def router():
@@ -43,10 +43,10 @@ def test_ambiguous_or_unknown_text_does_not_authorize_an_operation():
 
 
 def test_default_discovery_and_resolvable_references():
-    assert {p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md")} == {"axge", "axm"}
+    assert {p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md")} == {"axsk"}
     for package in ("axiom", "axiom-agy"):
         base = ROOT / "plugins" / package
-        assert {p.parent.name for p in (base / "skills").glob("*/SKILL.md")} == {"axge", "axm"}
+        assert {p.parent.name for p in (base / "skills").glob("*/SKILL.md")} == {"axsk"}
         for source in (ROOT / "skills").rglob("*"):
             if source.is_file():
                 assert (base / source.relative_to(ROOT)).read_bytes() == source.read_bytes()
