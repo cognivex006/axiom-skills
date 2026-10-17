@@ -1,7 +1,7 @@
 {
   "manifest_version": 1,
   "component": "axiom-skills",
-  "component_version": "0.1.11",
+  "component_version": "0.1.12",
   "channel": "development",
   "released": false,
   "spec_version": "2.0.0-draft.1",
@@ -221,7 +221,7 @@
     {
       "path": "adapters/compatibility.json",
       "role": "host-adapter-compatibility",
-      "sha256": "b5f351b46fd374bd3ea6640c1aecf4c1f216c552052417ca966be18763a9ead5",
+      "sha256": "1225db56d520895dd45cba050ba796d4ce1debf93269fb5f70739601ad6e18b5",
       "bytes": 12783
     },
     {
@@ -262,19 +262,19 @@
     {
       "path": "plugins/axiom/.claude-plugin/plugin.json",
       "role": "plugin-package",
-      "sha256": "6e7ce80760ca4819301447c0dbe0e8c2829fb044f44c5ac4e70fec531075e474",
+      "sha256": "5416366c540871164d179239ac6f983ffe6d5393d1258f1c9f25ffe06ca9d040",
       "bytes": 166
     },
     {
       "path": "plugins/axiom/.codex-plugin/plugin.json",
       "role": "plugin-package",
-      "sha256": "5981e915c18e317239583b516a79de4b28e0a922a30673984e64756c82d5c94f",
+      "sha256": "cc274362ae26bcace95084ec2ceee6bc16163d6629a354594ecbc58e27fb6643",
       "bytes": 794
     },
     {
       "path": "plugins/axiom/gemini-extension.json",
       "role": "plugin-package",
-      "sha256": "5f9c27f7d6ef54707ce9161ced3acd51811edff587d73844ff760731659ce96b",
+      "sha256": "228d01a2c7a5076113b2fbadcfed8def1fde33362f7091da131d330ec655d433",
       "bytes": 157
     },
     {
@@ -286,7 +286,7 @@
     {
       "path": "plugins/axiom/plugin.json",
       "role": "plugin-package",
-      "sha256": "285c9d141f0465b2d158c7b4cde2a047b1bf4f5dcb35877b6a59733608cda769",
+      "sha256": "5da8639c20e293f37315fda75b112398c0b6bc0207a124e432e6d1fd49903af8",
       "bytes": 437
     },
     {
@@ -534,7 +534,7 @@
     {
       "path": ".github/plugin/marketplace.json",
       "role": "plugin-marketplace",
-      "sha256": "f09234db83e99750797b4ebe69c7ddf23022e80389a999534915ce05cab6899c",
+      "sha256": "d912368a28d9171803c53d1348edf283f6a20c5fc827c2f7ed7a0d9e20d68a5c",
       "bytes": 367
     }
   ]

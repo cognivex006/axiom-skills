@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.1.12
+
+### Chores
+
+- Align package metadata with the 0.1.12 distribution; runtime behavior and public contracts are unchanged.
+
 ## 0.1.11
 
 ### Documentation

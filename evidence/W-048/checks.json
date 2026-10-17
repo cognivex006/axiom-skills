@@ -1,0 +1,38 @@
+[
+  {
+    "id": "tests",
+    "command": [
+      "python",
+      "-m",
+      "pytest",
+      "tests",
+      "-q"
+    ],
+    "exit_code": 0,
+    "seconds": 45.445,
+    "artifact": "evidence/W-048/tests.txt",
+    "sha256": "0f3e4db4816efa1442f6a0195855a18f67a0de076c5c77262134c118b5b11d4b"
+  },
+  {
+    "id": "manifest",
+    "command": [
+      "python",
+      "release/verify_manifest.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.246,
+    "artifact": "evidence/W-048/manifest.txt",
+    "sha256": "1e083812718d695a6cdd8e077647371103649664b6eefcfb12ccdb82aef67ed2"
+  },
+  {
+    "id": "plugin-parity",
+    "command": [
+      "python",
+      "release/build_plugin_bundle.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.189,
+    "artifact": "evidence/W-048/plugin-parity.txt",
+    "sha256": "354167af36e487ee7be2ed5b288ec7e07889f9f19536c18754ea73e81987392d"
+  }
+]
