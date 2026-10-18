@@ -18,3 +18,17 @@ traversal fields to search, select the first duplicate candidate, or concatenate
 graph shards into context. Multiple overloads/projects require contextual resolution
 or a concise choice. Missing/auth-denied/stale/partial MCP is degraded or unverified;
 permitted source inspection can continue without claiming graph verification.
+
+For an authorized local gateway start, first inspect the installed command help.
+Current Axiom supports `axm mcp start` with an automatically reserved loopback
+port; use its reported endpoint rather than assuming port 8765. Repeating the
+same launch reuses only a matching owned instance. Explicit ports and Host/Origin
+policies remain explicit; do not broaden them or stop a foreign listener to make
+startup succeed. Use `axm mcp status`, `axm mcp list` and `axm mcp stop` for the
+owned lifecycle. Multiple instances require an explicit selection.
+
+`axm doctor` describes installation health and reports MCP graph readiness
+separately. `axm mcp doctor` checks component compatibility, credentials and graph
+query/control readiness; `--verbose` retains technical diagnostics. A listening
+gateway or successful `/healthz` alone does not establish graph access. Diagnosis
+does not authorize starting the gateway, modifying credentials or writing config.

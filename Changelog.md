@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 0.1.13
+
+### Documentation
+
+- Explain automatic local MCP startup, reported endpoints and separate installation, credential and graph readiness.
+- Describe install/update terminal activity and plain, quiet and machine output modes.
+
 ## 0.1.12
 
 ### Chores

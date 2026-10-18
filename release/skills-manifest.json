@@ -1,11 +1,11 @@
 {
   "manifest_version": 1,
   "component": "axiom-skills",
-  "component_version": "0.1.12",
+  "component_version": "0.1.13",
   "channel": "development",
   "released": false,
   "spec_version": "2.0.0-draft.1",
-  "spec_revision": "336756510dd7ca03fc6d6dbb49c3d36e9253a48e",
+  "spec_revision": "ed84007f2bc0e558c1f42f108ac1fcc4a32be5d6",
   "install_policy": {
     "declared_scope": [
       "policy",
@@ -85,15 +85,15 @@
     },
     {
       "path": "skills/axsk/references/installation.md",
-      "sha256": "a5a680d385f4c3371f11600f6bedd2015613c318dc7a3d71fbc27431538996b7",
-      "bytes": 1974,
+      "sha256": "4778f8f11b66e3b981a160b06ce1d2dffdc7e31f4f44ed011bb7a26ec0de6d58",
+      "bytes": 2458,
       "role": "reference"
     },
     {
       "path": "skills/axsk/references/mcp-routing.md",
       "role": "skill",
-      "sha256": "07be9b2095ce99138ffbe9ada959f7d4f21d64b895b6a18e28352e3ab0e7dca2",
-      "bytes": 1344
+      "sha256": "d055ba01f6656078576cddb84624e0dca8e891210920204c3ce4ac646ee959bf",
+      "bytes": 2297
     },
     {
       "path": "skills/axsk/references/runtime-capabilities.md",
@@ -221,7 +221,7 @@
     {
       "path": "adapters/compatibility.json",
       "role": "host-adapter-compatibility",
-      "sha256": "1225db56d520895dd45cba050ba796d4ce1debf93269fb5f70739601ad6e18b5",
+      "sha256": "52baad2738b02883340725b2ba5d7eeaeeb07c9e6491a05c02d5c9c369c395cf",
       "bytes": 12783
     },
     {
@@ -262,19 +262,19 @@
     {
       "path": "plugins/axiom/.claude-plugin/plugin.json",
       "role": "plugin-package",
-      "sha256": "5416366c540871164d179239ac6f983ffe6d5393d1258f1c9f25ffe06ca9d040",
+      "sha256": "6435067900857e338ae6d08f9517e89a2cb2dc08f328fdb67e74dca1fcd8a7ef",
       "bytes": 166
     },
     {
       "path": "plugins/axiom/.codex-plugin/plugin.json",
       "role": "plugin-package",
-      "sha256": "cc274362ae26bcace95084ec2ceee6bc16163d6629a354594ecbc58e27fb6643",
+      "sha256": "0b9107a1efb31efa3dc7cbb2ffbf8535afd7f63975fbc9b4b5acad008a027146",
       "bytes": 794
     },
     {
       "path": "plugins/axiom/gemini-extension.json",
       "role": "plugin-package",
-      "sha256": "228d01a2c7a5076113b2fbadcfed8def1fde33362f7091da131d330ec655d433",
+      "sha256": "4a3e915701731fe559512a13e161302ae8ed74de0ce97520103de3ef8f5e986e",
       "bytes": 157
     },
     {
@@ -286,7 +286,7 @@
     {
       "path": "plugins/axiom/plugin.json",
       "role": "plugin-package",
-      "sha256": "5da8639c20e293f37315fda75b112398c0b6bc0207a124e432e6d1fd49903af8",
+      "sha256": "69190d2ed1a9dc8a66971dc0472f4b1078b7db1eea9b6f573481874eaf01a0d9",
       "bytes": 437
     },
     {
@@ -346,14 +346,14 @@
     {
       "path": "plugins/axiom/skills/axsk/references/installation.md",
       "role": "plugin-package",
-      "sha256": "a5a680d385f4c3371f11600f6bedd2015613c318dc7a3d71fbc27431538996b7",
-      "bytes": 1974
+      "sha256": "4778f8f11b66e3b981a160b06ce1d2dffdc7e31f4f44ed011bb7a26ec0de6d58",
+      "bytes": 2458
     },
     {
       "path": "plugins/axiom/skills/axsk/references/mcp-routing.md",
       "role": "plugin-package",
-      "sha256": "07be9b2095ce99138ffbe9ada959f7d4f21d64b895b6a18e28352e3ab0e7dca2",
-      "bytes": 1344
+      "sha256": "d055ba01f6656078576cddb84624e0dca8e891210920204c3ce4ac646ee959bf",
+      "bytes": 2297
     },
     {
       "path": "plugins/axiom/skills/axsk/references/runtime-capabilities.md",
@@ -458,14 +458,14 @@
     {
       "path": "plugins/axiom-agy/skills/axsk/references/installation.md",
       "role": "plugin-package",
-      "sha256": "a5a680d385f4c3371f11600f6bedd2015613c318dc7a3d71fbc27431538996b7",
-      "bytes": 1974
+      "sha256": "4778f8f11b66e3b981a160b06ce1d2dffdc7e31f4f44ed011bb7a26ec0de6d58",
+      "bytes": 2458
     },
     {
       "path": "plugins/axiom-agy/skills/axsk/references/mcp-routing.md",
       "role": "plugin-package",
-      "sha256": "07be9b2095ce99138ffbe9ada959f7d4f21d64b895b6a18e28352e3ab0e7dca2",
-      "bytes": 1344
+      "sha256": "d055ba01f6656078576cddb84624e0dca8e891210920204c3ce4ac646ee959bf",
+      "bytes": 2297
     },
     {
       "path": "plugins/axiom-agy/skills/axsk/references/runtime-capabilities.md",
@@ -534,7 +534,7 @@
     {
       "path": ".github/plugin/marketplace.json",
       "role": "plugin-marketplace",
-      "sha256": "d912368a28d9171803c53d1348edf283f6a20c5fc827c2f7ed7a0d9e20d68a5c",
+      "sha256": "351866cdf206c89a0394fdc8e2773faaf93bee83ba6be60864ef8f4e70590f0c",
       "bytes": 367
     }
   ]

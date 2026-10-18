@@ -19,6 +19,13 @@ compiler to consume a native Windows artifact. Treat actual missing mandatory
 runtime dependencies and unsupported platforms as refusals before mutation. Keep
 Windows/native Linux/macOS/WSL execution evidence distinct.
 
+Supported terminals show install/update activity in two repainted rows. A stalled
+byte count may still animate; it is not evidence of a completed transfer. Unknown
+work stays indeterminate and archive verification still gates extraction. Use
+`AXIOM_PROGRESS=plain` for deterministic stage records, `off` to suppress activity,
+and `--json` for machine results. Preserve normal plan/confirmation input and
+the original command exit status; do not auto-confirm just to obtain progress.
+
 Preserve source, user data, old owned generations and human files. Modified/unowned
 legacy installations require an explicit adoption/repair plan; never delete them.
 Apply only the reviewed target/state, verify installed `axm version` and `axm doctor`,
