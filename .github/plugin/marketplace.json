@@ -10,7 +10,7 @@
       "description": "Axiom graph skills for repository analysis and operations",
       "source": "./plugins/axiom",
       "category": "development",
-      "version": "0.1.13"
+      "version": "0.1.14"
     }
   ]
 }

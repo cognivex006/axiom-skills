@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.1.14
+
+### Chores
+
+- Align portable skills and host plugin package metadata with the 0.1.14 native distribution; workflow behavior and managed host policy are unchanged.
+
 ## 0.1.13
 
 ### Documentation
