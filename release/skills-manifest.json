@@ -5,7 +5,7 @@
   "channel": "development",
   "released": false,
   "spec_version": "2.0.0-draft.1",
-  "spec_revision": "ed84007f2bc0e558c1f42f108ac1fcc4a32be5d6",
+  "spec_revision": "c87642621ac9e832b0e8c187161cdf2c4f4f1999",
   "install_policy": {
     "declared_scope": [
       "policy",
