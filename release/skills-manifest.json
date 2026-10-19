@@ -1,7 +1,7 @@
 {
   "manifest_version": 1,
   "component": "axiom-skills",
-  "component_version": "0.1.14",
+  "component_version": "0.1.15",
   "channel": "development",
   "released": false,
   "spec_version": "2.0.0-draft.1",
@@ -221,7 +221,7 @@
     {
       "path": "adapters/compatibility.json",
       "role": "host-adapter-compatibility",
-      "sha256": "d33e06cf7251cfad024ef40a69f6f983482932755233305c587ee35b0f056405",
+      "sha256": "b55a7dc52b2ff642fd0c13e4627d500d2a19850495edf0f71c5c59c2e1b74d98",
       "bytes": 12783
     },
     {
@@ -262,19 +262,19 @@
     {
       "path": "plugins/axiom/.claude-plugin/plugin.json",
       "role": "plugin-package",
-      "sha256": "3ec8986ed487f3e2af9dfe71988530edc67d3b2ab97c4bddf95678dc2f6134c4",
+      "sha256": "08ddbd2b10d4fc390adcf4e13dbd9e4c0e61dd77f1aee7855919a316bc5a8043",
       "bytes": 166
     },
     {
       "path": "plugins/axiom/.codex-plugin/plugin.json",
       "role": "plugin-package",
-      "sha256": "8054f07ef09a67bb92acaf56b2ce160576bb5ac19ea1052bca69c7ef10cea009",
+      "sha256": "94e047a774e37f3d35fbd96b30d0b424f74a7771c5983112e83a6ad67a28be9f",
       "bytes": 794
     },
     {
       "path": "plugins/axiom/gemini-extension.json",
       "role": "plugin-package",
-      "sha256": "f03ab1c9971bf18aea5a88710f78032e38526f02bd3407e0c6e38f5ea82c35bc",
+      "sha256": "0e5a816fd23f8e483fc4a35c85963b70fd80276cd771e5daf6995d40e7833ee7",
       "bytes": 157
     },
     {
@@ -286,7 +286,7 @@
     {
       "path": "plugins/axiom/plugin.json",
       "role": "plugin-package",
-      "sha256": "3b68fbb61af9f435aabe3edaf824305f5772afd962992d4cdd6bd796e0f71c60",
+      "sha256": "9555dffe35cd88b1743254f0c72350edd52d1a91f65582bf5e3c79d6b4497421",
       "bytes": 437
     },
     {
@@ -534,7 +534,7 @@
     {
       "path": ".github/plugin/marketplace.json",
       "role": "plugin-marketplace",
-      "sha256": "03bb2836a81aa2c383d1984b85f003e543625ce14b464066f098402160e5c9fe",
+      "sha256": "55871ebbe44da7a1c9d656e4cc92677f6ec876486422ee54a0ad717407c7a382",
       "bytes": 367
     }
   ]
