@@ -2,7 +2,7 @@
   "name": "axiom-skills",
   "description": "Axiom graph skills for supported agent hosts",
   "owner": {
-    "name": "orchex006"
+    "name": "cognivex006"
   },
   "plugins": [
     {

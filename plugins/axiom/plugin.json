@@ -4,10 +4,10 @@
   "version": "0.1.15",
   "description": "Code graph context, change impact and Axiom operations for coding assistants",
   "author": {
-    "name": "orchex006",
-    "url": "https://github.com/orchex006"
+    "name": "cognivex006",
+    "url": "https://github.com/cognivex006"
   },
-  "repository": "https://github.com/orchex006/axiom-skills",
+  "repository": "https://github.com/cognivex006/axiom-skills",
   "keywords": [
     "code-graph",
     "skills",

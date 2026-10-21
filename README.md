@@ -5,9 +5,9 @@ project graphs. The plugin supplies workflow instructions and focused references
 
 ## Install
 
-Install the runtime using the [Axiom installer](https://github.com/orchex006/axiom-cli#install-and-update).
-The managed setup below requires Axiom 0.1.10 or later. Published 0.1.9
-keeps its original two skill names and [manual plugin registration](https://github.com/orchex006/axiom-skills/blob/v0.1.9/marketplace-plugins/README.md).
+Install the runtime using the [Axiom installer](https://github.com/cognivex006/axiom-cli#install-and-update).
+The managed setup below requires Axiom 0.1.10 or later. Older installations
+can use the current [manual plugin registration guide](https://github.com/cognivex006/axiom-skills/blob/main/marketplace-plugins/README.md).
 
 ```powershell
 axm skills install codex
@@ -75,3 +75,7 @@ packages retain prior `axge`/`axm` and graph-* skills through the documented win
 Published releases and historical payloads remain immutable.
 
 For contributors, see [Development](Development.md) and [Changelog](Changelog.md).
+
+## Build and deployment
+
+Build, verify and deploy on operator-managed machines; see [local build and deployment](docs/LOCAL-BUILD-DEPLOY.md). GitHub Actions workflows are removed.

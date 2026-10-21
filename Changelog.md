@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Chores
+
+- Move repository and download references to cognivex006 and run verification/builds on operator-managed machines instead of GitHub Actions.
+
+
 ## 0.1.15
 
 ### Chores
@@ -93,7 +98,7 @@
 
 - Use functional language in installation skill descriptions and put graph creation/refresh before runtime management in onboarding.
 
-Full Changelog: [v0.1.5…v0.1.6](https://github.com/orchex006/axiom-skills/compare/v0.1.5...v0.1.6)
+Full Changelog: [v0.1.5…v0.1.6](https://github.com/cognivex006/axiom-skills/compare/v0.1.5...v0.1.6)
 
 ## 0.1.5
 

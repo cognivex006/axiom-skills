@@ -4,7 +4,7 @@ A working setup has three parts: the Axiom runtime, the skills plugin in your as
 
 ## 1. Install the runtime
 
-Follow the [Axiom installation guide](https://github.com/orchex006/axiom-cli/blob/main/docs/INSTALL.md) for your platform. After installation:
+Follow the [Axiom installation guide](https://github.com/cognivex006/axiom-cli/blob/main/docs/INSTALL.md) for your platform. After installation:
 
 ```sh
 axm version
@@ -36,7 +36,7 @@ same host argument. Other host setup remains in
 
 Start with `$axiom:axsk build` to register the selected solution, build its first graph and verify a known symbol. Then use `$axiom:axsk watch` to keep that graph current after source files are saved. Both workflows need `axiom-graphd`; automatic refresh uses its running daemon and current polling watcher. This refresh updates graph data, not application binaries.
 
-Use the [graph engine command reference](https://github.com/orchex006/axiom-graphd/blob/main/docs/reference/axiom-graphd.md) to register your solution and produce its graph. Configure the [MCP gateway](https://github.com/orchex006/axiom-mcp#run) with credentials scoped to that solution and add its launch configuration to your host.
+Use the [graph engine command reference](https://github.com/cognivex006/axiom-graphd/blob/main/docs/reference/axiom-graphd.md) to register your solution and produce its graph. Configure the [MCP gateway](https://github.com/cognivex006/axiom-mcp#run) with credentials scoped to that solution and add its launch configuration to your host.
 
 MCP credentials stay private. Registering a skills plugin does not create credentials, register a solution or start an MCP server.
 

@@ -9,4 +9,4 @@ agy plugin list
 
 Invoke `/axsk` in the prompt. The graph runtime and MCP connection are configured separately; installing this package does not start servers or change host permissions.
 
-To remove the plugin, run `agy plugin uninstall axiom`. Follow the [installation guide](https://github.com/orchex006/axiom-skills/blob/main/marketplace-plugins/README.md#antigravity--agy) for update and IDE setup.
+To remove the plugin, run `agy plugin uninstall axiom`. Follow the [installation guide](https://github.com/cognivex006/axiom-skills/blob/main/marketplace-plugins/README.md#antigravity--agy) for update and IDE setup.

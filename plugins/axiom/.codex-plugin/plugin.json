@@ -3,16 +3,16 @@
   "version": "0.1.15",
   "description": "Axiom graph skills for repository analysis and operations",
   "author": {
-    "name": "orchex006",
-    "url": "https://github.com/orchex006"
+    "name": "cognivex006",
+    "url": "https://github.com/cognivex006"
   },
-  "repository": "https://github.com/orchex006/axiom-skills",
+  "repository": "https://github.com/cognivex006/axiom-skills",
   "skills": "./skills/",
   "interface": {
     "displayName": "Axiom",
     "shortDescription": "Inspect and operate an Axiom repository graph.",
     "longDescription": "Use the Axiom skills for bounded graph context, impact, checkpoints, reconciliation, installation, updates, and diagnostics. Axiom runtime installation is separate.",
-    "developerName": "orchex006",
+    "developerName": "cognivex006",
     "category": "Productivity",
     "capabilities": [],
     "defaultPrompt": [

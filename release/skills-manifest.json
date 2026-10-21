@@ -5,7 +5,7 @@
   "channel": "development",
   "released": false,
   "spec_version": "2.0.0-draft.1",
-  "spec_revision": "c87642621ac9e832b0e8c187161cdf2c4f4f1999",
+  "spec_revision": "4ef9d1d5be0588e85df3a437efa2ae6df2f81245",
   "install_policy": {
     "declared_scope": [
       "policy",
@@ -221,8 +221,8 @@
     {
       "path": "adapters/compatibility.json",
       "role": "host-adapter-compatibility",
-      "sha256": "b55a7dc52b2ff642fd0c13e4627d500d2a19850495edf0f71c5c59c2e1b74d98",
-      "bytes": 12783
+      "sha256": "b0e657b488fcbba3a0fa8a62afc345567323c7490510ecb2ec9da375275a5216",
+      "bytes": 12782
     },
     {
       "path": "adapters/gemini/hooks/graph_after_agent.py",
@@ -262,14 +262,14 @@
     {
       "path": "plugins/axiom/.claude-plugin/plugin.json",
       "role": "plugin-package",
-      "sha256": "08ddbd2b10d4fc390adcf4e13dbd9e4c0e61dd77f1aee7855919a316bc5a8043",
-      "bytes": 166
+      "sha256": "1cdca900582dce88940cc84f2603010938a42f956184b936b4edee4c3084869b",
+      "bytes": 168
     },
     {
       "path": "plugins/axiom/.codex-plugin/plugin.json",
       "role": "plugin-package",
-      "sha256": "94e047a774e37f3d35fbd96b30d0b424f74a7771c5983112e83a6ad67a28be9f",
-      "bytes": 794
+      "sha256": "b4a78fc2e263516e67fcb16c6ba16d73598ce77dd24b488258c28d08d41c2f15",
+      "bytes": 802
     },
     {
       "path": "plugins/axiom/gemini-extension.json",
@@ -286,8 +286,8 @@
     {
       "path": "plugins/axiom/plugin.json",
       "role": "plugin-package",
-      "sha256": "9555dffe35cd88b1743254f0c72350edd52d1a91f65582bf5e3c79d6b4497421",
-      "bytes": 437
+      "sha256": "4bfbbe919edf71e131eb8b157858e66c43bf74c288a8783e661e83790c734e34",
+      "bytes": 443
     },
     {
       "path": "plugins/axiom/policy/POLICY.md",
@@ -298,8 +298,8 @@
     {
       "path": "plugins/axiom/README.md",
       "role": "plugin-package",
-      "sha256": "cf2b4d9ad8fe5a9cd209d736847bf0acc60a6dc820dd81fbb4b9c4c8f4d25429",
-      "bytes": 1187
+      "sha256": "c7ed2ae3d11c9bec124e41c902a8c37e8f45cda665abbbef3a229f052cb47db9",
+      "bytes": 1191
     },
     {
       "path": "plugins/axiom/skills/axsk/references/ask.md",
@@ -410,8 +410,8 @@
     {
       "path": "plugins/axiom-agy/README.md",
       "role": "plugin-package",
-      "sha256": "01a4e31bf5586b24433ad10f01afd893856d03f8ed73cf8069133aa25864c6ad",
-      "bytes": 565
+      "sha256": "e7d180bf9ce20a4bc595957da5569192e8b4f130f1bf1137eabb24bf45d55764",
+      "bytes": 567
     },
     {
       "path": "plugins/axiom-agy/skills/axsk/references/ask.md",
@@ -516,8 +516,8 @@
     {
       "path": ".claude-plugin/marketplace.json",
       "role": "plugin-marketplace",
-      "sha256": "d8b7625b0798a1ba37138a8122fdf8d6e5dee057f619db9880d4c4dedd7fa35d",
-      "bytes": 340
+      "sha256": "ea221f06bea5b94249c06fc82ed159c0fc072a2cd0a0a474adaa3f121fbf5f68",
+      "bytes": 342
     },
     {
       "path": "marketplace-plugins/catalog.json",
@@ -528,14 +528,14 @@
     {
       "path": "marketplace-plugins/README.md",
       "role": "plugin-marketplace",
-      "sha256": "e8f0f158b4e7d2962003f56d5c44d0b9efcd8390d4980c3a185d2e7b480abb4e",
-      "bytes": 6063
+      "sha256": "7f65ace5ee740f584e99fa9cc661d1d900019cdc52124fb5c9fdf6bafd886e71",
+      "bytes": 6081
     },
     {
       "path": ".github/plugin/marketplace.json",
       "role": "plugin-marketplace",
-      "sha256": "55871ebbe44da7a1c9d656e4cc92677f6ec876486422ee54a0ad717407c7a382",
-      "bytes": 367
+      "sha256": "ece1d743f156afac35e1a47302a6d528988431ce92aafa27f2867803b7f0d81f",
+      "bytes": 369
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Install the Axiom skills plugin
 
-Choose your assistant below. Start with `axge build` to create the first graph and `axge watch` to update it automatically as source files change. Development packages contain the single axsk workflow entrypoint; published 0.1.9 retains its two earlier entrypoints. Plugin installation makes them discoverable; the [graph runtime](https://github.com/orchex006/axiom-cli) and MCP connection are configured separately.
+Choose your assistant below. Start with `axge build` to create the first graph and `axge watch` to update it automatically as source files change. Development packages contain the single axsk workflow entrypoint; published 0.1.9 retains its two earlier entrypoints. Plugin installation makes them discoverable; the [graph runtime](https://github.com/cognivex006/axiom-cli) and MCP connection are configured separately.
 
 ## Codex
 
@@ -11,7 +11,7 @@ manual path for diagnosing or managing an independently registered marketplace.
 
 
 ```sh
-codex plugin marketplace add orchex006/axiom-skills
+codex plugin marketplace add cognivex006/axiom-skills
 codex plugin add axiom@axiom-skills
 codex plugin list --marketplace axiom-skills
 ```
@@ -25,7 +25,7 @@ Start a new session. Invoke a skill such as `$axiom:axsk`. Update the registered
 In a Claude Code session:
 
 ```text
-/plugin marketplace add orchex006/axiom-skills
+/plugin marketplace add cognivex006/axiom-skills
 /plugin install axiom@axiom-skills
 /plugin
 ```
@@ -37,12 +37,12 @@ Invoke `/axiom:axsk`, or select a skill in the plugin manager. The `/plugin` man
 ## GitHub Copilot CLI
 
 ```sh
-copilot plugin marketplace add orchex006/axiom-skills
+copilot plugin marketplace add cognivex006/axiom-skills
 copilot plugin install axiom@axiom-skills
 copilot plugin list
 ```
 
-You can also install the plugin directly: `copilot plugin install orchex006/axiom-skills:plugins/axiom`. Use `copilot plugin update axiom@axiom-skills` to update and `copilot plugin uninstall axiom@axiom-skills` to remove it. Copilot cloud and desktop/IDE clients have their own plugin or repository-skill setup; the CLI commands do not configure those clients automatically.
+You can also install the plugin directly: `copilot plugin install cognivex006/axiom-skills:plugins/axiom`. Use `copilot plugin update axiom@axiom-skills` to update and `copilot plugin uninstall axiom@axiom-skills` to remove it. Copilot cloud and desktop/IDE clients have their own plugin or repository-skill setup; the CLI commands do not configure those clients automatically.
 
 [Official Copilot plugin reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference)
 
@@ -51,7 +51,7 @@ You can also install the plugin directly: `copilot plugin install orchex006/axio
 In a Copilot session using Agent Host, use the plugin manager commands:
 
 ```text
-/plugin marketplace add orchex006/axiom-skills
+/plugin marketplace add cognivex006/axiom-skills
 /plugin install axiom@axiom-skills
 /plugin list
 ```
@@ -67,7 +67,7 @@ For repository-scoped Copilot/cloud skills, the same canonical skill folders can
 The repository includes an extension entrypoint, so GitHub installation works from its root:
 
 ```sh
-gemini extensions install https://github.com/orchex006/axiom-skills
+gemini extensions install https://github.com/cognivex006/axiom-skills
 gemini extensions list
 ```
 
@@ -80,7 +80,7 @@ Restart the Gemini session. Use `gemini extensions update axiom` to refresh the 
 AGY uses its own plugin manifest. Use the dedicated package:
 
 ```sh
-git clone https://github.com/orchex006/axiom-skills.git
+git clone https://github.com/cognivex006/axiom-skills.git
 agy plugin install ./axiom-skills/plugins/axiom-agy
 agy plugin list
 ```
@@ -91,7 +91,7 @@ Use `/axsk` to invoke a skill. To refresh a local package, update the checkout a
 
 ## Local packages and offline distribution
 
-For Codex, Claude and Copilot, pass the absolute repository directory to their marketplace-add command instead of `orchex006/axiom-skills`. Gemini and AGY accept the package directories above directly.
+For Codex, Claude and Copilot, pass the absolute repository directory to their marketplace-add command instead of `cognivex006/axiom-skills`. Gemini and AGY accept the package directories above directly.
 
 The build tooling produces a separate standalone ZIP for each host with a source revision, exact file hashes and `SHA256SUMS`. Extract a ZIP into a new directory, then pass that directory to the host's local marketplace-add or install command. This package root contains the marketplace/manifest and skills; it does not require the Axiom source workspace. Choose one marketplace source at a time for the `axiom-skills` name to avoid registration conflicts.
 

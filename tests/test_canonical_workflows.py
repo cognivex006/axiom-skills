@@ -3163,6 +3163,7 @@ if __name__ == "__main__":
 class OneLineInstallSkillTests(unittest.TestCase):
     """L-008: the install skill leads with the ADR-0033 one-line flow."""
 
+    # This class reads the frozen pre-router fixture, never the current payload.
     PS = 'irm https://github.com/orchex006/axiom-cli/releases/latest/download/install.ps1 | iex'
     SH = 'curl -fsSL https://github.com/orchex006/axiom-cli/releases/latest/download/install.sh | sh'
     PINNED = "releases/download/vX.Y.Z/install.ps1"

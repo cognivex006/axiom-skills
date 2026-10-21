@@ -74,7 +74,7 @@ def test_runtime_claims_do_not_gate_portable_delivery():
     record = json.loads((ROOT / "adapters/compatibility.json").read_text(encoding="utf-8"))
     assert record["release_policy"]["host_runtime_tests_required_for_download"] is False
     assert record["release_policy"]["portable_skills"] is True
-    assert record["release_policy"]["verification"] == "github_actions"
+    assert record["release_policy"]["verification"] == "local_machine"
     assert record["release_policy"]["delivery"] == "github_releases"
     assert "certification_rules" not in record
     assert all("certified" not in adapter for adapter in record["adapters"])

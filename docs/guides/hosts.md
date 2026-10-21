@@ -2,7 +2,7 @@
 
 ## Current GitHub delivery policy
 
-Skills use one portable bundle across OS targets. GitHub Actions verifies tests, payload hashes and plugin parity; GitHub Releases supplies the checked archive with source revision, version and SHA-256 checksum. No certification, code signing or attestation is required. Host runtime results document capabilities and never gate skill downloads. Existing host permissions, updater integrity and approval checks remain unchanged.
+Skills use one portable bundle across OS targets. operator-managed build machines verifies tests, payload hashes and plugin parity; GitHub Releases supplies the checked archive with source revision, version and SHA-256 checksum. No certification, code signing or attestation is required. Host runtime results document capabilities and never gate skill downloads. Existing host permissions, updater integrity and approval checks remain unchanged.
 
 
 Owner: `axiom-skills` · Adapter guide version: 1 · Spec baseline: `2.0.0-draft.1`

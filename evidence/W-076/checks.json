@@ -1,0 +1,58 @@
+{
+  "task_id": "W-076",
+  "source_repo": "axiom-skills",
+  "platform": "windows-x64",
+  "execution": "native",
+  "verification": "source checks; not release acceptance",
+  "commands": [
+    {
+      "command": "python -m pytest tests -q -p no:cacheprovider",
+      "exit_code": 0,
+      "raw_log_sha256": "bdadbf820fbd64ec554ece363a84d14c0aac4c1e5bc0fc4ec442638e49d94c78",
+      "observed_summary": [
+        "249 passed in 50.76s"
+      ]
+    },
+    {
+      "command": "python release/verify_spec_pin.py",
+      "exit_code": 0,
+      "raw_log_sha256": "43639f192c7b862f2901983f5334aceda8936f873f33d875903922ab004c516e",
+      "observed_summary": [
+        "OK immutable owner pin metadata; private specification content not fetched"
+      ]
+    },
+    {
+      "command": "python release/verify_manifest.py",
+      "exit_code": 0,
+      "raw_log_sha256": "33e6223b634804986b41a8cf027e9deba38ba71122f13b99a0e549794cd2ca4b",
+      "observed_summary": [
+        "OK skills bundle verification: component=axiom-skills version=0.1.15 channel=development files=77 scopes=policy,skills,adapters,plugins,.agents/plugins,.claude-plugin,marketplace-plugins,templates/bootstrap,.github/plugin"
+      ]
+    },
+    {
+      "command": "python release/build_plugin_bundle.py",
+      "exit_code": 0,
+      "raw_log_sha256": "7c97896b321df64c1faa873750aee3f4fdc0cc8c318ac59024c232ab8152bf62",
+      "observed_summary": [
+        "OK plugin bundle: 1 skills and policy match canonical bytes",
+        "OK plugin bundle: 1 skills and policy match canonical bytes"
+      ]
+    },
+    {
+      "command": "python -m pytest tests/test_github_delivery.py tests/test_release_manifest_handoff.py -q",
+      "exit_code": 0,
+      "raw_log_sha256": "37148fb997ba8527a53015f05db2518729d30f4fd318b1c8d833dfe3d617c28e",
+      "observed_summary": [
+        "18 passed in 8.76s"
+      ]
+    }
+  ],
+  "spec_revision": "4ef9d1d5be0588e85df3a437efa2ae6df2f81245",
+  "verified_contract_digests": 44,
+  "limitations": [
+    "Rebuilt multi-platform binary acceptance and publication are pending.",
+    "Linux, macOS, WSL, current manual terminal screenshots and release upgrade/rollback were not executed for this namespace migration.",
+    "Original legacy-owner cached release bytes remain unpublished."
+  ],
+  "preserved_history": "Original source commits, archived task receipts and frozen contract/skill fixtures retain original identities."
+}

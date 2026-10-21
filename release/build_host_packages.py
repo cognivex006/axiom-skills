@@ -134,7 +134,7 @@ def build(root: Path, output: Path, source_revision: str, legacy: bool = False) 
             entry = {'name':'axiom', 'source': {'source':'local','path':'./'} if host == 'codex' else './', 'version':version}
             if host == 'codex':
                 entry['policy'] = {'installation':'AVAILABLE','authentication':'ON_INSTALL'}
-            catalog = {'name':'axiom-skills','owner':{'name':'orchex006'},'plugins':[entry]}
+            catalog = {'name':'axiom-skills','owner':{'name':'cognivex006'},'plugins':[entry]}
             name = {'codex':'.agents/plugins/marketplace.json','claude':'.claude-plugin/marketplace.json','copilot':'.github/plugin/marketplace.json'}[host]
             files[name] = (json.dumps(catalog, indent=2)+'\n').encode()
         files['INSTALL.md'] = (f"# Axiom skills for {host}\n\nExtract this archive into a new directory. Replace `<extracted-package>` with that directory in these commands:\n\n```text\n" + '\n'.join(INSTALL[host]) + "\n```\n\nStart a new host session. Graph queries require a separately configured Axiom runtime, solution and MCP connection. Package validation is separate from native host execution.\n").encode()

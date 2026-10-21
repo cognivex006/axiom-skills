@@ -14,4 +14,4 @@ The package root contains `.agents/plugins/marketplace.json` and this `plugins/a
 
 Choose `axsk ask` to find relevant code, `axsk impact` before editing, or `axsk doctor` to diagnose an unavailable graph. Graph operations need the Axiom runtime and a configured MCP connection. This plugin does not start a server or change host permissions.
 
-[Installation guide](https://github.com/orchex006/axiom-skills/blob/main/marketplace-plugins/README.md) · [Getting started](https://github.com/orchex006/axiom-skills/blob/main/docs/GETTING-STARTED.md)
+[Installation guide](https://github.com/cognivex006/axiom-skills/blob/main/marketplace-plugins/README.md) · [Getting started](https://github.com/cognivex006/axiom-skills/blob/main/docs/GETTING-STARTED.md)

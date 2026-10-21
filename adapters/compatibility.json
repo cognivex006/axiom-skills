@@ -360,7 +360,7 @@
     }
   ],
   "release_policy": {
-    "verification": "github_actions",
+    "verification": "local_machine",
     "delivery": "github_releases",
     "portable_skills": true,
     "host_runtime_tests_required_for_download": false
