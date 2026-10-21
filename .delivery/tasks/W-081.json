@@ -2,9 +2,9 @@
   "task_id": "W-081",
   "owner_repository": "axiom-skills",
   "branch": "feature/w-081-windows-014",
-  "status": "source_verified",
+  "status": "published",
   "version": "0.1.14",
-  "verification_artifact": "evidence/W-081/source-checks.json",
-  "git_delivery": "Exact committed and remote source SHA is recorded in the current release coordination source vector.",
-  "release_acceptance": "Native Windows package/runtime/distribution proof and authorized publication remain pending."
+  "published_source_revision": "dd19829e850b9700821ccd2938383df0126b0d76",
+  "publication_receipt": "evidence/W-081/publication.json",
+  "main_integration": "Pending human review; protected main unchanged."
 }
