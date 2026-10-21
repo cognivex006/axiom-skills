@@ -1,11 +1,11 @@
 {
   "manifest_version": 1,
   "component": "axiom-skills",
-  "component_version": "0.1.15",
+  "component_version": "0.1.14",
   "channel": "development",
   "released": false,
   "spec_version": "2.0.0-draft.1",
-  "spec_revision": "4ef9d1d5be0588e85df3a437efa2ae6df2f81245",
+  "spec_revision": "c8bd7f33d562b31a585478d377f866ce0da4fb0c",
   "install_policy": {
     "declared_scope": [
       "policy",
@@ -221,7 +221,7 @@
     {
       "path": "adapters/compatibility.json",
       "role": "host-adapter-compatibility",
-      "sha256": "b0e657b488fcbba3a0fa8a62afc345567323c7490510ecb2ec9da375275a5216",
+      "sha256": "a9a1ec7bf36812443d44f2a359487fd03137b37915048bb24b9396a6702e6d39",
       "bytes": 12782
     },
     {
@@ -262,19 +262,19 @@
     {
       "path": "plugins/axiom/.claude-plugin/plugin.json",
       "role": "plugin-package",
-      "sha256": "1cdca900582dce88940cc84f2603010938a42f956184b936b4edee4c3084869b",
+      "sha256": "3aa03e46ba0a5f0a93e6771f70645e815ff3af2c00eba059fd9ecb3ad22a2eea",
       "bytes": 168
     },
     {
       "path": "plugins/axiom/.codex-plugin/plugin.json",
       "role": "plugin-package",
-      "sha256": "b4a78fc2e263516e67fcb16c6ba16d73598ce77dd24b488258c28d08d41c2f15",
+      "sha256": "88d82fbc4b17fb02bc3885cb24727a197dd242989e5ee281e056ea4fe6c4de4a",
       "bytes": 802
     },
     {
       "path": "plugins/axiom/gemini-extension.json",
       "role": "plugin-package",
-      "sha256": "0e5a816fd23f8e483fc4a35c85963b70fd80276cd771e5daf6995d40e7833ee7",
+      "sha256": "f03ab1c9971bf18aea5a88710f78032e38526f02bd3407e0c6e38f5ea82c35bc",
       "bytes": 157
     },
     {
@@ -286,7 +286,7 @@
     {
       "path": "plugins/axiom/plugin.json",
       "role": "plugin-package",
-      "sha256": "4bfbbe919edf71e131eb8b157858e66c43bf74c288a8783e661e83790c734e34",
+      "sha256": "7bc9874aacd6f5d7fcea58cc2e50ffee197f04b15772b8f0819bbba1aa29c7bc",
       "bytes": 443
     },
     {
@@ -534,7 +534,7 @@
     {
       "path": ".github/plugin/marketplace.json",
       "role": "plugin-marketplace",
-      "sha256": "ece1d743f156afac35e1a47302a6d528988431ce92aafa27f2867803b7f0d81f",
+      "sha256": "5a784d81c4b884210fa93e2455ffb1242e64af2427127f836fc204f5a15cd6f0",
       "bytes": 369
     }
   ]

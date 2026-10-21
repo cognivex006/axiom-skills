@@ -1,0 +1,10 @@
+{
+  "task_id": "W-081",
+  "owner_repository": "axiom-skills",
+  "branch": "feature/w-081-windows-014",
+  "status": "published",
+  "version": "0.1.14",
+  "published_source_revision": "dd19829e850b9700821ccd2938383df0126b0d76",
+  "publication_receipt": "evidence/W-081/publication.json",
+  "main_integration": "Pending human review; protected main unchanged."
+}

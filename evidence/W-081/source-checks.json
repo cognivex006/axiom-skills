@@ -1,0 +1,61 @@
+{
+  "task_id": "W-081",
+  "repository": "axiom-skills",
+  "status": "source_verified",
+  "version": "0.1.14",
+  "platform": "windows-x64",
+  "spec_revision": "c8bd7f33d562b31a585478d377f866ce0da4fb0c",
+  "source_unchanged_during_checks": true,
+  "checks": [
+    {
+      "command": "python -m pytest tests -q -p no:cacheprovider",
+      "exit_code": 0,
+      "raw_log_sha256": "c1b6c9b447926e08335196d8ff1c43c64b953ff04389a60c8ad363a43574bb35",
+      "observed_summary": [
+        "251 passed in 29.63s"
+      ]
+    },
+    {
+      "command": "python release/verify_spec_pin.py",
+      "exit_code": 0,
+      "raw_log_sha256": "75cc3633640d0681f44a54813c63a3d3ab81d00d94d6d209a9dd1c906dae0210",
+      "observed_summary": [
+        "OK immutable owner pin metadata; private specification content not fetched"
+      ]
+    },
+    {
+      "command": "python release/verify_manifest.py",
+      "exit_code": 0,
+      "raw_log_sha256": "99a69755adc43106b950bfa8140526be5390edb4e9e8f78aee0b8119ef28f36a",
+      "observed_summary": [
+        "OK skills bundle verification: component=axiom-skills version=0.1.14 channel=development files=77 scopes=policy,skills,adapters,plugins,.agents/plugins,.claude-plugin,marketplace-plugins,templates/bootstrap,.github/plugin"
+      ]
+    },
+    {
+      "command": "python release/build_plugin_bundle.py",
+      "exit_code": 0,
+      "raw_log_sha256": "d7904046f2bf379cf4ee6b67eac1fa5bcde8ed23daee5f34986e6875ec2c7701",
+      "observed_summary": [
+        "OK plugin bundle: 1 skills and policy match canonical bytes",
+        "OK plugin bundle: 1 skills and policy match canonical bytes"
+      ]
+    }
+  ],
+  "independent_review": "No blocking source finding; actual native owner/distribution, refusal and rollback acceptance remains mandatory before publication.",
+  "publication": "not_published",
+  "tested_input_hashes": {
+    ".github/plugin/marketplace.json": "5a784d81c4b884210fa93e2455ffb1242e64af2427127f836fc204f5a15cd6f0",
+    "Changelog.md": "805cea2fb4d42c24c38f618d39426d2ae6edf526fdff4c8dc416b5394c7aa272",
+    "Development.md": "45ca35f69fe0892938a8bdf3dfd2ec750dd3f00a58cc6824b5c1f0d32d4656f3",
+    "adapters/compatibility.json": "a9a1ec7bf36812443d44f2a359487fd03137b37915048bb24b9396a6702e6d39",
+    "docs/LOCAL-BUILD-DEPLOY.md": "e1f5c498f68b8890f1a7d60c46432477305037358d0223d9a33fd148b818db45",
+    "gemini-extension.json": "f03ab1c9971bf18aea5a88710f78032e38526f02bd3407e0c6e38f5ea82c35bc",
+    "plugins/axiom/.claude-plugin/plugin.json": "3aa03e46ba0a5f0a93e6771f70645e815ff3af2c00eba059fd9ecb3ad22a2eea",
+    "plugins/axiom/.codex-plugin/plugin.json": "88d82fbc4b17fb02bc3885cb24727a197dd242989e5ee281e056ea4fe6c4de4a",
+    "plugins/axiom/gemini-extension.json": "f03ab1c9971bf18aea5a88710f78032e38526f02bd3407e0c6e38f5ea82c35bc",
+    "plugins/axiom/plugin.json": "7bc9874aacd6f5d7fcea58cc2e50ffee197f04b15772b8f0819bbba1aa29c7bc",
+    "release/readiness.json": "4ce0083e8cd621b72a58e0c456cc21e63e3197185d40cac63074bd58470d8167",
+    "release/skills-manifest.json": "66808d6fa1e90dda6adecb6dea737b7d000f6cc47a91389bfe0cf5240e87abf1",
+    "spec.lock.json": "96b6445f2513f9fda0e89de1ce7b9d98fd777841543a55e3c89242c0b9a6aee4"
+  }
+}

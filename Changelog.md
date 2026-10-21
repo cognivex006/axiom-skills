@@ -15,6 +15,12 @@
 
 ## 0.1.14
 
+### Current Windows distribution
+
+- Rebuild Windows delivery under cognivex006 with source-bound local-machine verification and no GitHub Actions.
+- Retain immutable source/checksum inventories and the current complete-inventory graph fixes.
+
+
 ### Chores
 
 - Align portable skills and host plugin package metadata with the 0.1.14 native distribution; workflow behavior and managed host policy are unchanged.
