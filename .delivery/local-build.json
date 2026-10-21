@@ -28,9 +28,9 @@
     [
       "python",
       "-m",
-      "release.build_github_release",
-      "--tag",
-      "v0.1.15",
+      "release.build_local_assets",
+      "--source-revision",
+      "{source}",
       "--out",
       "{out}"
     ]

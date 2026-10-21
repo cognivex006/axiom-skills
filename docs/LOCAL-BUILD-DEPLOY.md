@@ -28,7 +28,7 @@ not call it. Native acceptance, terminal captures and rollback checks still appl
 
 Use the existing owner release collector to assemble the three native lanes:
 graphd release/collect_assets.py, MCP release/collect_portable_assets.py, CLI
-release/collect_distribution.py; skills uses release/build_github_release.py.
+release/collect_distribution.py; skills uses python -m release.build_local_assets to combine the portable bundle and all standalone host packages from one clean commit.
 Each collector receives actual native outputs, not fabricated report files.
 After CLI collection, release/oneline_assets.py generates bootstrap scripts and
 channel metadata from the checked archive hashes. All tools are local scripts;
